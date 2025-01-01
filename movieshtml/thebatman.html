@@ -5,9 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Batman (2022) - IMDb</title>
     <link rel="stylesheet" href="css/movietemplate.css">
+    <style>
+        .header-background {
+            background-image: url('https://th.bing.com/th/id/R.dc04cf1d5487ba94a7752d4e9a12d5aa?rik=0d%2fuItQ3qUYkWA&pid=ImgRaw&r=0'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
 </head>
 <body>
-    <header>
+    <header class="header-background">
         <h1>The Batman (2022)</h1>
         <p>Directed by <span class="director">Matt Reeves</span></p>
         <p>Release Date: <span class="release-date">March 4, 2022</span></p>
@@ -30,15 +56,11 @@
             <p>When the Riddler, a sadistic serial killer, begins murdering key political figures in Gotham, Batman is forced to investigate the city's hidden corruption and question his family's involvement.</p>
         </section>
 
-        <!-- Space for your movie/video -->
+        <!-- Embed your movie/video -->
         <section class="card movie">
             <h3>Watch Movie</h3>
             <div class="video-container">
-                <video controls>
-                    <source src="twilight.m3u8" type="application/x-mpegURL">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
+                <iframe src="https://vidsrc.me/embed/movie?tmdb=414906" style="width: 100%; height: 100%;" frameborder="0" referrerpolicy="origin" allowfullscreen></iframe>
         </section>
 
         <section class="card details">
@@ -68,7 +90,9 @@
 
         <section class="card trailer">
             <h3>Trailer</h3>
-            <iframe class="responsive-iframe" src="https://www.youtube.com/embed/mqqft2x_Aa4?autoplay=1" frameborder="0" allowfullscreen></iframe>
+            <div class="video-container">
+                <iframe width="540" height="304" src="https://www.youtube.com/embed/0h8ZBXUNXXM" title="THE BATMAN Trailer (2022)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
         </section>
     </main>
 

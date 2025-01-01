@@ -5,9 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Bad Mother's Handbook (2007) - IMDb</title>
     <link rel="stylesheet" href="css/movietemplate.css">
+    <style>
+        .header-background {
+            background-image: url('https://th.bing.com/th/id/OIP.QFZI4WpGyhYM0Ti25OLLJgHaE4?rs=1&pid=ImgDetMain'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
 </head>
 <body>
-    <header>
+    <header class="header-background">
         <h1>The Bad Mother's Handbook (2007)</h1>
         <p>Directed by <span class="director">Robin Shepperd</span></p>
         <p>Release Date: <span class="release-date">February 19, 2007</span></p>
@@ -30,15 +56,10 @@
             <p>A teenager turns her foray into babysitting into a lucrative business but struggles to balance her newfound success with her personal life.</p>
         </section>
 
-        <!-- Space for your movie/video -->
+        <!-- Embed your movie/video -->
         <section class="card movie">
             <h3>Watch Movie</h3>
-            <div class="video-container">
-                <video controls>
-                    <source src="twilight.m3u8" type="application/x-mpegURL">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
+            <a href="https://www.cineby.app/movie/50364" class="play-button" style="color: white;">Click to Watch</a>
         </section>
 
         <section class="card details">
@@ -59,12 +80,14 @@
 
         <section class="card details">
             <h3>Rating</h3>
-            <p>IMDb Rating: <span class="rating">6.5</span>/10</p>
+            <p>IMDb Rating: <span class="rating">6.6</span>/10</p>
         </section>
 
         <section class="card trailer">
             <h3>Trailer</h3>
-            <iframe class="responsive-iframe" src="https://www.youtube.com/embed/TBD?autoplay=1" frameborder="0" allowfullscreen></iframe>
+            <div class="video-container">
+                <iframe width="943" height="250" src="https://www.youtube.com/embed/Wcg2QVbnPd8" title="THE BAD MOTHER&#39;S HANDBOOK Official Trailer (2010) - Catherine Tate, Anne Reid, Holliday Grainger" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
         </section>
     </main>
 

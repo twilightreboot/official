@@ -5,9 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How to Be (2008) - IMDb</title>
     <link rel="stylesheet" href="css/movietemplate.css">
+    <style>
+        .header-background {
+            background-image: url('https://th.bing.com/th/id/OIP.aXqiTUeOiUdlJwhx05Uq-QHaFj?rs=1&pid=ImgDetMain'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
 </head>
 <body>
-    <header>
+    <header class="header-background">
         <h1>How to Be (2008)</h1>
         <p>Directed by <span class="director">Oliver Irving</span></p>
         <p>Release Date: <span class="release-date">April 29, 2008</span></p>
@@ -30,14 +56,10 @@
             <p>A young man having an existential crisis convinces a Canadian self-help guru to come to London and become his personal life coach.</p>
         </section>
 
-        <!-- Space for your movie/video -->
         <section class="card movie">
             <h3>Watch Movie</h3>
             <div class="video-container">
-                <video controls>
-                    <source src="twilight.m3u8" type="application/x-mpegURL">
-                    Your browser does not support the video tag.
-                </video>
+                <iframe width="943" height="250" src="https://www.youtube.com/embed/rwUSBodHibA" title="How to Be (2008) starring robert pattinson" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </section>
 
@@ -48,25 +70,25 @@
                 <li>Rebecca Pidgeon as Mother</li>
                 <li>Jeremy Hardy as Father</li>
                 <li>Powell Jones as Dr. Ellington</li>
-                <li>Mike Pearce as Ronny</li>
-                <li>Johnny White as Nikki</li>
                 <!-- Add more cast members as needed -->
             </ul>
         </section>
 
         <section class="card details">
             <h3>Genres</h3>
-            <p>Comedy, Drama, Music</p>
+            <p>Comedy, Drama</p>
         </section>
 
         <section class="card details">
             <h3>Rating</h3>
-            <p>IMDb Rating: <span class="rating">5.5</span>/10</p>
+            <p>IMDb Rating: <span class="rating">5.6</span>/10</p>
         </section>
 
         <section class="card trailer">
             <h3>Trailer</h3>
-            <iframe class="responsive-iframe" src="https://www.youtube.com/embed/3tjoqhx_dwk?autoplay=1" frameborder="0" allowfullscreen></iframe>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/xyz123" frameborder="0" allowfullscreen></iframe>
+            </div>
         </section>
     </main>
 
