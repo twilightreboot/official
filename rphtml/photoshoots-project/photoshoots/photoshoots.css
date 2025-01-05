@@ -234,7 +234,7 @@ footer p {
     font-size: 14px;
 }
 
-social-icons {
+.social-icons {
     margin-top: 10px;
 }
 
@@ -263,7 +263,7 @@ social-icons {
     transition: transform 0.3s ease-out;
 }
 
-.social-icons a:hover::after {
+social-icons a:hover::after {
     transform: scaleX(1);
     transform-origin: bottom left;
 }

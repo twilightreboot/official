@@ -6,49 +6,6 @@
     <title>Robert Pattinson - 2005 Photoshoot</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="photoshoots.css">
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
-        @media (max-width: 768px) {
-            header {
-                padding: 70px 20px;
-            }
-
-            header h1 {
-                font-size: 48px;
-            }
-
-            header p {
-                font-size: 18px;
-            }
-
-            nav a {
-                font-size: 16px;
-                margin: 0 10px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header {
-                padding: 50px 20px;
-            }
-
-            header h1 {
-                font-size: 36px;
-            }
-
-            header p {
-                font-size: 16px;
-            }
-
-            nav a {
-                font-size: 14px;
-                margin: 0 5px;
-            }
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -143,26 +100,14 @@
             modal.style.justifyContent = 'center';
             modal.style.alignItems = 'center';
             modal.style.zIndex = '1000';
+            modal.onclick = () => document.body.removeChild(modal);
 
             const img = document.createElement('img');
             img.src = src;
             img.style.maxWidth = '90%';
             img.style.maxHeight = '90%';
 
-            const closeButton = document.createElement('button');
-            closeButton.textContent = 'Close';
-            closeButton.style.position = 'absolute';
-            closeButton.style.top = '20px';
-            closeButton.style.right = '20px';
-            closeButton.style.backgroundColor = '#e74c3c';
-            closeButton.style.color = '#fff';
-            closeButton.style.border = 'none';
-            closeButton.style.padding = '10px 20px';
-            closeButton.style.cursor = 'pointer';
-            closeButton.onclick = () => document.body.removeChild(modal);
-
             modal.appendChild(img);
-            modal.appendChild(closeButton);
             document.body.appendChild(modal);
         }
     </script>
