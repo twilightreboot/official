@@ -25,6 +25,16 @@
             display: block;
             cursor: pointer;
         }
+        @media (max-width: 768px) {
+            .gallery-item {
+                flex: 1 1 calc(50% - 20px);
+            }
+        }
+        @media (max-width: 480px) {
+            .gallery-item {
+                flex: 1 1 100%;
+            }
+        }
     </style>
     <script>
         function openImage(src) {
@@ -69,31 +79,31 @@
             <h2>Gallery</h2>
             <div class="gallery-container">
                 <div class="gallery-item">
-                    <img src="https://robert-pattinson.com/photos/albums/Photoshoots/2005/001/thumb_2005-RP01_003.jpg" alt="Photoshoot 1" onclick="openImage(this.src)">
+                    <img src="https://robert-pattinson.com/photos/albums/Photoshoots/2005/001/2005-RP01_003.jpg" alt="Photoshoot 1" onclick="openImage(this.src)">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://robert-pattinson.com/photos/albums/Photoshoots/2005/002%20TeenPeople/thumb_2005-RP02_003.jpg" alt="Photoshoot 2" onclick="openImage(this.src)">
+                    <img src="https://robert-pattinson.com/photos/albums/Photoshoots/2005/002%20TeenPeople/2005-RP02_003.jpg" alt="Photoshoot 2" onclick="openImage(this.src)">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://robert-pattinson.com/photos/albums/Photoshoots/2005/001/thumb_2005-RP01_001.jpg" alt="Photoshoot 3" onclick="openImage(this.src)">
+                    <img src="https://robert-pattinson.com/photos/albums/Photoshoots/2005/001/2005-RP01_001.jpg" alt="Photoshoot 3" onclick="openImage(this.src)">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://robert-pattinson.com/photos/albums/Photoshoots/2005/002%20TeenPeople/thumb_2005-RP02_002.jpg" alt="Photoshoot 4" onclick="openImage(this.src)">
+                    <img src="https://robert-pattinson.com/photos/albums/Photoshoots/2005/002%20TeenPeople/2005-RP02_002.jpg" alt="Photoshoot 4" onclick="openImage(this.src)">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://robert-pattinson.com/photos/albums/Photoshoots/2005/001/thumb_2005-RP01_004.jpg" alt="Photoshoot 5" onclick="openImage(this.src)">
+                    <img src="https://robert-pattinson.com/photos/albums/Photoshoots/2005/001/2005-RP01_004.jpg" alt="Photoshoot 5" onclick="openImage(this.src)">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://robert-pattinson.com/photos/albums/Photoshoots/2005/001/thumb_2005-RP01_005.jpg" alt="Photoshoot 6" onclick="openImage(this.src)">
+                    <img src="https://robert-pattinson.com/photos/albums/Photoshoots/2005/001/2005-RP01_005.jpg" alt="Photoshoot 6" onclick="openImage(this.src)">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://robert-pattinson.com/photos/albums/Photoshoots/2005/001/thumb_2005-RP01_002.jpg" alt="Photoshoot 7" onclick="openImage(this.src)">
+                    <img src="https://robert-pattinson.com/photos/albums/Photoshoots/2005/001/2005-RP01_002.jpg" alt="Photoshoot 7" onclick="openImage(this.src)">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://robert-pattinson.com/photos/albums/Photoshoots/2005/002%20TeenPeople/thumb_2005-RP02_004.jpg" alt="Photoshoot 8" onclick="openImage(this.src)">
+                    <img src="https://robert-pattinson.com/photos/albums/Photoshoots/2005/002%20TeenPeople/2005-RP02_004.jpg" alt="Photoshoot 8" onclick="openImage(this.src)">
                 </div>
                 <div class="gallery-item">
-                    <img src="https://robert-pattinson.com/photos/albums/Photoshoots/2005/002%20TeenPeople/thumb_2005-RP02_001.jpg" alt="Photoshoot 9" onclick="openImage(this.src)">
+                    <img src="https://robert-pattinson.com/photos/albums/Photoshoots/2005/002%20TeenPeople/2005-RP02_001.jpg" alt="Photoshoot 9" onclick="openImage(this.src)">
                 </div>
             </div>
         </section>
