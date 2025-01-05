@@ -5,7 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Robert Pattinson - 2005 Photoshoot</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="../css/photoshoots.css">
+    <link rel="stylesheet" href="photoshoots.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 70px 20px;
+            }
+
+            header h1 {
+                font-size: 48px;
+            }
+
+            header p {
+                font-size: 18px;
+            }
+
+            nav a {
+                font-size: 16px;
+                margin: 0 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 50px 20px;
+            }
+
+            header h1 {
+                font-size: 36px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
+
+            nav a {
+                font-size: 14px;
+                margin: 0 5px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -20,13 +63,63 @@
         <a href="photoshoots.html">Photoshoots</a>
     </nav>
     <main class="main-section">
-        <!-- First Photoshoot Section -->
-        <div>
-            <iframe src="https://robert-pattinson.com/photos/thumbnails.php?album=638" id="photoshootFrame1" style="width: 1300px; height: 2000px; border: none;"></iframe>
-        </div>
-        <!-- Second Photoshoot Section -->
-        <div>
-            <iframe src="https://robert-pattinson.com/photos/thumbnails.php?album=637" id="photoshootFrame2" style="width: 1300px; height: 2000px; border: none;"></iframe>
+        <div class="gallery-container">
+            <!-- Existing Images -->
+            <div class="gallery-item card">
+                <img src="https://robert-pattinson.com/photos/albums/Photoshoots/2005/001/2005-RP01_003.jpg" alt="Photoshoot 1" onclick="openImage(this.src)">
+            </div>
+            <div class="gallery-item card">
+                <img src="https://robert-pattinson.com/photos/albums/Photoshoots/2005/002%20TeenPeople/2005-RP02_003.jpg" alt="Photoshoot 2" onclick="openImage(this.src)">
+            </div>
+            <div class="gallery-item card">
+                <img src="https://robert-pattinson.com/photos/albums/Photoshoots/2005/001/2005-RP01_001.jpg" alt="Photoshoot 3" onclick="openImage(this.src)">
+            </div>
+            <div class="gallery-item card">
+                <img src="https://robert-pattinson.com/photos/albums/Photoshoots/2005/002%20TeenPeople/2005-RP02_002.jpg" alt="Photoshoot 4" onclick="openImage(this.src)">
+            </div>
+            <div class="gallery-item card">
+                <img src="https://robert-pattinson.com/photos/albums/Photoshoots/2005/001/2005-RP01_004.jpg" alt="Photoshoot 5" onclick="openImage(this.src)">
+            </div>
+            <div class="gallery-item card">
+                <img src="https://robert-pattinson.com/photos/albums/Photoshoots/2005/001/2005-RP01_005.jpg" alt="Photoshoot 6" onclick="openImage(this.src)">
+            </div>
+            <div class="gallery-item card">
+                <img src="https://robert-pattinson.com/photos/albums/Photoshoots/2005/001/2005-RP01_002.jpg" alt="Photoshoot 7" onclick="openImage(this.src)">
+            </div>
+            <div class="gallery-item card">
+                <img src="https://robert-pattinson.com/photos/albums/Photoshoots/2005/002%20TeenPeople/2005-RP02_004.jpg" alt="Photoshoot 8" onclick="openImage(this.src)">
+            </div>
+            <div class="gallery-item card">
+                <img src="https://robert-pattinson.com/photos/albums/Photoshoots/2005/002%20TeenPeople/2005-RP02_001.jpg" alt="Photoshoot 9" onclick="openImage(this.src)">
+            </div>
+            <!-- New Images -->
+            <div class="gallery-item card">
+                <img src="https://pattinson-photos.com/albums/userpics/10001/RPP0002~44.jpg" alt="Photoshoot 10" onclick="openImage(this.src)">
+            </div>
+            <div class="gallery-item card">
+                <img src="https://pattinson-photos.com/albums/userpics/10001/RPP0007~27.jpg" alt="Photoshoot 11" onclick="openImage(this.src)">
+            </div>
+            <div class="gallery-item card">
+                <img src="https://pattinson-photos.com/albums/userpics/10001/RPP0001~42.jpg" alt="Photoshoot 12" onclick="openImage(this.src)">
+            </div>
+            <div class="gallery-item card">
+                <img src="https://pattinson-photos.com/albums/userpics/10001/RPP0003~40.jpg" alt="Photoshoot 13" onclick="openImage(this.src)">
+            </div>
+            <div class="gallery-item card">
+                <img src="https://pattinson-photos.com/albums/userpics/10001/RPP0005~34.jpg" alt="Photoshoot 14" onclick="openImage(this.src)">
+            </div>
+            <div class="gallery-item card">
+                <img src="https://pattinson-photos.com/albums/userpics/10001/RPP0006~31.jpg" alt="Photoshoot 15" onclick="openImage(this.src)">
+            </div>
+            <div class="gallery-item card">
+                <img src="https://pattinson-photos.com/albums/userpics/10001/RPP0008~24.jpg" alt="Photoshoot 16" onclick="openImage(this.src)">
+            </div>
+            <div class="gallery-item card">
+                <img src="https://pattinson-photos.com/albums/userpics/10001/RPP0007~27.jpg" alt="Photoshoot 17" onclick="openImage(this.src)">
+            </div>
+            <div class="gallery-item card">
+                <img src="https://pattinson-photos.com/albums/userpics/10001/RPP0004~37.jpg" alt="Photoshoot 18" onclick="openImage(this.src)">
+            </div>
         </div>
     </main>
     <footer>
@@ -36,6 +129,42 @@
             <a href="https://x.com/@twilightnetflix/"><i class="fab fa-twitter"></i></a>
             <a href="https://www.instagram.com/twilightrebootofficial/"><i class="fab fa-instagram"></i></a>
         </div>
-    </footer>  
+    </footer>
+    <script>
+        function openImage(src) {
+            const modal = document.createElement('div');
+            modal.style.position = 'fixed';
+            modal.style.top = '0';
+            modal.style.left = '0';
+            modal.style.width = '100%';
+            modal.style.height = '100%';
+            modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+            modal.style.display = 'flex';
+            modal.style.justifyContent = 'center';
+            modal.style.alignItems = 'center';
+            modal.style.zIndex = '1000';
+
+            const img = document.createElement('img');
+            img.src = src;
+            img.style.maxWidth = '90%';
+            img.style.maxHeight = '90%';
+
+            const closeButton = document.createElement('button');
+            closeButton.textContent = 'Close';
+            closeButton.style.position = 'absolute';
+            closeButton.style.top = '20px';
+            closeButton.style.right = '20px';
+            closeButton.style.backgroundColor = '#e74c3c';
+            closeButton.style.color = '#fff';
+            closeButton.style.border = 'none';
+            closeButton.style.padding = '10px 20px';
+            closeButton.style.cursor = 'pointer';
+            closeButton.onclick = () => document.body.removeChild(modal);
+
+            modal.appendChild(img);
+            modal.appendChild(closeButton);
+            document.body.appendChild(modal);
+        }
+    </script>
 </body>
 </html>
