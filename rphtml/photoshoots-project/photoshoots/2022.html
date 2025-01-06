@@ -70,8 +70,28 @@
     </nav>
     <main class="main-section">
         <div class="card" onclick="openEmbed()">
-            <h2>Wonderland Magazine</h2>
+            <h2>Wonderland Magazine </h2>
             <img src="https://pattinson-photos.com/albums/userpics/10006/2020/RPP025.jpg" alt="Photoshoot 1">
+        </div>
+        <div class="card" onclick="openEmbed2024()">
+            <h2>The Batman</h2>
+            <img src="https://pattinson-photos.com/albums/photoshoots/2022/Deadline%20Filmmagazin/RPP001.jpg" alt="Photoshoot 2024">
+        </div>
+        <div class="card" onclick="openEmbed1981()">
+            <h2>GQ Magazine</h2>
+            <img src="https://pattinson-photos.com/albums/photoshoots/2022/GQ%20Magazine/RPP001.jpg" alt="Photoshoot 1981">
+        </div>
+        <div class="card" onclick="openEmbed2018()">
+            <h2>LA Times </h2>
+            <img src="https://pattinson-photos.com/albums/photoshoots/2022/Los%20Angeles%20Times/RPP002.jpg" alt="Photoshoot 2018">
+        </div>
+        <div class="card" onclick="openEmbed1987()">
+            <h2>Entertainment Weekly </h2>
+            <img src="https://pattinson-photos.com/albums/photoshoots/2022/Entertainment%20Weekly/RPP001.jpg" alt="Photoshoot 1987">
+        </div>
+        <div class="card" onclick="openEmbed2070()">
+            <h2>Art Gallery </h2>
+            <img src="https://pattinson-photos.com/albums/photoshoots/2022/Sothebys/RPP006.jpg" alt="Photoshoot 2070">
         </div>
     </main>
     <footer>
@@ -98,6 +118,186 @@
 
             const iframe = document.createElement('iframe');
             iframe.src = 'https://pattinson-photos.com/thumbnails.php?album=2020';
+            iframe.style.width = '90%';
+            iframe.style.height = '90%';
+            iframe.style.border = 'none';
+
+            const closeButton = document.createElement('button');
+            closeButton.textContent = 'Close';
+            closeButton.style.position = 'absolute';
+            closeButton.style.top = '20px';
+            closeButton.style.right = '20px';
+            closeButton.style.backgroundColor = '#e74c3c';
+            closeButton.style.color = '#fff';
+            closeButton.style.border = 'none';
+            closeButton.style.padding = '10px 20px';
+            closeButton.style.cursor = 'pointer';
+            closeButton.onclick = () => document.body.removeChild(modal);
+
+            modal.appendChild(iframe);
+            modal.appendChild(closeButton);
+            document.body.appendChild(modal);
+        }
+
+        function openEmbed2024() {
+            const modal = document.createElement('div');
+            modal.style.position = 'fixed';
+            modal.style.top = '0';
+            modal.style.left = '0';
+            modal.style.width = '100%';
+            modal.style.height = '100%';
+            modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+            modal.style.display = 'flex';
+            modal.style.justifyContent = 'center';
+            modal.style.alignItems = 'center';
+            modal.style.zIndex = '1000';
+
+            const iframe = document.createElement('iframe');
+            iframe.src = 'https://pattinson-photos.com/thumbnails.php?album=2024';
+            iframe.style.width = '90%';
+            iframe.style.height = '90%';
+            iframe.style.border = 'none';
+
+            const closeButton = document.createElement('button');
+            closeButton.textContent = 'Close';
+            closeButton.style.position = 'absolute';
+            closeButton.style.top = '20px';
+            closeButton.style.right = '20px';
+            closeButton.style.backgroundColor = '#e74c3c';
+            closeButton.style.color = '#fff';
+            closeButton.style.border = 'none';
+            closeButton.style.padding = '10px 20px';
+            closeButton.style.cursor = 'pointer';
+            closeButton.onclick = () => document.body.removeChild(modal);
+
+            modal.appendChild(iframe);
+            modal.appendChild(closeButton);
+            document.body.appendChild(modal);
+        }
+
+        function openEmbed1981() {
+            const modal = document.createElement('div');
+            modal.style.position = 'fixed';
+            modal.style.top = '0';
+            modal.style.left = '0';
+            modal.style.width = '100%';
+            modal.style.height = '100%';
+            modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+            modal.style.display = 'flex';
+            modal.style.justifyContent = 'center';
+            modal.style.alignItems = 'center';
+            modal.style.zIndex = '1000';
+
+            const iframe = document.createElement('iframe');
+            iframe.src = 'https://pattinson-photos.com/thumbnails.php?album=1981';
+            iframe.style.width = '90%';
+            iframe.style.height = '90%';
+            iframe.style.border = 'none';
+
+            const closeButton = document.createElement('button');
+            closeButton.textContent = 'Close';
+            closeButton.style.position = 'absolute';
+            closeButton.style.top = '20px';
+            closeButton.style.right = '20px';
+            closeButton.style.backgroundColor = '#e74c3c';
+            closeButton.style.color = '#fff';
+            closeButton.style.border = 'none';
+            closeButton.style.padding = '10px 20px';
+            closeButton.style.cursor = 'pointer';
+            closeButton.onclick = () => document.body.removeChild(modal);
+
+            modal.appendChild(iframe);
+            modal.appendChild(closeButton);
+            document.body.appendChild(modal);
+        }
+
+        function openEmbed2018() {
+            const modal = document.createElement('div');
+            modal.style.position = 'fixed';
+            modal.style.top = '0';
+            modal.style.left = '0';
+            modal.style.width = '100%';
+            modal.style.height = '100%';
+            modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+            modal.style.display = 'flex';
+            modal.style.justifyContent = 'center';
+            modal.style.alignItems = 'center';
+            modal.style.zIndex = '1000';
+
+            const iframe = document.createElement('iframe');
+            iframe.src = 'https://pattinson-photos.com/thumbnails.php?album=2018';
+            iframe.style.width = '90%';
+            iframe.style.height = '90%';
+            iframe.style.border = 'none';
+
+            const closeButton = document.createElement('button');
+            closeButton.textContent = 'Close';
+            closeButton.style.position = 'absolute';
+            closeButton.style.top = '20px';
+            closeButton.style.right = '20px';
+            closeButton.style.backgroundColor = '#e74c3c';
+            closeButton.style.color = '#fff';
+            closeButton.style.border = 'none';
+            closeButton.style.padding = '10px 20px';
+            closeButton.style.cursor = 'pointer';
+            closeButton.onclick = () => document.body.removeChild(modal);
+
+            modal.appendChild(iframe);
+            modal.appendChild(closeButton);
+            document.body.appendChild(modal);
+        }
+
+        function openEmbed1987() {
+            const modal = document.createElement('div');
+            modal.style.position = 'fixed';
+            modal.style.top = '0';
+            modal.style.left = '0';
+            modal.style.width = '100%';
+            modal.style.height = '100%';
+            modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+            modal.style.display = 'flex';
+            modal.style.justifyContent = 'center';
+            modal.style.alignItems = 'center';
+            modal.style.zIndex = '1000';
+
+            const iframe = document.createElement('iframe');
+            iframe.src = 'https://pattinson-photos.com/thumbnails.php?album=1987';
+            iframe.style.width = '90%';
+            iframe.style.height = '90%';
+            iframe.style.border = 'none';
+
+            const closeButton = document.createElement('button');
+            closeButton.textContent = 'Close';
+            closeButton.style.position = 'absolute';
+            closeButton.style.top = '20px';
+            closeButton.style.right = '20px';
+            closeButton.style.backgroundColor = '#e74c3c';
+            closeButton.style.color = '#fff';
+            closeButton.style.border = 'none';
+            closeButton.style.padding = '10px 20px';
+            closeButton.style.cursor = 'pointer';
+            closeButton.onclick = () => document.body.removeChild(modal);
+
+            modal.appendChild(iframe);
+            modal.appendChild(closeButton);
+            document.body.appendChild(modal);
+        }
+
+        function openEmbed2070() {
+            const modal = document.createElement('div');
+            modal.style.position = 'fixed';
+            modal.style.top = '0';
+            modal.style.left = '0';
+            modal.style.width = '100%';
+            modal.style.height = '100%';
+            modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+            modal.style.display = 'flex';
+            modal.style.justifyContent = 'center';
+            modal.style.alignItems = 'center';
+            modal.style.zIndex = '1000';
+
+            const iframe = document.createElement('iframe');
+            iframe.src = 'https://pattinson-photos.com/thumbnails.php?album=2070';
             iframe.style.width = '90%';
             iframe.style.height = '90%';
             iframe.style.border = 'none';
