@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Twilight Saga: Eclipse (2010) - IMDb</title>
+    <link rel="stylesheet" href="css/movietemplate.css">
+    <style>
+        .header-background {
+            background-image: url('https://th.bing.com/th/id/R.711b7b8efac33b4f893b20fba4763c94?rik=VccdPNbDFH6aGQ&riu=http%3a%2f%2fimages4.fanpop.com%2fimage%2fphotos%2f14700000%2fEclipse-Movie-Stills-twilight-girls-14721768-2560-1703.jpg&ehk=DxQ4AAefHLLUnNaQ367qB%2fp%2bllvjeuc%2bL7F%2fcll2ZaM%3d&risl=&pid=ImgRaw&r=0'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="header-background">
+        <h1>The Twilight Saga: Eclipse (2010)</h1>
+        <p>Directed by <span class="director">David Slade</span></p>
+        <p>Release Date: <span class="release-date">June 30, 2010</span></p>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Movies</a>
+        <a href="#">Top Rated</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <main>
+        <section class="card poster">
+            <img src="posters/eclipse.jpg" alt="Eclipse Poster">
+        </section>
+
+        <section class="card details">
+            <h3>Synopsis</h3>
+            <p>As a string of mysterious killings grips Seattle, Bella, whose high school graduation is fast approaching, is forced to choose between her love for vampire Edward and her friendship with werewolf Jacob.</p>
+        </section>
+
+        <!-- Embed your movie/video -->
+        <section class="card movie">
+            <h3>Watch Movie</h3>
+            <div class="video-container">
+                <iframe src="https://vidsrc.me/embed/movie?tmdb=24021" style="width: 100%; height: 100%;" frameborder="0" referrerpolicy="origin" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section class="card details">
+            <h3>Cast</h3>
+            <ul>
+                <li>Kristen Stewart as Bella Swan</li>
+                <li>Robert Pattinson as Edward Cullen</li>
+                <li>Taylor Lautner as Jacob Black</li>
+                <li>Peter Facinelli as Dr. Carlisle Cullen</li>
+                <li>Elizabeth Reaser as Esme Cullen</li>
+                <li>Ashley Greene as Alice Cullen</li>
+                <li>Kellan Lutz as Emmett Cullen</li>
+                <li>Nikki Reed as Rosalie Hale</li>
+                <li>Jackson Rathbone as Jasper Hale</li>
+                <!-- Add more cast members as needed -->
+            </ul>
+        </section>
+
+        <section class="card details">
+            <h3>Genres</h3>
+            <p>Adventure, Drama, Fantasy</p>
+        </section>
+
+        <section class="card details">
+            <h3>Rating</h3>
+            <p>IMDb Rating: <span class="rating">5.0</span>/10</p>
+        </section>
+
+        <section class="card trailer">
+            <h3>Trailer</h3>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/edLB6YWZ-R4" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span class="year">2023</span> Your Company Name. All rights reserved.</p>
+    </footer>
+
+    <script src="js/movie.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remember Me (2010) - IMDb</title>
+    <link rel="stylesheet" href="css/movietemplate.css">
+    <style>
+        .header-background {
+            background-image: url('https://th.bing.com/th/id/OIP.Ls9UesQ-92woLcR7Kc1LOQHaE6?rs=1&pid=ImgDetMain'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="header-background">
+        <h1>Remember Me (2010)</h1>
+        <p>Directed by <span class="director">Allen Coulter</span></p>
+        <p>Release Date: <span class="release-date">March 12, 2010</span></p>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Movies</a>
+        <a href="#">Top Rated</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <main>
+        <section class="card poster">
+            <img src="posters/rememberme.jpg" alt="Remember Me Poster">
+        </section>
+
+        <section class="card details">
+            <h3>Synopsis</h3>
+            <p>A romantic drama centered on two new lovers: Tyler, whose parents have split in the wake of his brother's suicide, and Ally, who lives each day to the fullest since witnessing her mother's murder.</p>
+        </section>
+
+        <!-- Embed your movie/video -->
+        <section class="card movie">
+            <h3>Watch Movie</h3>
+            <div class="video-container">
+                <iframe src="https://vidsrc.me/embed/movie?tmdb=23169" style="width: 100%; height: 100%;" frameborder="0" referrerpolicy="origin" allowfullscreen></iframe>
+            </div>
+        </section>
+
+        <section class="card details">
+            <h3>Cast</h3>
+            <ul>
+                <li>Robert Pattinson as Tyler Hawkins</li>
+                <li>Emilie de Ravin as Ally Craig</li>
+                <li>Chris Cooper as Neil Craig</li>
+                <li>Lena Olin as Diane Hirsch</li>
+                <li>Pierce Brosnan as Charles Hawkins</li>
+                <!-- Add more cast members as needed -->
+            </ul>
+        </section>
+
+        <section class="card details">
+            <h3>Genres</h3>
+            <p>Drama, Romance</p>
+        </section>
+
+        <section class="card details">
+            <h3>Rating</h3>
+            <p>IMDb Rating: <span class="rating">7.1</span>/10</p>
+        </section>
+
+        <section class="card trailer">
+            <h3>Trailer</h3>
+            <div class="video-container">
+                <iframe width="804" height="452" src="https://www.youtube.com/embed/oRUo4cWejYM" title="2010 Remember Me Official Trailer 1 HD Summit Entertainment" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; <span class="year">2023</span> Your Company Name. All rights reserved.</p>
+    </footer>
+
+    <script src="js/movie.js"></script>
+</body>
+</html>

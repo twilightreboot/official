@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robert Pattinson - 2024 Photoshoot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="photoshoots.css">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 70px 20px;
+            }
+
+            header h1 {
+                font-size: 48px;
+            }
+
+            header p {
+                font-size: 18px;
+            }
+
+            nav a {
+                font-size: 16px;
+                margin: 0 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 50px 20px;
+            }
+
+            header h1 {
+                font-size: 36px;
+            }
+
+            header p {
+                font-size: 16px;
+            }
+
+            nav a {
+                font-size: 14px;
+                margin: 0 5px;
+            }
+        }
+
+        .card img {
+            width: 200px;
+            border: 2px solid #000;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Robert Pattinson - 2024 Photoshoot</h1>
+        <p>Explore the stunning photoshoots of Robert Pattinson from 2024.</p>
+    </header>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="../discography.html">Discography</a>
+        <a href="../about.html">About</a>
+        <a href="../contact.html">Contact</a>
+        <a href="photoshoots.html">Photoshoots</a>
+    </nav>
+    <main class="main-section">
+        <div class="card" onclick="openEmbed2024()">
+            <h2>NY Times Style </h2>
+            <img src="https://pattinson-photos.com/albums/photoshoots/2024/The%20New%20York%20Times%20Style%20Magazine/RPP_005.png" alt="Photoshoot 2024">
+        </div>
+        <div class="card" onclick="openEmbed2022()">
+            <h2>Veuve Clicquot</h2>
+            <img src="https://pattinson-photos.com/albums/photoshoots/2024/Veuve%20Clicquot/RPP001.jpg" alt="Photoshoot 2022">
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Twilight Reboot Official | All Rights Reserved</p>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="https://x.com/TwilightNetflix"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/twilightrebootofficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+    <script>
+        function openEmbed2024() {
+            const modal = document.createElement('div');
+            modal.style.position = 'fixed';
+            modal.style.top = '0';
+            modal.style.left = '0';
+            modal.style.width = '100%';
+            modal.style.height = '100%';
+            modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+            modal.style.display = 'flex';
+            modal.style.justifyContent = 'center';
+            modal.style.alignItems = 'center';
+            modal.style.zIndex = '1000';
+
+            const iframe = document.createElement('iframe');
+            iframe.src = 'https://pattinson-photos.com/thumbnails.php?album=2259';
+            iframe.style.width = '90%';
+            iframe.style.height = '90%';
+            iframe.style.border = 'none';
+
+            const closeButton = document.createElement('button');
+            closeButton.textContent = 'Close';
+            closeButton.style.position = 'absolute';
+            closeButton.style.top = '20px';
+            closeButton.style.right = '20px';
+            closeButton.style.backgroundColor = '#e74c3c';
+            closeButton.style.color = '#fff';
+            closeButton.style.border = 'none';
+            closeButton.style.padding = '10px 20px';
+            closeButton.style.cursor = 'pointer';
+            closeButton.onclick = () => document.body.removeChild(modal);
+
+            modal.appendChild(iframe);
+            modal.appendChild(closeButton);
+            document.body.appendChild(modal);
+        }
+
+        function openEmbed2022() {
+            const modal = document.createElement('div');
+            modal.style.position = 'fixed';
+            modal.style.top = '0';
+            modal.style.left = '0';
+            modal.style.width = '100%';
+            modal.style.height = '100%';
+            modal.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+            modal.style.display = 'flex';
+            modal.style.justifyContent = 'center';
+            modal.style.alignItems = 'center';
+            modal.style.zIndex = '1000';
+
+            const iframe = document.createElement('iframe');
+            iframe.src = 'https://pattinson-photos.com/thumbnails.php?album=2238';
+            iframe.style.width = '90%';
+            iframe.style.height = '90%';
+            iframe.style.border = 'none';
+
+            const closeButton = document.createElement('button');
+            closeButton.textContent = 'Close';
+            closeButton.style.position = 'absolute';
+            closeButton.style.top = '20px';
+            closeButton.style.right = '20px';
+            closeButton.style.backgroundColor = '#e74c3c';
+            closeButton.style.color = '#fff';
+            closeButton.style.border = 'none';
+            closeButton.style.padding = '10px 20px';
+            closeButton.style.cursor = 'pointer';
+            closeButton.onclick = () => document.body.removeChild(modal);
+
+            modal.appendChild(iframe);
+            modal.appendChild(closeButton);
+            document.body.appendChild(modal);
+        }
+    </script>
+</body>
+</html>
