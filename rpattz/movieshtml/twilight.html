@@ -104,5 +104,12 @@
     </footer>
 
     <script src="js/movie.js"></script>
+    <script>
+        // Prevent pop-up ads from navigating away from the website
+        window.addEventListener('beforeunload', function (e) {
+            e.preventDefault();
+            e.returnValue = '';
+        });
+    </script>
 </body>
 </html>

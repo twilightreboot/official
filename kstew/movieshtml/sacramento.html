@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sacramento (TBA) - IMDb</title>
+    <title>Sacramento (2024) - IMDb</title>
     <link rel="stylesheet" href="css/movietemplate.css">
     <style>
         .header-background {
-            background-image: url('path/to/sacramento-background.jpg'); /* Replace with your image path */
+            background-image: url('https://m.media-amazon.com/images/M/MV5BZjI3ODEyNmEtMWNiMi00ZGIwLThkZmYtNDY4OTZiZWY1ZjUyXkEyXkFqcGdeQXVyMTQ4NTgxNzYx._V1_SX300.jpg'); /* Replace with your image path */
             background-size: cover;
             background-position: center;
             padding: 20px;
@@ -34,9 +34,9 @@
 </head>
 <body>
     <header class="header-background">
-        <h1>Sacramento (TBA)</h1>
-        <p>Directed by <span class="director">Director Name</span></p>
-        <p>Release Date: <span class="release-date">TBA</span></p>
+        <h1>Sacramento (2024)</h1>
+        <p>Directed by <span class="director">Michael Angarano</span></p>
+        <p>Release Date: <span class="release-date">08 Jun 2024</span></p>
     </header>
 
     <nav>
@@ -48,12 +48,12 @@
 
     <main>
         <section class="card poster">
-            <img src="../posters/sacramento.jpg" alt="Sacramento Poster">
+            <img src="https://m.media-amazon.com/images/M/MV5BZjI3ODEyNmEtMWNiMi00ZGIwLThkZmYtNDY4OTZiZWY1ZjUyXkEyXkFqcGdeQXVyMTQ4NTgxNzYx._V1_SX300.jpg" alt="Sacramento Poster">
         </section>
 
         <section class="card details">
             <h3>Synopsis</h3>
-            <p>Details about the movie Sacramento.</p>
+            <p>Rickey, an energetic and free-spirited young man who convinces Glenn, his long-time friend who's settled into domestic life, to go on an impromptu road trip from Los Angeles to Sacramento.</p>
         </section>
 
         <!-- Embed your movie/video -->
@@ -67,15 +67,16 @@
         <section class="card details">
             <h3>Cast</h3>
             <ul>
-                <li>Actor Name as Character Name</li>
-                <li>Actor Name as Character Name</li>
+                <li>Kristen Stewart as Rosie</li>
+                <li>Rosalind Chao as Character Name</li>
+                <li>Maya Erskine as Character Name</li>
                 <!-- Add more cast members as needed -->
             </ul>
         </section>
 
         <section class="card details">
             <h3>Genres</h3>
-            <p>Drama, Genre2, Genre3</p>
+            <p>Comedy</p>
         </section>
 
         <section class="card details">
@@ -92,9 +93,49 @@
     </main>
 
     <footer>
-        <p>&copy; <span class="year">2024</span> Twilight Reboot Official. All rights reserved.</p>
+        <p>&copy; <span class="year">2024</span> Your Company Name. All rights reserved.</p>
     </footer>
 
-    <script src="../js/movie.js"></script>
+    <script>
+        const movieData = {
+            "Title": "Sacramento",
+            "Year": "2024",
+            "Rated": "N/A",
+            "Released": "08 Jun 2024",
+            "Runtime": "84 min",
+            "Genre": "Comedy",
+            "Director": "Michael Angarano",
+            "Writer": "Michael Angarano, Christopher Nicholas Smith",
+            "Actors": "Kristen Stewart, Rosalind Chao, Maya Erskine",
+            "Plot": "Rickey, an energetic and free-spirited young man who convinces Glenn, his long-time friend who's settled into domestic life, to go on an impromptu road trip from Los Angeles to Sacramento.",
+            "Language": "N/A",
+            "Country": "United States",
+            "Awards": "1 nomination",
+            "Poster": "https://m.media-amazon.com/images/M/MV5BZjI3ODEyNmEtMWNiMi00ZGIwLThkZmYtNDY4OTZiZWY1ZjUyXkEyXkFqcGdeQXVyMTQ4NTgxNzYx._V1_SX300.jpg",
+            "Ratings": [
+                {
+                    "Source": "Rotten Tomatoes",
+                    "Value": "95%"
+                }
+            ],
+            "Metascore": "N/A",
+            "imdbRating": "N/A",
+            "imdbVotes": "32",
+            "imdbID": "tt13491834",
+            "Type": "movie",
+            "DVD": "N/A",
+            "BoxOffice": "N/A",
+            "Production": "N/A",
+            "Website": "N/A",
+            "Response": "True"
+        };
+
+        document.querySelector('.header-background h1').textContent = `${movieData.Title} (${movieData.Year})`;
+        document.querySelector('.director').textContent = movieData.Director;
+        document.querySelector('.release-date').textContent = movieData.Released;
+        document.querySelector('.poster img').src = movieData.Poster;
+        document.querySelector('.details p').textContent = movieData.Plot;
+        document.querySelector('.rating').textContent = movieData.imdbRating;
+    </script>
 </body>
 </html>
