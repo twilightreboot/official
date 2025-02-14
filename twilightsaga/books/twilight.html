@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twilight Saga Books</title>
+    <link rel="stylesheet" href="css/twilightsaga.css">
+    <style>
+        .movies-container { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+        .card { padding: 10px; margin: 10px; width: 100%; max-width: 200px; text-align: center; cursor: pointer; transition: transform 0.2s; }
+        .card:hover { transform: scale(1.05); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); }
+        .card img { max-width: 100%; height: auto; }
+        .pdf-viewer { 
+            margin: 20px auto; 
+            width: 90%; 
+            height: 500px; 
+            border: 1px solid #ccc; 
+            border-radius: 15px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+            background: url('images/twilight-background.jpg') no-repeat center center; 
+            background-size: cover; 
+            overflow: hidden; 
+        }
+        .pdf-viewer iframe { border-radius: 15px; }
+        .download-button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 20px auto;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .download-button:hover {
+            background-color: #45a049;
+        }
+        @media (max-width: 600px) {
+            .pdf-viewer { width: 100%; height: 300px; }
+            .movies-container { flex-direction: column; align-items: center; }
+            .card { max-width: 90%; }
+            .download-button {
+                width: 90%;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Twilight Saga Books</h1>
+        <p>🌕✨ Dive into the Twilight Saga Like Never Before! Read All Twilight Books Free 📚 Experience every moment of this legendary series, from the first page to the last.</p>
+    </header>
+    <main class="movies-container">
+        <!-- Your book sections here -->
+    </main>
+    <div class="pdf-viewer">
+        <iframe src="twilightbook.pdf" width="100%" height="100%"></iframe>
+    </div>
+    <a href="twilightbook.pdf" download class="download-button">Download PDF</a>
+    <footer>
+        <div class="social-icons">
+            <a href="#">Facebook</a>
+            <a href="https://x.com/@TwilightNetflix">Twitter</a>
+            <a href="https://www.instagram.com/twilightrebootofficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a>
+        </div>
+        <p>&copy; 2023 Twilight Saga Fan Site. All rights reserved.</p>
+    </footer>
+    <script src="js/twilightsaga.js"></script>
+</body>
+</html>
