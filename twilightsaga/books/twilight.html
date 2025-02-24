@@ -5,28 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Twilight Saga Books</title>
     <link rel="stylesheet" href="css/twilightsaga.css">
+    <script src="https://mozilla.github.io/pdf.js/build/pdf.js"></script>
     <style>
-        .movies-container { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
-        .card { padding: 10px; margin: 10px; width: 100%; max-width: 200px; text-align: center; cursor: pointer; transition: transform 0.2s; }
-        .card:hover { transform: scale(1.05); box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); }
-        .card img { max-width: 100%; height: auto; }
-        .pdf-viewer { 
-            margin: 20px auto; 
-            width: 90%; 
-            height: 500px; 
-            border: 1px solid #ccc; 
-            border-radius: 15px; 
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
-            background: url('images/twilight-background.jpg') no-repeat center center; 
-            background-size: cover; 
-            overflow: hidden; 
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #0d0d0d;
+            color: #e0e0e0;
+            margin: 0;
+            padding: 0;
         }
-        .pdf-viewer iframe { border-radius: 15px; }
+        header {
+            background-color: #1a1a1a;
+            color: #00aaff;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        header p {
+            font-size: 1.2em;
+        }
+        .movies-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+        .card {
+            padding: 10px;
+            margin: 10px;
+            width: 100%;
+            max-width: 200px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s;
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+        }
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .pdf-viewer {
+            margin: 20px auto;
+            width: 90%;
+            height: 500px;
+            border: 1px solid #333;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            background-color: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        .pdf-canvas {
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+        }
         .download-button {
             display: inline-block;
             padding: 10px 20px;
             margin: 20px auto;
-            background-color: #4CAF50;
+            background-color: #00aaff;
             color: white;
             text-align: center;
             text-decoration: none;
@@ -34,12 +86,36 @@
             transition: background-color 0.3s;
         }
         .download-button:hover {
-            background-color: #45a049;
+            background-color: #0088cc;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #1a1a1a;
+            color: #00aaff;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .social-icons a {
+            color: #00aaff;
+            text-decoration: none;
         }
         @media (max-width: 600px) {
-            .pdf-viewer { width: 100%; height: 300px; }
-            .movies-container { flex-direction: column; align-items: center; }
-            .card { max-width: 90%; }
+            .pdf-viewer {
+                width: 100%;
+                height: 300px;
+            }
+            .movies-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .card {
+                max-width: 90%;
+            }
             .download-button {
                 width: 90%;
                 padding: 15px;
@@ -56,7 +132,7 @@
         <!-- Your book sections here -->
     </main>
     <div class="pdf-viewer">
-        <iframe src="twilightbook.pdf" width="100%" height="100%"></iframe>
+        <canvas id="pdf-canvas" class="pdf-canvas"></canvas>
     </div>
     <a href="twilightbook.pdf" download class="download-button">Download PDF</a>
     <footer>
@@ -68,5 +144,44 @@
         <p>&copy; 2023 Twilight Saga Fan Site. All rights reserved.</p>
     </footer>
     <script src="js/twilightsaga.js"></script>
+    <script>
+        const url = 'twilightbook.pdf';
+
+        let pdfDoc = null,
+            pageNum = 1,
+            pageRendering = false,
+            pageNumPending = null,
+            scale = 1.5,
+            canvas = document.getElementById('pdf-canvas'),
+            ctx = canvas.getContext('2d');
+
+        pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
+            pdfDoc = pdfDoc_;
+            renderPage(pageNum);
+        });
+
+        function renderPage(num) {
+            pageRendering = true;
+            pdfDoc.getPage(num).then(function(page) {
+                const viewport = page.getViewport({ scale: scale });
+                canvas.height = viewport.height;
+                canvas.width = viewport.width;
+
+                const renderContext = {
+                    canvasContext: ctx,
+                    viewport: viewport
+                };
+                const renderTask = page.render(renderContext);
+
+                renderTask.promise.then(function() {
+                    pageRendering = false;
+                    if (pageNumPending !== null) {
+                        renderPage(pageNumPending);
+                        pageNumPending = null;
+                    }
+                });
+            });
+        }
+    </script>
 </body>
 </html>
