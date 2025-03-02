@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/twilightsaga.css">
     <style>
         body {
-            background-image: url('https://wallpapers.com/images/featured/twilight-background-p33emce6bzrqb2re.jpg');
+            background-image: url('https://wallpapers.com/images/hd/twilight-aesthetic-hifd9578tphdzivr.jpg');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -47,17 +47,52 @@
             max-width: 800px;
             margin: auto;
         }
-        audio {
-            margin: 10px;
+        .audio-player {
+            display: flex;
+            align-items: center;
             width: 100%;
-            max-width: 300px;
+            max-width: 500px; /* Increased max-width */
+            margin: 10px;
+            background-color: #000000;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .audio-player button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            margin-right: 10px;
+            font-size: 16px; /* Added for text button */
+            color: white; /* Changed to white */
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .audio-player button:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Added hover effect */
+        }
+        .audio-player .skip {
+            margin-right: 5px; /* Added for skip buttons */
+        }
+        .audio-player input[type="range"] {
+            flex-grow: 1;
+        }
+        .audio-player .time {
+            margin-left: 10px;
+            min-width: 50px; /* Ensure space for timestamps */
+        }
+        .audio-player .duration {
+            margin-left: 10px;
+            min-width: 50px; /* Ensure space for duration */
         }
         @media (max-width: 600px) {
             .header, .footer, .audio-container {
                 padding: 5px;
                 margin: 5px;
             }
-            audio {
+            .audio-player {
                 max-width: 100%;
             }
         }
@@ -65,59 +100,143 @@
 </head>
 <body>
     <header class="header">
-        <h1>Twilight Saga Books</h1>
+        <h1>Twilight Audiobook by Stephenie Meyer</h1>
         <p>📚✨ Dive into the Twilight Saga! Explore All Twilight Books Free 📖 Experience the magic, the love, and the adventure of this legendary series.</p>
     </header>
 
     <div class="audio-container">
-        <audio controls style="width: 100%;">
-            <source src="twilightaudio/01.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-        <audio controls style="width: 100%;">
-            <source src="twilightaudio/02.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-        <audio controls style="width: 100%;">
-            <source src="twilightaudio/03.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-        <audio controls style="width: 100%;">
-            <source src="twilightaudio/04.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-        <audio controls style="width: 100%;">
-            <source src="twilightaudio/05.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-        <audio controls style="width: 100%;">
-            <source src="twilightaudio/06.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-        <audio controls style="width: 100%;">
-            <source src="twilightaudio/07.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-        <audio controls style="width: 100%;">
-            <source src="twilightaudio/08.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-        <audio controls style="width: 100%;">
-            <source src="twilightaudio/09.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-        <audio controls style="width: 100%;">
-            <source src="twilightaudio/10.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-        <audio controls style="width: 100%;">
-            <source src="twilightaudio/11.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-        <audio controls style="width: 100%;">
-            <source src="twilightaudio/12.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
+        <div class="audio-player">
+            <button class="skip backward">-10s</button>
+            <button class="play-pause">Play</button>
+            <button class="skip forward">+10s</button>
+            <input type="range" class="progress" value="0" max="100">
+            <span class="time">0:00</span> / <span class="duration">0:00</span>
+            <audio>
+                <source src="twilightaudio/01.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="audio-player">
+            <button class="skip backward">-10s</button>
+            <button class="play-pause">Play</button>
+            <button class="skip forward">+10s</button>
+            <input type="range" class="progress" value="0" max="100">
+            <span class="time">0:00</span> / <span class="duration">0:00</span>
+            <audio>
+                <source src="twilightaudio/02.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="audio-player">
+            <button class="skip backward">-10s</button>
+            <button class="play-pause">Play</button>
+            <button class="skip forward">+10s</button>
+            <input type="range" class="progress" value="0" max="100">
+            <span class="time">0:00</span> / <span class="duration">0:00</span>
+            <audio>
+                <source src="twilightaudio/03.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="audio-player">
+            <button class="skip backward">-10s</button>
+            <button class="play-pause">Play</button>
+            <button class="skip forward">+10s</button>
+            <input type="range" class="progress" value="0" max="100">
+            <span class="time">0:00</span> / <span class="duration">0:00</span>
+            <audio>
+                <source src="twilightaudio/04.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="audio-player">
+            <button class="skip backward">-10s</button>
+            <button class="play-pause">Play</button>
+            <button class="skip forward">+10s</button>
+            <input type="range" class="progress" value="0" max="100">
+            <span class="time">0:00</span> / <span class="duration">0:00</span>
+            <audio>
+                <source src="twilightaudio/05.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="audio-player">
+            <button class="skip backward">-10s</button>
+            <button class="play-pause">Play</button>
+            <button class="skip forward">+10s</button>
+            <input type="range" class="progress" value="0" max="100">
+            <span class="time">0:00</span> / <span class="duration">0:00</span>
+            <audio>
+                <source src="twilightaudio/06.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="audio-player">
+            <button class="skip backward">-10s</button>
+            <button class="play-pause">Play</button>
+            <button class="skip forward">+10s</button>
+            <input type="range" class="progress" value="0" max="100">
+            <span class="time">0:00</span> / <span class="duration">0:00</span>
+            <audio>
+                <source src="twilightaudio/07.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="audio-player">
+            <button class="skip backward">-10s</button>
+            <button class="play-pause">Play</button>
+            <button class="skip forward">+10s</button>
+            <input type="range" class="progress" value="0" max="100">
+            <span class="time">0:00</span> / <span class="duration">0:00</span>
+            <audio>
+                <source src="twilightaudio/08.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="audio-player">
+            <button class="skip backward">-10s</button>
+            <button class="play-pause">Play</button>
+            <button class="skip forward">+10s</button>
+            <input type="range" class="progress" value="0" max="100">
+            <span class="time">0:00</span> / <span class="duration">0:00</span>
+            <audio>
+                <source src="twilightaudio/09.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="audio-player">
+            <button class="skip backward">-10s</button>
+            <button class="play-pause">Play</button>
+            <button class="skip forward">+10s</button>
+            <input type="range" class="progress" value="0" max="100">
+            <span class="time">0:00</span> / <span class="duration">0:00</span>
+            <audio>
+                <source src="twilightaudio/10.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="audio-player">
+            <button class="skip backward">-10s</button>
+            <button class="play-pause">Play</button>
+            <button class="skip forward">+10s</button>
+            <input type="range" class="progress" value="0" max="100">
+            <span class="time">0:00</span> / <span class="duration">0:00</span>
+            <audio>
+                <source src="twilightaudio/11.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+        <div class="audio-player">
+            <button class="skip backward">-10s</button>
+            <button class="play-pause">Play</button>
+            <button class="skip forward">+10s</button>
+            <input type="range" class="progress" value="0" max="100">
+            <span class="time">0:00</span> / <span class="duration">0:00</span>
+            <audio>
+                <source src="twilightaudio/12.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
     </div>
 
     <footer class="footer">
@@ -131,13 +250,61 @@
     <script src="js/twilightsaga.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const audios = document.querySelectorAll('.audio-container audio');
-            audios.forEach((audio, index) => {
-                audio.addEventListener('ended', function() {
-                    if (index + 1 < audios.length) {
-                        audios[index + 1].play();
+            const players = document.querySelectorAll('.audio-player');
+            players.forEach(player => {
+                const audio = player.querySelector('audio');
+                const playPauseButton = player.querySelector('.play-pause');
+                const progress = player.querySelector('.progress');
+                const time = player.querySelector('.time');
+                const duration = player.querySelector('.duration');
+                const skipBackwardButton = player.querySelector('.skip.backward');
+                const skipForwardButton = player.querySelector('.skip.forward');
+
+                playPauseButton.addEventListener('click', function() {
+                    if (audio.paused) {
+                        audio.play();
+                        playPauseButton.textContent = 'Pause';
+                    } else {
+                        audio.pause();
+                        playPauseButton.textContent = 'Play';
                     }
                 });
+
+                skipBackwardButton.addEventListener('click', function() {
+                    audio.currentTime = Math.max(0, audio.currentTime - 10);
+                });
+
+                skipForwardButton.addEventListener('click', function() {
+                    audio.currentTime = Math.min(audio.duration, audio.currentTime + 10);
+                });
+
+                audio.addEventListener('timeupdate', function() {
+                    const currentTime = audio.currentTime;
+                    const totalDuration = audio.duration;
+                    progress.value = (currentTime / totalDuration) * 100;
+                    time.textContent = formatTime(currentTime);
+                    duration.textContent = formatTime(totalDuration);
+                });
+
+                progress.addEventListener('input', function() {
+                    const totalDuration = audio.duration;
+                    audio.currentTime = (progress.value / 100) * totalDuration;
+                });
+
+                audio.addEventListener('ended', function() {
+                    playPauseButton.textContent = 'Play';
+                    const nextPlayer = player.nextElementSibling;
+                    if (nextPlayer && nextPlayer.classList.contains('audio-player')) {
+                        nextPlayer.querySelector('audio').play();
+                        nextPlayer.querySelector('.play-pause').textContent = 'Pause';
+                    }
+                });
+
+                function formatTime(seconds) {
+                    const minutes = Math.floor(seconds / 60);
+                    seconds = Math.floor(seconds % 60);
+                    return `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+                }
             });
         });
     </script>
