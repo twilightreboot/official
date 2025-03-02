@@ -94,6 +94,14 @@
             }
             .audio-player {
                 max-width: 100%;
+                flex-direction: column; /* Stack elements vertically */
+                align-items: flex-start; /* Align items to the start */
+            }
+            .audio-player button {
+                margin-bottom: 5px; /* Add space between buttons */
+            }
+            .audio-player .time, .audio-player .duration {
+                margin-left: 0; /* Remove left margin */
             }
         }
     </style>
