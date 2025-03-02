@@ -94,6 +94,15 @@
             }
             .audio-player {
                 max-width: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .audio-player button, .audio-player input[type="range"], .audio-player .time, .audio-player .duration, .audio-player select, .audio-player canvas {
+                width: 100%;
+                margin: 5px 0;
+            }
+            .audio-player canvas {
+                height: 50px;
             }
         }
     </style>
