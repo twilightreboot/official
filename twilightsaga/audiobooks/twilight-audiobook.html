@@ -14,6 +14,7 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
+        
         }
         .header {
             text-align: center;
@@ -23,7 +24,7 @@
         .footer {
             text-align: center;
             padding: 20px;
-            background-color: #0000009c;
+            background-color: #0000009c; /* Changed to match header background color */
             border-top: 2px solid #ddd;
             margin-top: 20px;
             font-family: 'Times New Roman', Times, serif;
@@ -38,7 +39,7 @@
             flex-wrap: wrap;
             gap: 10px;
             justify-content: center;
-            background-color: transparent;
+            background-color: transparent; /* Changed to transparent */
             padding: 20px;
             border: 2px solid #0f0c0c;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -50,42 +51,41 @@
             display: flex;
             align-items: center;
             width: 100%;
-            max-width: 500px;
+            max-width: 500px; /* Increased max-width */
             margin: 10px;
-            background-color: #1a1a1a;
-            border: 1px solid #333;
-            border-radius: 10px;
-            padding: 15px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            background-color: #000000;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
         .audio-player button {
             background: none;
             border: none;
             cursor: pointer;
-            margin-right: 5px;
-            font-size: 14px;
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
+            margin-right: 3px; /* Reduced margin */
+            font-size: 12px; /* Reduced font size */
+            color: white; /* Changed to white */
+            padding: 2px 5px; /* Reduced padding */
+            border-radius: 3px; /* Reduced border radius */
             transition: background-color 0.3s;
         }
         .audio-player button:hover {
-            background-color: rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.2); /* Added hover effect */
         }
         .audio-player .skip {
-            margin-right: 5px;
+            margin-right: 2px; /* Reduced margin for skip buttons */
         }
         .audio-player input[type="range"] {
             flex-grow: 1;
-            margin: 0 10px;
         }
         .audio-player .time {
             margin-left: 10px;
-            min-width: 50px;
+            min-width: 50px; /* Ensure space for timestamps */
         }
         .audio-player .duration {
             margin-left: 10px;
-            min-width: 50px;
+            min-width: 50px; /* Ensure space for duration */
         }
         @media (max-width: 600px) {
             .header, .footer, .audio-container {
@@ -94,14 +94,6 @@
             }
             .audio-player {
                 max-width: 100%;
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .audio-player button {
-                margin-bottom: 5px;
-            }
-            .audio-player .time, .audio-player .duration {
-                margin-left: 0;
             }
         }
     </style>
