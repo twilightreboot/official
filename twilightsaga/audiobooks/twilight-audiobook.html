@@ -44,14 +44,15 @@
             border: 2px solid #0f0c0c;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
-            max-width: 640px;
+            max-width: 500px;
             margin: auto;
+            width: 90%;
         }
         .audio-player {
             display: flex;
             align-items: center;
             width: 100%;
-            max-width: 640px; /* Increased max-width */
+            max-width: 500px; /* Increased max-width */
             margin: 10px;
             background-color: #000000;
             border: 1px solid #ddd;
@@ -87,6 +88,10 @@
             margin-left: 10px;
             min-width: 50px; /* Ensure space for duration */
         }
+        .audio-player canvas {
+            width: 100%;
+            height: auto;
+        }
         @media (max-width: 600px) {
             .header, .footer, .audio-container {
                 padding: 5px;
@@ -103,6 +108,10 @@
             }
             .audio-player canvas {
                 height: 50px;
+            }
+            .audio-player {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
@@ -121,17 +130,14 @@
             <span class="time">0:00</span> / <span class="duration">0:00</span>
             <button class="skip backward">-10s</button>
             <button class="skip forward">+10s</button>
-            <input type="range" class="volume" min="0" max="1" step="0.01" value="1">
-            <button class="mute">Mute</button>
-            <label for="speed">Speed:</label>
-            <select class="speed" id="speed">
+            <label>Speed:</label>
+            <select class="speed">
                 <option value="0.5">0.5x</option>
                 <option value="1" selected>1x</option>
                 <option value="1.5">1.5x</option>
                 <option value="2">2x</option>
             </select>
             <canvas width="600" height="100"></canvas>
-            <button class="theme-toggle">Toggle Theme</button>
         </div>
         <div class="audio-player">
             <audio src="twilightaudio/02.mp3"></audio>
@@ -140,17 +146,14 @@
             <span class="time">0:00</span> / <span class="duration">0:00</span>
             <button class="skip backward">-10s</button>
             <button class="skip forward">+10s</button>
-            <input type="range" class="volume" min="0" max="1" step="0.01" value="1">
-            <button class="mute">Mute</button>
-            <label for="speed">Speed:</label>
-            <select class="speed" id="speed">
+            <label>Speed:</label>
+            <select class="speed">
                 <option value="0.5">0.5x</option>
                 <option value="1" selected>1x</option>
                 <option value="1.5">1.5x</option>
                 <option value="2">2x</option>
             </select>
             <canvas width="600" height="100"></canvas>
-            <button class="theme-toggle">Toggle Theme</button>
         </div>
         <div class="audio-player">
             <audio src="twilightaudio/03.mp3"></audio>
@@ -159,17 +162,14 @@
             <span class="time">0:00</span> / <span class="duration">0:00</span>
             <button class="skip backward">-10s</button>
             <button class="skip forward">+10s</button>
-            <input type="range" class="volume" min="0" max="1" step="0.01" value="1">
-            <button class="mute">Mute</button>
-            <label for="speed">Speed:</label>
-            <select class="speed" id="speed">
+            <label>Speed:</label>
+            <select class="speed">
                 <option value="0.5">0.5x</option>
                 <option value="1" selected>1x</option>
                 <option value="1.5">1.5x</option>
                 <option value="2">2x</option>
             </select>
             <canvas width="600" height="100"></canvas>
-            <button class="theme-toggle">Toggle Theme</button>
         </div>
         <div class="audio-player">
             <audio src="twilightaudio/04.mp3"></audio>
@@ -178,17 +178,14 @@
             <span class="time">0:00</span> / <span class="duration">0:00</span>
             <button class="skip backward">-10s</button>
             <button class="skip forward">+10s</button>
-            <input type="range" class="volume" min="0" max="1" step="0.01" value="1">
-            <button class="mute">Mute</button>
-            <label for="speed">Speed:</label>
-            <select class="speed" id="speed">
+            <label>Speed:</label>
+            <select class="speed">
                 <option value="0.5">0.5x</option>
                 <option value="1" selected>1x</option>
                 <option value="1.5">1.5x</option>
                 <option value="2">2x</option>
             </select>
             <canvas width="600" height="100"></canvas>
-            <button class="theme-toggle">Toggle Theme</button>
         </div>
         <div class="audio-player">
             <audio src="twilightaudio/05.mp3"></audio>
@@ -197,17 +194,14 @@
             <span class="time">0:00</span> / <span class="duration">0:00</span>
             <button class="skip backward">-10s</button>
             <button class="skip forward">+10s</button>
-            <input type="range" class="volume" min="0" max="1" step="0.01" value="1">
-            <button class="mute">Mute</button>
-            <label for="speed">Speed:</label>
-            <select class="speed" id="speed">
+            <label>Speed:</label>
+            <select class="speed">
                 <option value="0.5">0.5x</option>
                 <option value="1" selected>1x</option>
                 <option value="1.5">1.5x</option>
                 <option value="2">2x</option>
             </select>
             <canvas width="600" height="100"></canvas>
-            <button class="theme-toggle">Toggle Theme</button>
         </div>
         <div class="audio-player">
             <audio src="twilightaudio/06.mp3"></audio>
@@ -216,17 +210,14 @@
             <span class="time">0:00</span> / <span class="duration">0:00</span>
             <button class="skip backward">-10s</button>
             <button class="skip forward">+10s</button>
-            <input type="range" class="volume" min="0" max="1" step="0.01" value="1">
-            <button class="mute">Mute</button>
-            <label for="speed">Speed:</label>
-            <select class="speed" id="speed">
+            <label>Speed:</label>
+            <select class="speed">
                 <option value="0.5">0.5x</option>
                 <option value="1" selected>1x</option>
                 <option value="1.5">1.5x</option>
                 <option value="2">2x</option>
             </select>
             <canvas width="600" height="100"></canvas>
-            <button class="theme-toggle">Toggle Theme</button>
         </div>
         <div class="audio-player">
             <audio src="twilightaudio/07.mp3"></audio>
@@ -235,17 +226,14 @@
             <span class="time">0:00</span> / <span class="duration">0:00</span>
             <button class="skip backward">-10s</button>
             <button class="skip forward">+10s</button>
-            <input type="range" class="volume" min="0" max="1" step="0.01" value="1">
-            <button class="mute">Mute</button>
-            <label for="speed">Speed:</label>
-            <select class="speed" id="speed">
+            <label>Speed:</label>
+            <select class="speed">
                 <option value="0.5">0.5x</option>
                 <option value="1" selected>1x</option>
                 <option value="1.5">1.5x</option>
                 <option value="2">2x</option>
             </select>
             <canvas width="600" height="100"></canvas>
-            <button class="theme-toggle">Toggle Theme</button>
         </div>
         <div class="audio-player">
             <audio src="twilightaudio/08.mp3"></audio>
@@ -254,17 +242,14 @@
             <span class="time">0:00</span> / <span class="duration">0:00</span>
             <button class="skip backward">-10s</button>
             <button class="skip forward">+10s</button>
-            <input type="range" class="volume" min="0" max="1" step="0.01" value="1">
-            <button class="mute">Mute</button>
-            <label for="speed">Speed:</label>
-            <select class="speed" id="speed">
+            <label>Speed:</label>
+            <select class="speed">
                 <option value="0.5">0.5x</option>
                 <option value="1" selected>1x</option>
                 <option value="1.5">1.5x</option>
                 <option value="2">2x</option>
             </select>
             <canvas width="600" height="100"></canvas>
-            <button class="theme-toggle">Toggle Theme</button>
         </div>
         <div class="audio-player">
             <audio src="twilightaudio/09.mp3"></audio>
@@ -273,17 +258,14 @@
             <span class="time">0:00</span> / <span class="duration">0:00</span>
             <button class="skip backward">-10s</button>
             <button class="skip forward">+10s</button>
-            <input type="range" class="volume" min="0" max="1" step="0.01" value="1">
-            <button class="mute">Mute</button>
-            <label for="speed">Speed:</label>
-            <select class="speed" id="speed">
+            <label>Speed:</label>
+            <select class="speed">
                 <option value="0.5">0.5x</option>
                 <option value="1" selected>1x</option>
                 <option value="1.5">1.5x</option>
                 <option value="2">2x</option>
             </select>
             <canvas width="600" height="100"></canvas>
-            <button class="theme-toggle">Toggle Theme</button>
         </div>
         <div class="audio-player">
             <audio src="twilightaudio/10.mp3"></audio>
@@ -292,17 +274,14 @@
             <span class="time">0:00</span> / <span class="duration">0:00</span>
             <button class="skip backward">-10s</button>
             <button class="skip forward">+10s</button>
-            <input type="range" class="volume" min="0" max="1" step="0.01" value="1">
-            <button class="mute">Mute</button>
-            <label for="speed">Speed:</label>
-            <select class="speed" id="speed">
+            <label>Speed:</label>
+            <select class="speed">
                 <option value="0.5">0.5x</option>
                 <option value="1" selected>1x</option>
                 <option value="1.5">1.5x</option>
                 <option value="2">2x</option>
             </select>
             <canvas width="600" height="100"></canvas>
-            <button class="theme-toggle">Toggle Theme</button>
         </div>
         <div class="audio-player">
             <audio src="twilightaudio/11.mp3"></audio>
@@ -311,17 +290,14 @@
             <span class="time">0:00</span> / <span class="duration">0:00</span>
             <button class="skip backward">-10s</button>
             <button class="skip forward">+10s</button>
-            <input type="range" class="volume" min="0" max="1" step="0.01" value="1">
-            <button class="mute">Mute</button>
-            <label for="speed">Speed:</label>
-            <select class="speed" id="speed">
+            <label>Speed:</label>
+            <select class="speed">
                 <option value="0.5">0.5x</option>
                 <option value="1" selected>1x</option>
                 <option value="1.5">1.5x</option>
                 <option value="2">2x</option>
             </select>
             <canvas width="600" height="100"></canvas>
-            <button class="theme-toggle">Toggle Theme</button>
         </div>
         <div class="audio-player">
             <audio src="twilightaudio/12.mp3"></audio>
@@ -330,17 +306,14 @@
             <span class="time">0:00</span> / <span class="duration">0:00</span>
             <button class="skip backward">-10s</button>
             <button class="skip forward">+10s</button>
-            <input type="range" class="volume" min="0" max="1" step="0.01" value="1">
-            <button class="mute">Mute</button>
-            <label for="speed">Speed:</label>
-            <select class="speed" id="speed">
+            <label>Speed:</label>
+            <select class="speed">
                 <option value="0.5">0.5x</option>
                 <option value="1" selected>1x</option>
                 <option value="1.5">1.5x</option>
                 <option value="2">2x</option>
             </select>
             <canvas width="600" height="100"></canvas>
-            <button class="theme-toggle">Toggle Theme</button>
         </div>
     </div>
 
