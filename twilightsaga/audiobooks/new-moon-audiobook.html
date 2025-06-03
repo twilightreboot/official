@@ -1,127 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>New Moon Audiobook</title>
-  <link rel="stylesheet" href="css/twilightsaga.css" />
-  <style>
-    body {
-      background-image: url('https://m.media-amazon.com/images/I/71F63AXN+BL.jpg');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
-
-    .header {
-      text-align: center;
-      padding: 20px;
-      font-family: 'Times New Roman', Times, serif;
-      background-color: rgba(0, 0, 0, 0.6);
-      color: white;
-    }
-
-    .footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #0000009c;
-      border-top: 2px solid #ddd;
-      margin-top: 20px;
-      font-family: 'Times New Roman', Times, serif;
-      color: white;
-    }
-
-    .social-icons a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #ffffff;
-    }
-
-    .audio-container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-      padding: 20px;
-      max-width: 700px;
-      margin: auto;
-    }
-
-    .audio-box {
-      width: 100%;
-      background-color: #1a1a1a;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      padding: 15px;
-      color: white;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    }
-
-    .audio-box h3 {
-      margin: 0 0 10px;
-      font-size: 1.1rem;
-      color: #ff4d4d;
-    }
-
-    .audio-box audio {
-      width: 100%;
-      outline: none;
-      border-radius: 5px;
-    }
-
-    @media (max-width: 600px) {
-      .audio-box {
-        padding: 10px;
-      }
-      .audio-box h3 {
-        font-size: 1rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Moon Audiobook</title>
+    <link rel="stylesheet" href="css/twilightsaga.css">
+    <style>
+        body {
+            background-image: url('https://m.media-amazon.com/images/I/71F63AXN+BL.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #0000009c;
+            border-top: 2px solid #ddd;
+            margin-top: 20px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .social-icons a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #ffffff;
+        }
+        .audio-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            justify-content: center;
+            background-color: transparent;
+            padding: 20px;
+            max-width: 700px;
+            margin: auto;
+        }
+        .audio-player {
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+        }
+        .audio-player h4 {
+            margin: 0 0 10px;
+        }
+        .audio-player audio {
+            width: 100%;
+            outline: none;
+        }
+        .audio-player button {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            margin: 10px 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .audio-player button:hover {
+            background-color: #cc0000;
+        }
+        @media (max-width: 600px) {
+            .audio-player {
+                padding: 10px;
+            }
+            .audio-player button {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header class="header">
-    <h1>New Moon Audiobook by Stephenie Meyer</h1>
-    <p>📚✨ Dive into the Twilight Saga! Explore All Twilight Books Free 📖 Experience the magic, the love, and the adventure of this legendary series.</p>
-  </header>
+    <header class="header">
+        <h1>New Moon Audiobook by Stephenie Meyer</h1>
+        <p>📚✨ Dive into the Twilight Saga! Explore All Twilight Books Free 📖 Experience the magic, the love, and the adventure of this legendary series.</p>
+    </header>
 
-  <div class="audio-container" id="audioContainer"></div>
+    <div class="audio-container" id="audioContainer"></div>
 
-  <footer class="footer">
-    <div class="social-icons">
-      <a href="#">Facebook</a>
-      <a href="https://x.com/@TwilightNetflix">Twitter</a>
-      <a href="https://www.instagram.com/twilightrebootofficial">Instagram</a>
-    </div>
-    <p>&copy; 2025 Twilight Saga Fan Site. All rights reserved.</p>
-  </footer>
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="#">Facebook</a>
+            <a href="https://x.com/@TwilightNetflix">Twitter</a>
+            <a href="https://www.instagram.com/twilightrebootofficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a>
+        </div>
+        <p>&copy; 2025 Twilight Saga Fan Site. All rights reserved.</p>
+    </footer>
 
-  <script>
-    const audioFiles = [
-      "nmaudio/1.mp3", "nmaudio/2.mp3", "nmaudio/3.mp3",
-      "nmaudio/4.mp3", "nmaudio/5.mp3", "nmaudio/6.mp3",
-      "nmaudio/7.mp3", "nmaudio/8.mp3", "nmaudio/9.mp3"
-    ];
-
-    const container = document.getElementById("audioContainer");
-
-    audioFiles.forEach((src, index) => {
-      const box = document.createElement("div");
-      box.className = "audio-box";
-      box.innerHTML = `
-        <h3>Chapter ${index + 1}</h3>
-        <audio controls preload="none">
-          <source src="${src}" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>
-      `;
-      container.appendChild(box);
-    });
-  </script>
-
-  <script src="js/twilightsaga.js"></script>
+    <script>
+        const audioSources = [
+            "nmaudio/1.mp3", "nmaudio/2.mp3", "nmaudio/3.mp3",
+            "nmaudio/4.mp3", "nmaudio/5.mp3", "nmaudio/6.mp3",
+            "nmaudio/7.mp3", "nmaudio/8.mp3", "nmaudio/9.mp3"
+        ];
+        const container = document.getElementById('audioContainer');
+        audioSources.forEach((src, index) => {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'audio-player';
+            const title = document.createElement('h4');
+            title.textContent = `Chapter ${index + 1}`;
+            const audio = document.createElement('audio');
+            audio.controls = true;
+            audio.src = src;
+            wrapper.appendChild(title);
+            wrapper.appendChild(audio);
+            container.appendChild(wrapper);
+        });
+    </script>
 </body>
 </html>

@@ -16,66 +16,83 @@
             font-family: Arial, sans-serif;
             color: white;
         }
-        .header, .footer {
+        .header {
             text-align: center;
-            font-family: 'Times New Roman', Times, serif;
-            background-color: rgba(0, 0, 0, 0.6);
-            padding: 20px;
             margin-bottom: 20px;
+            font-family: 'Times New Roman', Times, serif;
         }
-        .audio-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-            padding: 20px;
-            background-color: rgba(0, 0, 0, 0.6);
-            border-radius: 10px;
-            max-width: 900px;
-            margin: auto;
-        }
-        .audio-box {
-            background-color: rgba(255, 255, 255, 0.05);
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 10px;
-            width: 260px;
+        .footer {
             text-align: center;
-        }
-        audio {
-            width: 100%;
+            padding: 20px;
+            background-color: #0000009c;
+            border-top: 2px solid #ddd;
+            margin-top: 20px;
+            font-family: 'Times New Roman', Times, serif;
         }
         .social-icons a {
             margin: 0 10px;
             text-decoration: none;
             color: #ffffff;
         }
+        .audio-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            justify-content: center;
+            background-color: transparent;
+            padding: 20px;
+            max-width: 700px;
+            margin: auto;
+        }
+        .audio-player {
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 15px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+        }
+        .audio-player h4 {
+            margin: 0 0 10px;
+        }
+        .audio-player audio {
+            width: 100%;
+            outline: none;
+        }
+        .audio-player button {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            margin: 10px 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .audio-player button:hover {
+            background-color: #cc0000;
+        }
+        @media (max-width: 600px) {
+            .audio-player {
+                padding: 10px;
+            }
+            .audio-player button {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
     </style>
 </head>
 <body>
     <header class="header">
         <h1>Breaking Dawn Audiobook by Stephenie Meyer</h1>
-        <p>📚✨ Dive into the Twilight Saga! Explore All Twilight Books Free 📖</p>
+        <p>📚✨ Dive into the Twilight Saga! Explore All Twilight Books Free 📖 Experience the magic, the love, and the adventure of this legendary series.</p>
     </header>
 
-    <div class="audio-container">
-        <script>
-            const sources = [
-                "bdaudio/01.mp3", "bdaudio/02.mp3", "bdaudio/03.mp3",
-                "bdaudio/04.mp3", "bdaudio/05.mp3", "bdaudio/06.mp3",
-                "bdaudio/07.mp3", "bdaudio/08.mp3", "bdaudio/09.mp3",
-                "bdaudio/10.mp3", "bdaudio/11.mp3", "bdaudio/12.mp3",
-                "bdaudio/13.mp3", "bdaudio/14.mp3", "bdaudio/15.mp3", "bdaudio/16.mp3"
-            ];
-            const container = document.currentScript.parentElement;
-            sources.forEach((src, i) => {
-                const div = document.createElement('div');
-                div.className = 'audio-box';
-                div.innerHTML = `<p>Chapter ${i + 1}</p><audio controls src="${src}"></audio>`;
-                container.appendChild(div);
-            });
-        </script>
-    </div>
+    <div class="audio-container" id="audioContainer"></div>
 
     <footer class="footer">
         <div class="social-icons">
@@ -85,5 +102,27 @@
         </div>
         <p>&copy; 2025 Twilight Saga Fan Site. All rights reserved.</p>
     </footer>
+    <script>
+        const audioSources = [
+            "bdaudio/01.mp3", "bdaudio/02.mp3", "bdaudio/03.mp3",
+            "bdaudio/04.mp3", "bdaudio/05.mp3", "bdaudio/06.mp3",
+            "bdaudio/07.mp3", "bdaudio/08.mp3", "bdaudio/09.mp3",
+            "bdaudio/10.mp3", "bdaudio/11.mp3", "bdaudio/12.mp3",
+            "bdaudio/13.mp3", "bdaudio/14.mp3", "bdaudio/15.mp3", "bdaudio/16.mp3"
+        ];
+        const container = document.getElementById('audioContainer');
+        audioSources.forEach((src, index) => {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'audio-player';
+            const title = document.createElement('h4');
+            title.textContent = `Chapter ${index + 1}`;
+            const audio = document.createElement('audio');
+            audio.controls = true;
+            audio.src = src;
+            wrapper.appendChild(title);
+            wrapper.appendChild(audio);
+            container.appendChild(wrapper);
+        });
+    </script>
 </body>
 </html>
