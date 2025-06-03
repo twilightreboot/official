@@ -19,6 +19,10 @@
             text-align: center;
             margin-bottom: 20px;
             font-family: 'Times New Roman', Times, serif;
+            color: #ffffff;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            border-radius: 10px;
         }
         .footer {
             text-align: center;
@@ -27,6 +31,7 @@
             border-top: 2px solid #ddd;
             margin-top: 20px;
             font-family: 'Times New Roman', Times, serif;
+            color: #ffffff;
         }
         .social-icons a {
             margin: 0 10px;
@@ -35,81 +40,41 @@
         }
         .audio-container {
             display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
+            flex-direction: column;
+            gap: 15px;
             justify-content: center;
-            background-color: transparent;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 15px;
+            max-width: 700px;
+            margin: 30px auto;
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+        }
+        .audio-box {
+            background-color: #1c1c1c;
+            border: 1px solid #ff4747;
+            border-radius: 8px;
             padding: 10px;
-            border: 2px solid #0f0c0c;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            max-width: 660px;
-            margin: auto;
-        }
-        .audio-player {
-            display: flex;
-            align-items: center;
-            width: 100%;
-            max-width: 660px;
-            margin: 2px;
-            background-color: #000000;
-            border: 1px solid #fffcfc;
-            border-radius: 2px;
-            padding: 2px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .audio-player button {
-            background: none;
-            border: none;
-            cursor: pointer;
-            margin-right: 3px;
-            font-size: 12px;
             color: white;
-            padding: 8px 5px;
-            border-radius: 3px;
-            transition: background-color 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
         }
-        .audio-player button:hover {
-            background-color: rgba(255, 255, 255, 0.2);
+        .audio-box h3 {
+            margin-top: 0;
+            font-size: 18px;
+            color: #ff4747;
         }
-        .audio-player .skip {
-            margin-right: 2px;
-        }
-        .audio-player input[type="range"] {
-            flex-grow: 1;
-        }
-        .audio-player .time {
-            margin-left: 10px;
-            min-width: 50px;
-        }
-        .audio-player .duration {
-            margin-left: 10px;
-            min-width: 50px;
+        audio {
+            width: 100%;
+            outline: none;
         }
         @media (max-width: 600px) {
-            .header, .footer, .audio-container {
-                padding: 5px;
-                margin: 5px;
+            .audio-container {
+                padding: 10px;
+                margin: 10px;
                 width: 95%;
             }
-            .audio-player {
-                max-width: 100%;
-                flex-direction: column;
-                align-items: center;
-                margin: 5px auto;
-                padding: 5px;
-            }
-            .audio-player button,
-            .audio-player input[type="range"],
-            .audio-player .time,
-            .audio-player .duration,
-            .audio-player select,
-            .audio-player canvas {
-                width: 100%;
-                margin: 5px 0;
-            }
-            .audio-player canvas {
-                height: auto !important;
+            .audio-box h3 {
+                font-size: 16px;
             }
         }
     </style>
@@ -120,41 +85,10 @@
         <p>📚✨ Dive into the Twilight Saga! Explore All Twilight Books Free 📖 Experience the magic, the love, and the adventure of this legendary series.</p>
     </header>
 
-    <!-- Add audio player template -->
-    <template id="audio-player-template">
-        <div class="audio-player">
-            <audio></audio>
-            <button class="play-pause">Play</button>
-            <input type="range" class="progress" min="0" max="100" value="0">
-            <span class="time">0:00</span> / <span class="duration">0:00</span>
-            <button class="skip backward">Skip Back</button>
-            <button class="skip forward">Skip Forward</button>
-            <div class="volume-container">
-                <label class="volume-label">Volume:</label>
-                <input type="range" class="volume" min="0" max="1" step="0.01" value="1">
-            </div>
-            <button class="mute">Mute</button>
-            <label for="speed">Speed:</label>
-            <select class="speed">
-                <option value="0.5">0.5x</option>
-                <option value="1" selected>1x</option>
-                <option value="1.5">1.5x</option>
-                <option value="2">2x</option>
-            </select>
-            <canvas width="600" height="100"></canvas>
-            <button class="theme-toggle">Toggle Theme</button>
-        </div>
-    </template>
+    <div class="audio-container" id="audioContainer"></div>
 
-    <!-- Audio container; players will be injected here -->
-    <div class="audio-container">
-        <!-- ...existing code removed; dynamic insertion below... -->
-    </div>
-
-    <!-- Include dynamic player generation script -->
     <script>
-        // Array of audio file sources (adjust as needed)
-        const audioSources = [
+        window.audioSources = [
             "msaudio/01.mp3", "msaudio/02.mp3", "msaudio/03.mp3",
             "msaudio/04.mp3", "msaudio/05.mp3", "msaudio/06.mp3",
             "msaudio/07.mp3", "msaudio/08.mp3", "msaudio/09.mp3",
@@ -165,14 +99,19 @@
             "msaudio/25.mp3", "msaudio/26.mp3", "msaudio/27.mp3", "msaudio/28.mp3",
             "msaudio/29.mp3", "msaudio/30.mp3"
         ];
-        const container = document.querySelector('.audio-container');
-        const template = document.getElementById('audio-player-template').content;
-        // Clear container if necessary
-        container.innerHTML = "";
-        audioSources.forEach(src => {
-            const player = document.importNode(template, true);
-            player.querySelector("audio").src = src;
-            container.appendChild(player);
+
+        const audioContainer = document.getElementById('audioContainer');
+        window.audioSources.forEach((src, index) => {
+            const audioBox = document.createElement('div');
+            audioBox.className = 'audio-box';
+            audioBox.innerHTML = `
+                <h3>Chapter ${index + 1}</h3>
+                <audio controls preload="none">
+                    <source src="${src}" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+            `;
+            audioContainer.appendChild(audioBox);
         });
     </script>
 
@@ -185,6 +124,5 @@
         <p>&copy; 2025 Twilight Saga Fan Site. All rights reserved.</p>
     </footer>
     <script src="js/twilightsaga.js"></script>
-    <script src="js/audioPlayer.js"></script>
 </body>
 </html>
