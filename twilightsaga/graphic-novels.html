@@ -6,114 +6,134 @@
   <title>Twilight Saga Graphic Novels</title>
   <link rel="stylesheet" href="css/twilightsaga.css" />
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
 
-    body {
-      font-family: Arial, sans-serif;
-      background: linear-gradient(120deg, #232526 0%, #414345 100%);
-      background-image: url('https://www.my-sf.com/wp-content/uploads/2013/08/Twilight_Graphic_Novel_vol1-2.jpg');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
-      min-height: 100vh;
-      color: #fff;
-    }
+  body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(120deg, #232526 0%, #414345 100%);
+    background-image: url('https://www.my-sf.com/wp-content/uploads/2013/08/Twilight_Graphic_Novel_vol1-2.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    color: #fff;
+  }
 
-    header {
-      text-align: center;
-      padding: 1.5em;
-      background: rgba(0, 0, 0, 0.6);
-    }
+  header {
+    text-align: center;
+    padding: 1.5em;
+    background: rgba(0, 0, 0, 0.6);
+  }
 
-    header h1 {
-      font-size: 1.8rem;
-      margin-bottom: 0.5em;
-      color: #e0c3fc;
-    }
+  header h1 {
+    font-size: 1.6rem;
+    margin-bottom: 0.5em;
+    color: #e0c3fc;
+  }
 
-    header p {
-      font-size: 0.95rem;
-      color: #f8e9ff;
-    }
+  header p {
+    font-size: 0.9rem;
+    color: #f8e9ff;
+  }
 
-    .graphic-novels-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      max-width: 1000px;
-      margin: 2em auto;
-      gap: 1.5em;
-      padding: 0 1em;
-    }
+  .graphic-novels-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5em;
+  padding: 2em 1em;
+}
 
-    .novel-card {
-      background: #1e1e1ecc;
-      border-radius: 14px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
-      padding: 1em;
-      text-align: center;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
+.novel-card {
+  width: 100%;
+  max-width: 320px;
+}
 
-    .novel-card:hover {
-      transform: translateY(-6px) scale(1.02);
-      box-shadow: 0 8px 24px #f5f5f533;
-    }
+  .novel-card {
+    background: #1e1e1ecc;
+    border-radius: 14px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    padding: 1em;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
 
-    .novel-card img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 1em;
-    }
+  .novel-card:hover {
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 8px 24px #f5f5f533;
+  }
 
-    .novel-card h3 {
-      font-size: 1rem;
-      margin-bottom: 0.3em;
-      color: #e0c3fc;
-    }
+  .novel-card img {
+    width: 100%;
+    max-height: 280px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1em;
+  }
 
-    .novel-card p {
-      font-size: 0.85rem;
-      color: #f8e9ff;
-    }
+  .novel-card h3 {
+    font-size: 1rem;
+    margin-bottom: 0.3em;
+    color: #e0c3fc;
+  }
 
-    footer {
-      text-align: center;
-      padding: 1.5em 1em;
-      background: rgba(0, 0, 0, 0.6);
-      font-size: 0.8rem;
-    }
+  .novel-card p {
+    font-size: 0.85rem;
+    color: #f8e9ff;
+  }
 
-    .social-icons a {
-      color: #f8e9ff;
-      margin: 0 0.5em;
-      text-decoration: none;
-    }
+  .read-button {
+    display: inline-block;
+    margin-top: 0.8em;
+    padding: 0.5em 1em;
+    background-color: #e0c3fc;
+    color: #1e1e1e;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    transition: background-color 0.3s;
+  }
 
-    .social-icons a:hover {
-      text-decoration: underline;
-    }
+  .read-button:hover {
+    background-color: #d3b0f5;
+  }
 
-    @media (min-width: 600px) {
-      .graphic-novels-container {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
+  footer {
+    text-align: center;
+    padding: 1.5em 1em;
+    background: rgba(0, 0, 0, 0.6);
+    font-size: 0.8rem;
+  }
 
-    @media (min-width: 1024px) {
-      .graphic-novels-container {
-        grid-template-columns: repeat(2, 1fr);
-      }
+  .social-icons a {
+    color: #f8e9ff;
+    margin: 0 0.5em;
+    text-decoration: none;
+  }
 
-      .novel-card {
-        max-width: 480px;
-        margin: 0 auto;
-      }
-    }
-  </style>
+  .social-icons a:hover {
+    text-decoration: underline;
+  }
+
+  /* Tablet and desktop: 2 columns */
+  @media (min-width: 700px) {
+  .graphic-novels-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .novel-card {
+    margin: 1em;
+  }
+}
+
+</style>
+
 </head>
 <body>
   <header>
@@ -148,7 +168,7 @@
     <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1367354258i/15790912.jpg" alt="New Moon Graphic Novel Vol 2">
     <h3>New Moon: The Graphic Novel Vol. 2</h3>
     <p>Volume 2 concludes the New Moon graphic novel, with stunning visuals of Bella's reunion with Edward and the Volturi encounter.</p>
-    <a href="https://drive.google.com/file/d/1u0FtL6W3YttP40ma6wbMtHc0jIPJliwL/view" target="_blank" class="read-button">📖 Read Now</a>
+    <a href="" target="_blank" class="read-button">📖 Read Now</a>
   </div>
 </div>
   </main>
