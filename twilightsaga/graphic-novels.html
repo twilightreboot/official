@@ -1,29 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Twilight Saga Graphic Novels</title>
-    <link rel="stylesheet" href="css/twilightsaga.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Twilight Saga Graphic Novels</title>
+  <link rel="stylesheet" href="css/twilightsaga.css" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(120deg, #232526 0%, #414345 100%);
+      background-image: url('https://www.my-sf.com/wp-content/uploads/2013/08/Twilight_Graphic_Novel_vol1-2.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      min-height: 100vh;
+      color: #fff;
+    }
+
+    header {
+      text-align: center;
+      padding: 1.5em;
+      background: rgba(0, 0, 0, 0.6);
+    }
+
+    header h1 {
+      font-size: 1.8rem;
+      margin-bottom: 0.5em;
+      color: #e0c3fc;
+    }
+
+    header p {
+      font-size: 0.95rem;
+      color: #f8e9ff;
+    }
+
+    .graphic-novels-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      max-width: 1000px;
+      margin: 2em auto;
+      gap: 1.5em;
+      padding: 0 1em;
+    }
+
+    .novel-card {
+      background: #1e1e1ecc;
+      border-radius: 14px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+      padding: 1em;
+      text-align: center;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .novel-card:hover {
+      transform: translateY(-6px) scale(1.02);
+      box-shadow: 0 8px 24px #f5f5f533;
+    }
+
+    .novel-card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 1em;
+    }
+
+    .novel-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.3em;
+      color: #e0c3fc;
+    }
+
+    .novel-card p {
+      font-size: 0.85rem;
+      color: #f8e9ff;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5em 1em;
+      background: rgba(0, 0, 0, 0.6);
+      font-size: 0.8rem;
+    }
+
+    .social-icons a {
+      color: #f8e9ff;
+      margin: 0 0.5em;
+      text-decoration: none;
+    }
+
+    .social-icons a:hover {
+      text-decoration: underline;
+    }
+
+    @media (min-width: 600px) {
+      .graphic-novels-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .graphic-novels-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .novel-card {
+        max-width: 480px;
+        margin: 0 auto;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Twilight Saga Graphic Novels</h1>
-        <p>Dive into the visual retelling of the Twilight Saga with stunning graphic novels.</p>
-    </header>
-    <nav>
-        <!-- ...existing navigation links... -->
-    </nav>
-    <main>
-        <section class="card">
-            <img src="https://th.bing.com/th/id/R.1d5aac325184b0054c8f6301b876ca6a?rik=Bemd7JzccTJLkw&riu=http%3a%2f%2fwww.my-sf.com%2fwp-content%2fuploads%2f2013%2f08%2fTwilight_Graphic_Novel_vol1-2.jpg&ehk=pqc7ZMDqMDugWmQzQEy54YvuuI2rw2YDQQ%2bGNH7WqiI%3d&risl=&pid=ImgRaw&r=0" alt="Breaking Dawn Part 1 Poster">
-            <h3>Graphic Novels</h3>
-            <p>Dive into the visual retelling of the Twilight Saga with stunning graphic novels.</p>
-        </section>
-    </main>
-    <footer>
-        <!-- ...existing footer content... -->
-    </footer>
-    <script src="js/twilightsaga.js"></script>
+  <header>
+    <h1>Twilight Saga Graphic Novels</h1>
+    <p>Experience the Twilight Saga in a whole new way with beautifully illustrated graphic novels.</p>
+  </header>
+
+  <main>
+    <div class="graphic-novels-container">
+  <div class="novel-card">
+    <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1317294278i/7619292.jpg" alt="Twilight Graphic Novel Vol 1">
+    <h3>Twilight: The Graphic Novel Vol. 1</h3>
+    <p>The beloved story of Bella and Edward, reimagined with stunning artwork. A must-have for every Twilight fan!</p>
+    <a href="https://drive.google.com/file/d/16aDzkQ-t_5ruk7LVEz3s5zvNyDBoSyuU/view" target="_blank" class="read-button">📖 Read Now</a>
+  </div>
+
+  <div class="novel-card">
+    <img src="https://m.media-amazon.com/images/I/71KjBcqzOdL._AC_UF1000,1000_QL80_DpWeblab_.jpg" alt="Twilight Graphic Novel Vol 2">
+    <h3>Twilight: The Graphic Novel Vol. 2</h3>
+    <p>Continue the saga with the graphic adaptation of Twilight, featuring dramatic visuals and all the romance and suspense you love.</p>
+    <a href="https://drive.google.com/file/d/16b-DS7GpKJ55hZCRKitmPDi2rhZo6iXm/view?usp=sharing" target="_blank" class="read-button">📖 Read Now</a>
+  </div>
+
+  <div class="novel-card">
+    <img src="https://www.hachette.co.uk/wp-content/uploads/2019/01/hbg-title-9781405525176-5.jpg" alt="New Moon Graphic Novel Vol 1">
+    <h3>New Moon: The Graphic Novel Vol. 1</h3>
+    <p>Volume 1 of the New Moon graphic novel adaptation, capturing the heartbreak and transformation of Bella's journey after Edward's departure.</p>
+    <a href="https://drive.google.com/file/d/1u0FtL6W3YttP40ma6wbMtHc0jIPJliwL/view" target="_blank" class="read-button">📖 Read Now</a>
+  </div>
+
+  <div class="novel-card">
+    <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1367354258i/15790912.jpg" alt="New Moon Graphic Novel Vol 2">
+    <h3>New Moon: The Graphic Novel Vol. 2</h3>
+    <p>Volume 2 concludes the New Moon graphic novel, with stunning visuals of Bella's reunion with Edward and the Volturi encounter.</p>
+    <a href="https://drive.google.com/file/d/1u0FtL6W3YttP40ma6wbMtHc0jIPJliwL/view" target="_blank" class="read-button">📖 Read Now</a>
+  </div>
+</div>
+  </main>
+
+  <footer>
+    <div class="social-icons">
+      <a href="#">Facebook</a>
+      <a href="https://x.com/@TwilightNetflix">Twitter</a>
+      <a href="https://www.instagram.com/twilightrebootofficial">Instagram</a>
+    </div>
+    <p>&copy; 2025 Twilight Saga Fan Site. All rights reserved.</p>
+  </footer>
+
+  <script src="js/twilightsaga.js"></script>
 </body>
 </html>
