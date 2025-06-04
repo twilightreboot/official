@@ -1,86 +1,133 @@
-/* General styles */
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #121212;
-    color: white;
+  font-family: 'Crimson Pro', serif;
+  background: linear-gradient(to bottom, #0f0f0f 0%, #1a1a1a 100%);
+  margin: 0;
+  color: #eee;
 }
 
-a {
-    color: #1abc9c;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-a:hover {
-    color: #16a085;
-}
-
-/* Header styles */
 header {
-    background: linear-gradient(to right, #2c3e50, #4ca1af);
-    padding: 1em 0;
-    text-align: center;
+  background: rgba(0, 0, 0, 0.85);
+  text-align: center;
+  padding: 2em 1em;
+  color: #d3b0f5;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2.5em;
+  font-size: 2.8rem;
+  margin-bottom: 0.3em;
 }
 
 header p {
-    margin: 0;
-    font-size: 1.2em;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #b39ddb;
 }
 
-/* Navigation styles */
 nav {
-    background-color: #34495e;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 1em 0;
+  background-color: #191919;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+  padding: 1em;
 }
 
 nav a {
-    padding: 0.5em 1em;
-    text-transform: uppercase;
-    font-weight: bold;
-    transition: background-color 0.3s;
+  color: #e0c3fc;
+  padding: 0.6em 1em;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.3s;
 }
 
 nav a:hover {
-    background-color: #1abc9c;
-    color: black;
+  background-color: #45284b;
 }
 
-/* Main content styles */
 main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 2em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+  padding: 2em;
 }
 
 .card {
-    background-color: #1e1e1e;
-    border: 1px solid #333;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin: 1em;
-    padding: 1em;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-    flex: 1 1 300px; /* Ensures each card takes equal space */
-    max-width: 300px;
-    box-sizing: border-box;
+  background: #1f1f1f;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.6);
+  width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 12px 32px rgba(255, 255, 255, 0.08);
 }
 
 .card img {
-    max-width: 100%;
-    border-radius: 10px 10px 0 0;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  filter: brightness(0.9);
+}
+
+.card-content {
+  padding: 1em;
 }
 
 .card h3 {
-    margin: 0.5em 0[_{{{CITATION{{{_1{](https://github.com/antydemant/lessons-2020/tree/0c6095f45bfd841914ac8e7e25f8c9df273dea69/02-closure-and-context%2Fhomework%2FREADME.md)[_{{{CITATION{{{_2{](https://github.com/ItaloFaud/Projeto-Lab.-Web/tree/ecbc2c9a4e904038aac05ee2df3a4910af75fe8d/sobre.php)[_{{{CITATION{{{_3{](https://github.com/nsamardzic13/Exter/tree/e47ab570ee0e885de2d8fe043546f85e2199cf01/resources%2Fviews%2Ffooter.blade.php)[_{{{CITATION{{{_4{](https://github.com/edwardcruzcruz/DAW/tree/7d10c8998d2136dff09b9783102d31fedc33d34e/resources%2Fviews%2Fpages%2FsolicitudesClient.blade.php)[_{{{CITATION{{{_5{](https://github.com/vikrantRajan/CMS-Template/tree/dfaeadf705480f55693c73aa126f7070b3f9108a/cmstemplate%2Ftemplates%2Fpartials%2Ffootercontact.php)
+  color: #e0c3fc;
+  margin: 0.4em 0;
+  font-size: 1.2rem;
+}
+
+.card p {
+  font-size: 0.9rem;
+  color: #dcdcdc;
+}
+
+footer {
+  text-align: center;
+  padding: 2em 1em;
+  background: #111;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.social-icons a {
+  color: #e0c3fc;
+  margin: 0 0.5em;
+  text-decoration: none;
+}
+/* Animation: fade-in */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Glow effect */
+nav a:hover,
+.social-icons a:hover {
+  text-shadow: 0 0 10px #e0c3fc;
+}
