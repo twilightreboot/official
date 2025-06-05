@@ -68,15 +68,48 @@
     }
     @media (max-width: 600px) {
       .about-books-container {
-        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-        padding: 20px 10px;
-        gap: 24px;
+        grid-template-columns: 1fr;
+        padding: 10px 2vw;
+        gap: 16px;
+      }
+      .card {
+        padding: 10px 6px;
+        border-radius: 6px;
+      }
+      .card img {
+        height: 180px;
+        min-width: 0;
+        border-radius: 3px;
       }
       .card h3 {
-        font-size: 0.95rem;
+        font-size: 0.98rem;
       }
       .card a {
-        font-size: 0.8rem;
+        font-size: 0.95rem;
+        padding: 8px 24px;
+        margin-top: 10px;
+        border-radius: 4px;
+        background: #e0c3fc;
+        color: #1a1a1a;
+        font-weight: bold;
+        text-shadow: none;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+        text-decoration: none;
+        transition: background 0.2s, color 0.2s;
+        display: inline-block;
+      }
+      .card a:hover {
+        background: #b39ddb;
+        color: #fff;
+      }
+      .header, .footer {
+        padding: 1em 0.2em;
+      }
+      .header h1 {
+        font-size: 1.3rem;
+      }
+      .header p {
+        font-size: 0.98rem;
       }
     }
   </style>
@@ -90,6 +123,11 @@
   <main class="about-books-container">
     <!-- PDF Links for All Books -->
     <section class="card"><img src="https://coverart.oclc.org/ImageWebSvc/oclc/+-+218204003_400.jpg?allowDefault=false&client=WorldcatOrgUI" alt="Twilight Global Phenomenon"><h3>Twilight Global Phenomenon</h3><a href="https://drive.google.com/file/d/17sqMho90moULg_4oU5XQD8gRecLhcKvm/view" target="_blank">Open</a></section>
+        <section class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcPEBI06AQ08VHB3u54-37GO5F4Tybaw9ukA&s" alt="Screening Twilight"><h3>Screening Twilight: Pop Phenomenon</h3><a href="https://drive.google.com/file/d/1VfTTUH_MPfR-rJi0twNkT1sCk3fXuMD_/view" target="_blank">Open</a></section>
+    <section class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRo4356vFuXe7TsC41h83BisXTrfRLlXbHK6A&s" alt="Guide to Real Forks"><h3>Guide to Real Forks Tour</h3><a href="https://drive.google.com/file/d/1F_bFBLOypa7enecukzyy4I8NfmCEGLXi/view" target="_blank">Open</a></section>
+    <section class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA6VRDE7tKQDAHnjjkWYZVEO4jFseOvF-2MQ&s" alt="Twilight True Love"><h3>Twilight True Love and You</h3><a href="https://drive.google.com/file/d/1-vsKqHr2fSDmclBCBdeU97hdEc0trU5Z/view" target="_blank">Open</a></section>
+    <section class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxiFB6YsKLwPYdzXaOZaoTSeBe22T7YZifbA&s" alt="Twilight and History"><h3>Twilight and History</h3><a href="https://drive.google.com/file/d/11TYwyBfVvwWTUG-RUrf_BspWjGSAOV5R/view" target="_blank">Open</a></section>
+    <section class="card"><img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1348132058i/6441654.jpg" alt="Twilight Philosophy"><h3>Twilight and Philosophy</h3><a href="https://drive.google.com/file/d/1rv5urB9wj2zoEbW-d7g6Q9kEOndXs3jW/view" target="_blank">Open</a></section>
     <section class="card"><img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1438760194i/6202690.jpg" alt="Director's Notebook"><h3>Twilight Director's Notebook</h3><a href="https://drive.google.com/file/d/1N_8K_cdilhFZcSbvpmbk6pyRKbu2zlwm/view" target="_blank">Open</a></section>
     <section class="card"><img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1352539022i/3609760.jpg" alt="Illustrated Movie Companion"><h3>Twilight Illustrated Movie Companion</h3><a href="https://drive.google.com/file/d/1YWN0lBEt3Ote-1hT684qjP9dbViqRq0c/view" target="_blank">Open</a></section>
     <section class="card"><img src="https://i.discogs.com/NhItaHPATiPf6kRxJE81RD06UqCBbZLyibk2brMzmhM/rs:fit/g:sm/q:40/h:300/w:300/czM6Ly9kaXNjb2dz/LWRhdGFiYXNlLWlt/YWdlcy9SLTEyNTE3/MjA1LTE1OTcwMjYw/ODgtMTI5NS5qcGVn.jpeg" alt="Music from Motion Picture"><h3>Twilight Music from Motion Picture</h3><a href="https://drive.google.com/file/d/1S_kgyEfu58QXfs_UdA4X-IY3VSUFPDwv/view" target="_blank">Open</a></section>
@@ -101,11 +139,6 @@
     <section class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKDgTE_K4dWiW81cIm8j-moOd9BRTzEu2jjg&s" alt="Bringing Light to Twilight"><h3>Bringing Light to Twilight</h3><a href="https://drive.google.com/file/d/1RmX42BWlhma3fnqLt81Yt5RYFQ5wzNLY/view" target="_blank">Open</a></section>
     <section class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLkKDnw3cqtErOxyYXAU6ZeT9Z2cKB110rcA&s" alt="From Twilight to Breaking Dawn"><h3>From Twilight to Breaking Dawn</h3><a href="https://drive.google.com/file/d/1rPY9liyh1_lZuatFSFsGT3PVZp-CUI5g/view" target="_blank">Open</a></section>
     <section class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSMs-ACZfu1DutbUSQdNqLjmUJ9DdN2ApIm5g&s" alt="Seduced by Twilight"><h3>Seduced by Twilight</h3><a href="https://drive.google.com/file/d/1gistbVizJ3cfmMzl0fzoCPtmh5kl0iaw/view" target="_blank">Open</a></section>
-    <section class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcPEBI06AQ08VHB3u54-37GO5F4Tybaw9ukA&s" alt="Screening Twilight"><h3>Screening Twilight: Pop Phenomenon</h3><a href="https://drive.google.com/file/d/1VfTTUH_MPfR-rJi0twNkT1sCk3fXuMD_/view" target="_blank">Open</a></section>
-    <section class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRo4356vFuXe7TsC41h83BisXTrfRLlXbHK6A&s" alt="Guide to Real Forks"><h3>Guide to Real Forks Tour</h3><a href="https://drive.google.com/file/d/1F_bFBLOypa7enecukzyy4I8NfmCEGLXi/view" target="_blank">Open</a></section>
-    <section class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQA6VRDE7tKQDAHnjjkWYZVEO4jFseOvF-2MQ&s" alt="Twilight True Love"><h3>Twilight True Love and You</h3><a href="https://drive.google.com/file/d/1-vsKqHr2fSDmclBCBdeU97hdEc0trU5Z/view" target="_blank">Open</a></section>
-    <section class="card"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxiFB6YsKLwPYdzXaOZaoTSeBe22T7YZifbA&s" alt="Twilight and History"><h3>Twilight and History</h3><a href="https://drive.google.com/file/d/11TYwyBfVvwWTUG-RUrf_BspWjGSAOV5R/view" target="_blank">Open</a></section>
-    <section class="card"><img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1348132058i/6441654.jpg" alt="Twilight Philosophy"><h3>Twilight and Philosophy</h3><a href="https://drive.google.com/file/d/1rv5urB9wj2zoEbW-d7g6Q9kEOndXs3jW/view" target="_blank">Open</a></section>
     <section class="card"><img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1348010202i/12472485.jpg" alt="Theorizing Twilight"><h3>Theorizing Twilight</h3><a href="https://drive.google.com/file/d/1ZSEssKzA4aqWqy50rnJDvN0nugoOmLWa/view" target="_blank">Open</a></section>
   </main>
   <footer class="footer">
