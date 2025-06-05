@@ -1,29 +1,24 @@
-console.log("Welcome to the Twilight Saga Fan Site!");
+console.log("Welcome to the Twilight Saga Fan Site ✨");
 
-// Smooth scrolling for internal nav links
-document.querySelectorAll('nav a').forEach(anchor => {
+// Smooth scroll for anchor links in nav
+document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
-    const href = this.getAttribute('href');
-    if (href.startsWith("#")) {
+    const targetId = this.getAttribute('href').substring(1);
+    const targetElement = document.getElementById(targetId);
+    if (targetElement) {
       e.preventDefault();
-      const targetId = href.substring(1);
-      const targetElement = document.getElementById(targetId);
-
-      if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop,
-          behavior: 'smooth'
-        });
-      }
+      window.scrollTo({
+        top: targetElement.offsetTop - 60,
+        behavior: 'smooth'
+      });
     }
   });
 });
 
-// Fade-in cards on scroll using Intersection Observer
-const faders = document.querySelectorAll('.card');
-
-const fadeInObserver = new IntersectionObserver((entries, observer) => {
-  entries.forEach(entry => {
+// Reveal card elements on scroll with IntersectionObserver
+const cards = document.querySelectorAll('.card');
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach((entry, index) => {
     if (entry.isIntersecting) {
       entry.target.classList.add('visible');
       observer.unobserve(entry.target);
@@ -33,7 +28,33 @@ const fadeInObserver = new IntersectionObserver((entries, observer) => {
   threshold: 0.1
 });
 
-faders.forEach(card => {
-  card.classList.add('fade-in');
-  fadeInObserver.observe(card);
+cards.forEach(card => {
+  observer.observe(card);
+});
+
+// Optional parallax effect for background overlay
+window.addEventListener('scroll', () => {
+  const overlay = document.querySelector('.background-overlay');
+  if (overlay) {
+    overlay.style.backgroundPositionY = `${window.scrollY * 0.2}px`;
+  }
+});
+
+// Animate card on click/tap (add/remove .selected class)
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('mousedown', function() {
+    card.classList.add('selected');
+  });
+  card.addEventListener('touchstart', function() {
+    card.classList.add('selected');
+  });
+  card.addEventListener('mouseup', function() {
+    setTimeout(() => card.classList.remove('selected'), 300);
+  });
+  card.addEventListener('mouseleave', function() {
+    card.classList.remove('selected');
+  });
+  card.addEventListener('touchend', function() {
+    setTimeout(() => card.classList.remove('selected'), 300);
+  });
 });

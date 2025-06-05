@@ -2,91 +2,94 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Twilight Saga Fan Site</title>
   <link rel="stylesheet" href="css/twilightsaga.css" />
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@500&display=swap" rel="stylesheet" />
 </head>
 <body>
+  <div class="background-overlay"></div>
+
   <header>
     <h1>Twilight Saga</h1>
-    <p>“And so the lion fell in love with the lamb…”</p>
+    <p class="quote">“And so the lion fell in love with the lamb…”</p>
   </header>
 
   <nav>
-    <a href="index.html">Home</a>
-    <a href="twilightsaga/movies.html">Movies</a>
-    <a href="twilightsaga/books.html">Books</a>
-    <a href="twilightsaga/audiobooks.html">Audiobooks</a>
-    <a href="twilightsaga/graphic-novels.html">Graphic Novels</a>
-    <a href="twilightsaga/books-about-twilight.html">Books About Twilight</a>
-    <a href="twilightsaga/movie-scripts.html">Scripts</a>
-    <a href="contact.html">Contact</a>
+    <ul>
+      <li><a href="#movies">Movies</a></li>
+      <li><a href="#books">Books</a></li>
+      <li><a href="#audiobooks">Audiobooks</a></li>
+      <li><a href="#graphic-novels">Graphic Novels</a></li>
+      <li><a href="#about">About Twilight</a></li>
+      <li><a href="#scripts">Scripts</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
   </nav>
 
   <main>
-    <section class="card">
-      <a href="twilightsaga/movies.html">
+    <a href="twilightsaga/movies.html" class="card-link">
+      <section id="movies" class="card">
         <img src="https://th.bing.com/th/id/R.bd649a6fc814ff8520d46bae0ddd9fe9?rik=nU2lfqn75agh8g&pid=ImgRaw&r=0" alt="Twilight Poster" />
         <div class="card-content">
           <h3>Movies</h3>
           <p>Watch every moment of this legendary saga—from first glance to final goodbye.</p>
         </div>
-      </a>
-    </section>
+      </section>
+    </a>
 
-    <section class="card">
-      <a href="twilightsaga/books.html">
+    <a href="twilightsaga/books.html" class="card-link">
+      <section id="books" class="card">
         <img src="https://th.bing.com/th/id/OIP.kqbQmIawQA0yBu9n1aOZygHaHa?rs=1&pid=ImgDetMain" alt="New Moon Poster" />
         <div class="card-content">
           <h3>Books</h3>
           <p>Read the novels that sparked a global phenomenon.</p>
         </div>
-      </a>
-    </section>
+      </section>
+    </a>
 
-    <section class="card">
-      <a href="twilightsaga/audiobooks.html">
+    <a href="twilightsaga/audiobooks.html" class="card-link">
+      <section id="audiobooks" class="card">
         <img src="https://m.media-amazon.com/images/I/71tuF0niifL._AC_SY550_.jpg" alt="Eclipse Poster" />
         <div class="card-content">
           <h3>Audiobooks</h3>
           <p>Immerse yourself in the Twilight world with haunting narration.</p>
         </div>
-      </a>
-    </section>
+      </section>
+    </a>
 
-    <section class="card">
-      <a href="twilightsaga/graphic-novels.html">
+    <a href="twilightsaga/graphic-novels.html" class="card-link">
+      <section id="graphic-novels" class="card">
         <img src="https://www.my-sf.com/wp-content/uploads/2013/08/Twilight_Graphic_Novel_vol1-2.jpg" alt="Graphic Novels" />
         <div class="card-content">
           <h3>Graphic Novels</h3>
           <p>Explore Twilight’s most iconic moments—visually reimagined.</p>
         </div>
-      </a>
-    </section>
+      </section>
+    </a>
 
-    <section class="card">
-      <a href="twilightsaga/books-about-twilight.html">
+    <a href="twilightsaga/books-about-twilight.html" class="card-link">
+      <section id="about" class="card">
         <img src="https://th.bing.com/th/id/OIP.FXKOfVMKfEPD82O6g0CmugHaKe?rs=1&pid=ImgDetMain" alt="Books About Twilight" />
         <div class="card-content">
-          <h3>Books About Twilight</h3>
-          <p>Discover the impact and legacy of Twilight in pop culture.</p>
+          <h3>About Twilight</h3>
+          <p>Discover the impact and legacy of Twilight in pop culture and beyond.</p>
         </div>
-      </a>
-    </section>
+      </section>
+    </a>
 
-    <section class="card">
-      <a href="twilightsaga/movie-scripts.html">
+    <a href="twilightsaga/movie-scripts.html" class="card-link">
+      <section id="scripts" class="card">
         <img src="https://th.bing.com/th/id/R.65ef712ee16a4fe3a7e4c5c428ea89bb?rik=YYvdE5jjk6wTvw&pid=ImgRaw&r=0" alt="Scripts" />
         <div class="card-content">
-          <h3>Movie Scripts</h3>
-          <p>Read every line of the saga straight from the page.</p>
+          <h3>Scripts</h3>
+          <p>Read the lines that brought the saga to life on screen.</p>
         </div>
-      </a>
-    </section>
+      </section>
+    </a>
   </main>
 
-  <footer>
+  <footer id="contact">
     <div class="social-icons">
       <a href="#">Facebook</a>
       <a href="https://x.com/@TwilightNetflix">Twitter</a>
@@ -94,5 +97,7 @@
     </div>
     <p>&copy; 2025 Twilight Saga Fan Site. All rights reserved.</p>
   </footer>
+
+  <script src="js/twilightsaga.js"></script>
 </body>
 </html>
