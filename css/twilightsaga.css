@@ -9,13 +9,13 @@ body {
 header {
   background: rgba(0, 0, 0, 0.85);
   text-align: center;
-  padding: 2em 1em;
+  padding: 1.2em 0.5em;
   color: #d3b0f5;
 }
 
 header h1 {
-  font-size: 2rem;
-  margin-bottom: 0.3em;
+  font-size: 1.7rem;
+  margin-bottom: 0.2em;
 }
 
 header p {
@@ -51,8 +51,8 @@ main {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1.2em;
-  padding: 1.2em;
+  gap: 1em;
+  padding: 1em 0.5em;
 }
 
 .card {
@@ -60,7 +60,8 @@ main {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 8px 24px rgba(0,0,0,0.6);
-  width: 220px;
+  width: 180px;
+  min-width: 0;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
@@ -71,19 +72,20 @@ main {
 
 .card img {
   width: 100%;
-  height: 260px;
-  object-fit: cover;
+  height: auto;
+  max-height: 220px;
+  object-fit: contain;
   filter: brightness(0.9);
 }
 
 .card-content {
-  padding: 0.7em;
+  padding: 0.6em;
 }
 
 .card h3 {
   color: #e0c3fc;
   margin: 0.4em 0;
-  font-size: 1rem;
+  font-size: 0.98rem;
 }
 
 .card p {
@@ -103,4 +105,29 @@ footer {
   color: #e0c3fc;
   margin: 0 0.5em;
   text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  main {
+    gap: 0.7em;
+    padding: 0.5em 0.2em;
+  }
+  .card {
+    width: 98vw;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  .card img {
+    width: 100%;
+    height: auto;
+    max-height: 220px;
+    object-fit: contain;
+    display: block;
+  }
+  header h1 {
+    font-size: 1.2rem;
+  }
+  header p {
+    font-size: 0.9rem;
+  }
 }
