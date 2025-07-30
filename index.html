@@ -39,5 +39,38 @@
             <a href="https://www.instagram.com/twilightrebootofficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
         </div>
     </footer>
+    <section id="contact">
+  <h2>Contact Us</h2>
+  <form id="contactForm">
+    <input name="name" placeholder="Your Name" required /><br>
+    <input name="email" type="email" placeholder="Your Email" required /><br>
+    <textarea name="message" placeholder="Your Message" required></textarea><br>
+    <button type="submit">Send</button>
+  </form>
+  <p id="responseMsg"></p>
+</section>
+
+<script>
+  document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = {
+      name: form.name.value,
+      email: form.email.value,
+      message: form.message.value
+    };
+
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData)
+    });
+
+    const data = await res.json();
+    document.getElementById('responseMsg').innerText = data.msg || 'Sent!';
+  });
+</script>
+
 </body>
 </html>
