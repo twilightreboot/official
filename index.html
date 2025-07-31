@@ -6,17 +6,20 @@
     <title>Twilight Reboot Official</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 </head>
 <body>
     <header>
         <h1>Twilight Reboot Official</h1>
         <p>Your ultimate source for all things Robert Pattinson, Kristen Stewart, and the Twilight Saga!</p>
     </header>
+
     <nav>
         <a href="#robert">Robert Pattinson</a>
         <a href="#kristen">Kristen Stewart</a>
         <a href="#twilight">Twilight Saga</a>
     </nav>
+
     <main class="main-section">
         <div class="card">
             <img src="images/icon/robpatticon.jpg" alt="Robert Pattinson">
@@ -31,6 +34,37 @@
             <a href="twilightsaga.html">Twilight Saga</a>
         </div>
     </main>
+
+    <section id="auth">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label>Email: <input type="email" name="email" required></label><br>
+            <label>Password: <input type="password" name="password" required></label><br>
+            <button type="submit">Login</button>
+        </form>
+        <p id="loginMsg"></p>
+        <button id="logoutBtn" style="display:none;">Logout</button>
+
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+            <label>Email: <input type="email" name="email" placeholder="Email" required></label><br>
+            <label>Password: <input type="password" name="password" placeholder="Password" required></label><br>
+            <button type="submit">Sign Up</button>
+        </form>
+        <p id="signupMsg"></p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <label>Name: <input name="name" placeholder="Your Name" required /></label><br>
+            <label>Email: <input name="email" type="email" placeholder="Your Email" required /></label><br>
+            <label>Message: <textarea name="message" placeholder="Your Message" required></textarea></label><br>
+            <button type="submit">Send</button>
+        </form>
+        <p id="responseMsg"></p>
+    </section>
+
     <footer>
         <p>&copy; 2024 Twilight Reboot Official | All Rights Reserved</p>
         <div class="social-icons">
@@ -39,38 +73,67 @@
             <a href="https://www.instagram.com/twilightrebootofficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
         </div>
     </footer>
-    <section id="contact">
-  <h2>Contact Us</h2>
-  <form id="contactForm">
-    <input name="name" placeholder="Your Name" required /><br>
-    <input name="email" type="email" placeholder="Your Email" required /><br>
-    <textarea name="message" placeholder="Your Message" required></textarea><br>
-    <button type="submit">Send</button>
-  </form>
-  <p id="responseMsg"></p>
-</section>
 
-<script>
-  document.getElementById('contactForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
+    <script>
+        const SUPABASE_URL = 'https://jyxkkhmsvpvqwvuhdfgp.supabase.co';
+        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp5eGtraG1zdnB2cXd2dWhkZmdwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM5NTY0MTMsImV4cCI6MjA2OTUzMjQxM30.0HyTL_d6_0HnllIIB6MlAJ58E3_mTH2YC_VlnlIlvzQ';
+        const supabase = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-    const form = e.target;
-    const formData = {
-      name: form.name.value,
-      email: form.email.value,
-      message: form.message.value
-    };
+        document.getElementById('contactForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const form = e.target;
+            const formData = {
+                name: form.name.value,
+                email: form.email.value,
+                message: form.message.value
+            };
 
-    const res = await fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(formData)
-    });
+            const { error } = await supabase.from('contact_messages').insert([formData]);
+            document.getElementById('responseMsg').innerText = error ? error.message : 'Sent!';
+            if (!error) form.reset();
+        });
 
-    const data = await res.json();
-    document.getElementById('responseMsg').innerText = data.msg || 'Sent!';
-  });
-</script>
+        function updateAuthUI(user) {
+            document.getElementById('loginForm').style.display = user ? 'none' : '';
+            document.getElementById('logoutBtn').style.display = user ? '' : 'none';
+            document.getElementById('signupForm').style.display = user ? 'none' : '';
+        }
 
+        supabase.auth.getUser().then(({ data }) => updateAuthUI(data.user));
+        supabase.auth.onAuthStateChange((_event, session) => updateAuthUI(session && session.user));
+
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const email = e.target.email.value;
+            const password = e.target.password.value;
+
+            const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+            document.getElementById('loginMsg').innerText = error ? error.message : 'Logged in!';
+            if (!error) updateAuthUI(data.user);
+        });
+
+        document.getElementById('logoutBtn').addEventListener('click', async function() {
+            await supabase.auth.signOut();
+            alert('Logged out');
+            updateAuthUI(null);
+        });
+
+        document.getElementById('signupForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const email = e.target.email.value;
+            const password = e.target.password.value;
+
+            const { data, error } = await supabase.auth.signUp({ email, password });
+            document.getElementById('signupMsg').innerText = error ? error.message : 'Signup successful! Check your email.';
+
+            if (!error) {
+                fetch('/api/signup-notify', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email })
+                });
+            }
+        });
+    </script>
 </body>
 </html>
