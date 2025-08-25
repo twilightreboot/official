@@ -198,14 +198,20 @@
     </section>
 </main>
 
-<footer>
-    <p>&copy; 2025 Twilight Saga Fan Site. All rights reserved.</p>
-</footer>
+<footer class="footer">
+        <div class="social-icons">
+            <a href="#">Facebook</a>
+            <a href="https://x.com/@TwilightNetflix">Twitter</a>
+            <a href="https://www.instagram.com/twilightrebootofficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a>
+        </div>
+        <p>&copy; 2025 Twilight Saga Fan Site. All rights reserved.</p>
+    </footer>
 
 <!-- Modal -->
 <div class="modal" id="emailModal">
     <div class="modal-content">
         <h3>Enter your Email</h3>
+        <!-- TEMPLATE: EMAIL FORM ACTION -->
         <form id="emailForm" action="https://formspree.io/f/xyzdgpoy" method="POST">
             <input type="email" name="email" placeholder="Your Email" required>
             <input type="hidden" name="movie" id="selectedMovie">
@@ -215,6 +221,7 @@
 </div>
 
 <script>
+    // TEMPLATE: SCRIPT REGION START
     const modal = document.getElementById('emailModal');
     const emailForm = document.getElementById('emailForm');
     const selectedMovie = document.getElementById('selectedMovie');
@@ -236,6 +243,7 @@
         }).then(response => {
             if (response.ok) {
                 modal.style.display = 'none';
+                // TEMPLATE: PAYME ID
                 window.location.href = 'https://paypal.me/iamsaaddar/2';
             } else {
                 alert('Something went wrong. Try again!');
@@ -247,6 +255,7 @@
     window.addEventListener('click', (e) => {
         if (e.target === modal) modal.style.display = 'none';
     });
+    // TEMPLATE: SCRIPT REGION END
 </script>
 </body>
 </html>

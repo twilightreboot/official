@@ -1,102 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Twilight Saga Movie Scripts</title>
-    <link rel="stylesheet" href="../css/twilightsaga.css">
-    <style>
-        .scripts-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            background-color: #000;
-            padding: 20px;
-            border: 2px solid #ddd;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
-            max-width: 900px;
-            margin: auto;
-        }
-        .card {
-            padding: 10px;
-            margin: 10px;
-            width: 100%;
-            max-width: 220px;
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-            transform-style: preserve-3d;
-            perspective: 1000px;
-        }
-        .card:hover {
-            transform: rotateY(15deg);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-        .card img {
-            max-width: 100%;
-            height: auto;
-            border: 2px solid #ddd;
-            border-radius: 5px;
-        }
-        .header {
-            text-align: center;
-            margin-bottom: 20px;
-            font-family: 'Times New Roman', Times, serif;
-            background-color: #000000;
-        }
-        .footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #0000009c;
-            border-top: 2px solid #ddd;
-            margin-top: 20px;
-            font-family: 'Times New Roman', Times, serif;
-        }
-        .social-icons a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #333;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Twilight Saga Movie Scripts</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+
+    .scripts-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      background-color: #000;
+      padding: 20px;
+      border: 2px solid #ddd;
+      border-radius: 10px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .card {
+      padding: 15px;
+      width: 100%;
+      max-width: 220px;
+      text-align: center;
+      background-color: #1a1a1a;
+      border-radius: 8px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+    }
+
+    .card img {
+      max-width: 100%;
+      height: auto;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .card h3, .card p {
+      color: #fff;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 20px;
+      font-family: 'Times New Roman', Times, serif;
+      background-color: #000000;
+      padding: 20px;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #0000009c;
+      border-top: 2px solid #ddd;
+      margin-top: 20px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+
+    .social-icons a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #fff;
+    }
+
+    .read-button {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #e0c3fc;
+      color: #000;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: bold;
+      transition: background-color 0.3s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .read-button:hover {
+      background-color: #d3b0f5;
+    }
+
+    /* Modal Styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      justify-content: center;
+      align-items: center;
+      transition: opacity 0.3s ease;
+    }
+
+    .modal-content {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      width: 90%;
+      text-align: center;
+      color: #000;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .modal-content input[type="email"] {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1rem;
+    }
+
+    .modal-content button {
+      padding: 10px 20px;
+      background: #e0c3fc;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    .modal-content button:hover {
+      background: #d3b0f5;
+    }
+
+    .close {
+      float: right;
+      font-size: 22px;
+      cursor: pointer;
+      color: #333;
+    }
+
+    @media (max-width: 600px) {
+      .scripts-container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
 </head>
 <body>
-    <header class="header">
-        <h1>Twilight Saga Movie Scripts</h1>
-        <p>🎬✨ Read the scripts of the Twilight Saga! Dive into the dialogue and scenes that brought the story to life.</p>
-    </header>
-    <main class="scripts-container">
-        <section id="twilight-script" class="card">
-            <a href="https://drive.google.com/file/d/1xf-QK2eW4lyZvEh9UrR2zUcwsSJFNpv5/view?usp=drive_link" target="_blank">
-                <img src="https://i.ebayimg.com/images/g/L3oAAOSw6eNkZY7i/s-l1200.png" alt="Twilight Script Cover">
-                <h3>Twilight (2008) Script</h3>
-                <p>The original screenplay that started it all. Relive Bella and Edward's first meeting and the beginning of their epic story.</p>
-            </a>
-        </section>
-        <section id="newmoon-script" class="card">
-            <a href="https://drive.google.com/file/d/1N4MXY8-vz9cq-Fz4D3HpSU7-YeNCit8s/view?usp=drive_link" target="_blank">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ0sGOeuyJlFCYh1qwSno6JvCnLE2eCvfPeQ&s" alt="New Moon Script Cover">
-                <h3>New Moon (2009) Script</h3>
-                <p>Experience the heartbreak and transformation as Bella faces a world without Edward and discovers new dangers.</p>
-            </a>
-        </section>
-        <section id="eclipse-script" class="card">
-            <a href="https://drive.google.com/file/d/1dBiQPDinRN5l4nRmmiTVP65Df3RlWm7u/view?usp=drive_link" target="_blank">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW3gh7w959ePW5J_oUcyDGNkKvmj6ErxPo5A&s" alt="Eclipse Script Cover">
-                <h3>Eclipse (2010) Script</h3>
-                <p>The thrilling third installment. Read the script as Bella is caught between love, loyalty, and a looming threat.</p>
-            </a>
-        </section>
-    </main>
-    <footer class="footer">
-        <div class="social-icons">
-            <a href="#">Facebook</a>
-            <a href="https://x.com/@TwilightNetflix">Twitter</a>
-            <a href="https://www.instagram.com/twilightrebootofficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a>
-        </div>
-        <p>&copy; 2025 Twilight Saga Fan Site. All rights reserved.</p>
-    </footer>
-    <script src="../js/twilightsaga.js"></script>
+  <header class="header">
+    <h1>Twilight Saga Movie Scripts</h1>
+    <p>🎬✨ Access Twilight Saga Scripts for just $2 each! Enter your email and unlock after payment.</p>
+  </header>
+
+  <main class="scripts-container">
+    <section class="card">
+      <img src="https://i.ebayimg.com/images/g/L3oAAOSw6eNkZY7i/s-l1200.png" alt="Twilight Script Cover">
+      <h3>Twilight (2008) Script</h3>
+      <p>The original screenplay that started it all.</p>
+      <button class="pay-btn read-button" data-novel="Twilight (2008) Script">Pay & Unlock</button>
+    </section>
+
+    <section class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZ0sGOeuyJlFCYh1qwSno6JvCnLE2eCvfPeQ&s" alt="New Moon Script Cover">
+      <h3>New Moon (2009) Script</h3>
+      <p>The heartbreak and transformation in Bella's journey.</p>
+      <button class="pay-btn read-button" data-novel="New Moon (2009) Script">Pay & Unlock</button>
+    </section>
+
+    <section class="card">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW3gh7w959ePW5J_oUcyDGNkKvmj6ErxPo5A&s" alt="Eclipse Script Cover">
+      <h3>Eclipse (2010) Script</h3>
+      <p>Read the script as Bella is caught between love and loyalty.</p>
+      <button class="pay-btn read-button" data-novel="Eclipse (2010) Script">Pay & Unlock</button>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="social-icons">
+      <a href="#">Facebook</a>
+      <a href="https://x.com/@TwilightNetflix">Twitter</a>
+      <a href="https://www.instagram.com/twilightrebootofficial">Instagram</a>
+    </div>
+    <p>&copy; 2025 Twilight Saga Fan Site. All rights reserved.</p>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal" id="emailModal">
+    <div class="modal-content">
+      <span class="close" id="closeModal">&times;</span>
+      <h3>Enter your Email</h3>
+      <form id="emailForm" action="https://formspree.io/f/xyzdgpoy" method="POST">
+        <input type="email" name="email" placeholder="Your Email" required>
+        <input type="hidden" name="novel" id="selectedNovel">
+        <button type="submit">Submit & Pay</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById('emailModal');
+    const emailForm = document.getElementById('emailForm');
+    const selectedNovel = document.getElementById('selectedNovel');
+    const closeModal = document.getElementById('closeModal');
+
+    document.querySelectorAll('.pay-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        selectedNovel.value = btn.dataset.novel;
+        modal.style.display = 'flex';
+      });
+    });
+
+    emailForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const formData = new FormData(emailForm);
+      fetch(emailForm.action, {
+        method: emailForm.method,
+        body: formData,
+        headers: { 'Accept': 'application/json' }
+      }).then(response => {
+        if (response.ok) {
+          modal.style.display = 'none';
+          window.location.href = 'https://paypal.me/iamsaaddar/2';
+        } else {
+          alert('Something went wrong. Try again!');
+        }
+      });
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) modal.style.display = 'none';
+    });
+
+    closeModal.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+  </script>
 </body>
 </html>
+    `
