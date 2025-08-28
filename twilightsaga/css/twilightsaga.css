@@ -1,129 +1,134 @@
-/* General styles */
+/* Global styles */
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #121212;
-    color: white;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #0d0d0d;
+  color: #fff;
+  margin: 0;
+  padding: 0;
 }
 
-a {
-    color: #1abc9c;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-a:hover {
-    color: #16a085;
-}
-
-/* Header styles */
+/* Header */
 header {
-    background: linear-gradient(90deg, #2d1e2f 0%, #4e4376 100%);
-    padding: 2.5em 0 1.5em 0;
-    text-align: center;
-    color: #f8e9ff;
-    box-shadow: 0 4px 24px rgba(78, 67, 118, 0.25);
-    border-bottom-left-radius: 40px;
-    border-bottom-right-radius: 40px;
-    position: relative;
-    margin-bottom: 2em;
-    overflow: hidden;
-}
-
-header::before {
-    content: '';
-    position: absolute;
-    left: 0; right: 0; top: 0; bottom: 0;
-    background: radial-gradient(circle at 60% 40%, #a4508b33 0%, transparent 70%);
-    z-index: 0;
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #ff512f, #dd2476, #1e3c72);
+  background-size: 300% 300%;
+  animation: gradientShift 8s ease infinite;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+  border-bottom: 2px solid #222;
 }
 
 header h1 {
-    margin: 0 0 0.5em 0;
-    font-size: 3em;
-    font-family: 'Georgia', 'Times New Roman', serif;
-    letter-spacing: 2px;
-    font-weight: 700;
-    color: #fff6fa;
-    text-shadow: 0 2px 12px #a4508b55;
-    position: relative;
-    z-index: 1;
+  margin: 0;
+  font-size: 1.6rem; /* smaller for mobile */
+  line-height: 1.2;
 }
 
 header p {
-    margin: 0;
-    font-size: 1.3em;
-    color: #e0c3fc;
-    font-family: 'Inter', Arial, sans-serif;
-    font-weight: 400;
-    letter-spacing: 1px;
-    position: relative;
-    z-index: 1;
+  margin-top: 6px;
+  font-size: 0.9rem;
+  opacity: 0.85;
 }
 
-@media (max-width: 700px) {
-    header {
-        padding: 1.5em 0 1em 0;
-        border-bottom-left-radius: 20px;
-        border-bottom-right-radius: 20px;
-    }
-    header h1 {
-        font-size: 2em;
-    }
-    header p {
-        font-size: 1em;
-    }
+/* Gradient animation */
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* Navigation styles */
-nav {
-    background-color: #34495e;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 1em 0;
+/* Cards container */
+.movies-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  padding: 15px;
 }
 
-nav a {
-    padding: 0.5em 1em;
-    text-transform: uppercase;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-nav a:hover {
-    background-color: #1abc9c;
-    color: black;
-}
-
-/* Main content styles */
-main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 2em;
-}
-
+/* Movie cards */
 .card {
-    background-color: #1e1e1e;
-    border: 1px solid #333;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin: 1em;
-    padding: 1em;
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-    flex: 1 1 300px; /* Ensures each card takes equal space */
-    max-width: 300px;
-    box-sizing: border-box;
+  background: #1a1a1a;
+  border-radius: 14px;
+  padding: 12px;
+  width: 100%; /* default full width on mobile */
+  max-width: 280px;
+  text-align: center;
+  transition: 0.2s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.5);
 }
 
 .card img {
-    max-width: 100%;
-    border-radius: 10px 10px 0 0;
+  width: 100%;
+  border-radius: 10px;
 }
 
 .card h3 {
-    margin: 0.5em 0;
+  margin: 10px 0 6px;
+  font-size: 1rem;
+}
+
+.card p {
+  font-size: 0.8rem;
+  color: #bbb;
+  margin-bottom: 8px;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 7px 10px; /* slightly bigger touch target */
+  width: auto;
+  min-width: 110px;
+  margin: 3px 0;
+  border: none;
+  border-radius: 18px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.watch-btn {
+  background: #28a745;
+  color: #fff;
+}
+
+.watch-btn:hover {
+  background: #1e7e34;
+}
+
+.donate-btn {
+  background: #ffb400;
+  color: #000;
+}
+
+.donate-btn:hover {
+  background: #e6a200;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 12px;
+  font-size: 0.75rem;
+  color: #999;
+  border-top: 1px solid #222;
+  margin-top: 20px;
+}
+
+/* Responsive adjustments */
+@media (min-width: 600px) {
+  .card {
+    width: 45%; /* 2 cards side by side on tablets/small laptops */
+  }
+}
+
+@media (min-width: 900px) {
+  .card {
+    width: 30%; /* 3 per row on bigger screens */
+  }
 }
