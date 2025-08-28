@@ -1,263 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Twilight Saga Movies</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Arial, sans-serif;
-            background: #0d0d0d;
-            color: #fff;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            text-align: center;
-            padding: 20px;
-            background: linear-gradient(90deg, #222, #111);
-        }
-        header h1 {
-            margin: 0;
-            font-size: 1.8rem;
-        }
-        header p {
-            margin-top: 8px;
-            font-size: 1rem;
-            color: #ccc;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Twilight Saga Movies</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #0d0d0d;
+      color: #fff;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      background: linear-gradient(90deg, #222, #111);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.8rem;
+    }
+    header p {
+      margin-top: 8px;
+      font-size: 1rem;
+      color: #ccc;
+    }
 
-        .movies-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 18px;
-            padding: 20px;
-            max-width: 1200px;
-            margin: auto;
-        }
+    .movies-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 18px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-        .card {
-            background: #1a1a1a;
-            border-radius: 12px;
-            padding: 15px;
-            width: 220px;
-            flex: 1 1 200px;
-            text-align: center;
-            transition: 0.3s ease;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
-        }
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 4px 15px rgba(0,0,0,0.7);
-        }
-        .card img {
-            width: 100%;
-            border-radius: 10px;
-        }
-        .card h3 {
-            margin: 10px 0 6px;
-            font-size: 1rem;
-            color: #f1f1f1;
-        }
-        .card p {
-            font-size: 0.85rem;
-            color: #bbb;
-            margin-bottom: 10px;
-        }
-        .pay-btn {
-            display: inline-block;
-            padding: 10px;
-            width: 100%;
-            background: #0070ba;
-            color: #fff;
-            border: none;
-            border-radius: 6px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: background 0.2s ease;
-        }
-        .pay-btn:hover {
-            background: #005c99;
-        }
+    .card {
+      background: #1a1a1a;
+      border-radius: 12px;
+      padding: 15px;
+      width: 220px;
+      flex: 1 1 200px;
+      text-align: center;
+      transition: 0.3s ease;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.7);
+    }
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .card h3 {
+      margin: 10px 0 6px;
+      font-size: 1rem;
+      color: #f1f1f1;
+    }
+    .card p {
+      font-size: 0.85rem;
+      color: #bbb;
+      margin-bottom: 10px;
+    }
 
-        footer {
-            text-align: center;
-            padding: 15px;
-            font-size: 0.8rem;
-            color: #999;
-            border-top: 1px solid #222;
-            margin-top: 30px;
-        }
+    .btn {
+      display: inline-block;
+      padding: 10px;
+      width: 100%;
+      margin: 5px 0;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: background 0.2s ease;
+      text-decoration: none;
+    }
+    .donate-btn {
+      background: #0070ba;
+      color: #fff;
+    }
+    .donate-btn:hover {
+      background: #005c99;
+    }
+    .watch-btn {
+      background: #28a745;
+      color: #fff;
+    }
+    .watch-btn:hover {
+      background: #1e7e34;
+    }
 
-        /* Modal */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0; left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(0,0,0,0.8);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-        .modal-content {
-            background: #fff;
-            color: #000;
-            padding: 20px;
-            border-radius: 10px;
-            width: 90%;
-            max-width: 360px;
-            text-align: center;
-            animation: fadeIn 0.3s ease;
-        }
-        .modal-content h3 {
-            margin-bottom: 15px;
-            font-size: 1.2rem;
-        }
-        .modal input {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            font-size: 1rem;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-        }
-        .modal button {
-            width: 100%;
-            padding: 12px;
-            background: #0070ba;
-            color: #fff;
-            border: none;
-            border-radius: 6px;
-            font-size: 1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.2s;
-        }
-        .modal button:hover {
-            background: #005c99;
-        }
+    footer {
+      text-align: center;
+      padding: 15px;
+      font-size: 0.8rem;
+      color: #999;
+      border-top: 1px solid #222;
+      margin-top: 30px;
+    }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: scale(0.95); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .card {
-                width: 45%;
-            }
-        }
-        @media (max-width: 500px) {
-            .card {
-                width: 95%;
-            }
-        }
-    </style>
+    @media (max-width: 768px) {
+      .card { width: 45%; }
+    }
+    @media (max-width: 500px) {
+      .card { width: 95%; }
+    }
+  </style>
 </head>
 <body>
 <header>
-    <h1>Twilight Saga Movies</h1>
-    <p>✨ Unlock your favorite Twilight movie for just $2! Delivered to your email after payment.</p>
+  <h1>Twilight Saga Movies</h1>
+  <p>✨ Watch your favorite Twilight movie & support us with a donation!</p>
 </header>
 
 <main class="movies-container">
-    <section class="card">
-        <img src="https://play-lh.googleusercontent.com/DROhBLPk4hGPKkw7cFm5pNX164vVkxVbX8NFyFu0GwGGpfn-OUYbpCQ-PXV9l31NzeAU9g" alt="Twilight Poster">
-        <h3>Twilight (2008)</h3>
-        <p>The beginning of the epic saga!</p>
-        <button class="pay-btn" data-movie="Twilight (2008)">Pay & Unlock</button>
-    </section>
-    <section class="card">
-        <img src="https://play-lh.googleusercontent.com/v8egQot7THvZDXzSN5srP8k22FqDmbOpmEgTDs04SIzHFdr4uooq_WzJU-HHovEM2kc1fg" alt="New Moon Poster">
-        <h3>New Moon (2009)</h3>
-        <p>Bella faces heartbreak and new dangers.</p>
-        <button class="pay-btn" data-movie="New Moon (2009)">Pay & Unlock</button>
-    </section>
-    <section class="card">
-        <img src="https://play-lh.googleusercontent.com/raxN-IjZEiNvL7zyocJX9AhnVyZTp9Txm0xPjJF7DjDYPYfzV1lQ3suQNNzmwyPtpCE" alt="Eclipse Poster">
-        <h3>Eclipse (2010)</h3>
-        <p>Bella chooses between Edward and Jacob amid danger.</p>
-        <button class="pay-btn" data-movie="Eclipse (2010)">Pay & Unlock</button>
-    </section>
-    <section class="card">
-        <img src="https://play-lh.googleusercontent.com/Nfr4OxJ8M_7phvH3P0R4rebZNtZx4i8P84qfUCxTeIhg2ynlY8urGDdp0mfmDDHJeE4" alt="Breaking Dawn Part 1 Poster">
-        <h3>Breaking Dawn – Part 1 (2011)</h3>
-        <p>Bella and Edward's marriage faces a life-threatening twist.</p>
-        <button class="pay-btn" data-movie="Breaking Dawn – Part 1 (2011)">Pay & Unlock</button>
-    </section>
-    <section class="card">
-        <img src="https://play-lh.googleusercontent.com/wVjZzmZ9-NVYX8RyDH6iX6qvaQUONgbmccQ17AzzSHuvAFR6KN5WQZBhgWVVp19k6Apwug=w240-h480-rw" alt="Breaking Dawn Part 2 Poster">
-        <h3>Breaking Dawn – Part 2 (2012)</h3>
-        <p>The epic conclusion where Bella and Edward fight for their family.</p>
-        <button class="pay-btn" data-movie="Breaking Dawn – Part 2 (2012)">Pay & Unlock</button>
-    </section>
+  <section class="card">
+    <img src="https://play-lh.googleusercontent.com/DROhBLPk4hGPKkw7cFm5pNX164vVkxVbX8NFyFu0GwGGpfn-OUYbpCQ-PXV9l31NzeAU9g" alt="Twilight Poster">
+    <h3>Twilight (2008)</h3>
+    <p>The beginning of the epic saga!</p>
+    <a class="btn watch-btn" href="https://twilightrebootofficial.vercel.app/rpattz/movieshtml/twilight.html">Watch Movie</a>
+    <a class="btn donate-btn" href="https://paypal.me/iamsaaddar/2" target="_blank">Donate & Support</a>
+  </section>
+
+  <section class="card">
+    <img src="https://play-lh.googleusercontent.com/v8egQot7THvZDXzSN5srP8k22FqDmbOpmEgTDs04SIzHFdr4uooq_WzJU-HHovEM2kc1fg" alt="New Moon Poster">
+    <h3>New Moon (2009)</h3>
+    <p>Bella faces heartbreak and new dangers.</p>
+    <a class="btn watch-btn" href="https://twilightrebootofficial.vercel.app/rpattz/movieshtml/newmoon.html">Watch Movie</a>
+    <a class="btn donate-btn" href="https://paypal.me/iamsaaddar/2" target="_blank">Donate & Support</a>
+  </section>
+
+  <section class="card">
+    <img src="https://play-lh.googleusercontent.com/raxN-IjZEiNvL7zyocJX9AhnVyZTp9Txm0xPjJF7DjDYPYfzV1lQ3suQNNzmwyPtpCE" alt="Eclipse Poster">
+    <h3>Eclipse (2010)</h3>
+    <p>Bella chooses between Edward and Jacob amid danger.</p>
+    <a class="btn watch-btn" href="https://twilightrebootofficial.vercel.app/rpattz/movieshtml/eclipse.html">Watch Movie</a>
+    <a class="btn donate-btn" href="https://paypal.me/iamsaaddar/2" target="_blank">Donate & Support</a>
+  </section>
+
+  <section class="card">
+    <img src="https://play-lh.googleusercontent.com/Nfr4OxJ8M_7phvH3P0R4rebZNtZx4i8P84qfUCxTeIhg2ynlY8urGDdp0mfmDDHJeE4" alt="Breaking Dawn Part 1 Poster">
+    <h3>Breaking Dawn – Part 1 (2011)</h3>
+    <p>Bella and Edward's marriage faces a life-threatening twist.</p>
+    <a class="btn watch-btn" href="https://twilightrebootofficial.vercel.app/rpattz/movieshtml/breakingdawn1.html">Watch Movie</a>
+    <a class="btn donate-btn" href="https://paypal.me/iamsaaddar/2" target="_blank">Donate & Support</a>
+  </section>
+
+  <section class="card">
+    <img src="https://play-lh.googleusercontent.com/wVjZzmZ9-NVYX8RyDH6iX6qvaQUONgbmccQ17AzzSHuvAFR6KN5WQZBhgWVVp19k6Apwug=w240-h480-rw" alt="Breaking Dawn Part 2 Poster">
+    <h3>Breaking Dawn – Part 2 (2012)</h3>
+    <p>The epic conclusion where Bella and Edward fight for their family.</p>
+    <a class="btn watch-btn" href="https://twilightrebootofficial.vercel.app/rpattz/movieshtml/breakingdawn2.html">Watch Movie</a>
+    <a class="btn donate-btn" href="https://paypal.me/iamsaaddar/2" target="_blank">Donate & Support</a>
+  </section>
 </main>
 
 <footer class="footer">
-        <div class="social-icons">
-            <a href="#">Facebook</a>
-            <a href="https://x.com/@TwilightNetflix">Twitter</a>
-            <a href="https://www.instagram.com/twilightrebootofficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==">Instagram</a>
-        </div>
-        <p>&copy; 2025 Twilight Saga Fan Site. All rights reserved.</p>
-    </footer>
+  <div class="social-icons">
+    <a href="#">Facebook</a>
+    <a href="https://x.com/@TwilightNetflix">Twitter</a>
+    <a href="https://www.instagram.com/twilightrebootofficial">Instagram</a>
+  </div>
+  <p>&copy; 2025 Twilight Saga Fan Site. All rights reserved.</p>
+</footer>
 
-<!-- Modal -->
-<div class="modal" id="emailModal">
-    <div class="modal-content">
-        <h3>Enter your Email</h3>
-        <!-- TEMPLATE: EMAIL FORM ACTION -->
-        <form id="emailForm" action="https://formspree.io/f/xyzdgpoy" method="POST">
-            <input type="email" name="email" placeholder="Your Email" required>
-            <input type="hidden" name="movie" id="selectedMovie">
-            <button type="submit">Submit & Pay</button>
-        </form>
-    </div>
-</div>
-
-<script>
-    // TEMPLATE: SCRIPT REGION START
-    const modal = document.getElementById('emailModal');
-    const emailForm = document.getElementById('emailForm');
-    const selectedMovie = document.getElementById('selectedMovie');
-
-    document.querySelectorAll('.pay-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            selectedMovie.value = btn.dataset.movie;
-            modal.style.display = 'flex';
-        });
-    });
-
-    emailForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const formData = new FormData(emailForm);
-        fetch(emailForm.action, {
-            method: emailForm.method,
-            body: formData,
-            headers: { 'Accept': 'application/json' }
-        }).then(response => {
-            if (response.ok) {
-                modal.style.display = 'none';
-                // TEMPLATE: PAYME ID
-                window.location.href = 'https://paypal.me/iamsaaddar/2';
-            } else {
-                alert('Something went wrong. Try again!');
-            }
-        });
-    });
-
-    // Close modal if clicked outside
-    window.addEventListener('click', (e) => {
-        if (e.target === modal) modal.style.display = 'none';
-    });
-    // TEMPLATE: SCRIPT REGION END
-</script>
 <script defer src="/_vercel/insights/script.js"></script>
-
 </body>
 </html>
