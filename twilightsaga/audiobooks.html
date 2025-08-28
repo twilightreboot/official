@@ -1,261 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Twilight Saga Audiobooks</title>
-  <style>
-    /* Global page style */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #2c3e50, #4ca1af);
-      color: #fff;
-    }
-
-    /* Header */
-    .header {
-      text-align: center;
-      padding: 30px 20px;
-      background: rgba(0, 0, 0, 0.4);
-      backdrop-filter: blur(10px);
-      border-bottom: 2px solid rgba(255, 255, 255, 0.2);
-    }
-    .header h1 {
-      font-size: 2.2rem;
-      margin-bottom: 10px;
-    }
-    .header p {
-      font-size: 1rem;
-      opacity: 0.9;
-    }
-
-    /* Audiobook cards container */
-    .audiobooks-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      padding: 30px 10px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    /* Card style */
-    .card {
-      background: rgba(255, 255, 255, 0.08);
-      border-radius: 15px;
-      overflow: hidden;
-      width: 180px;
-      text-align: center;
-      transition: transform 0.3s, box-shadow 0.3s;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-    }
-    .card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 25px rgba(0,0,0,0.4);
-    }
-    .card img {
-      width: 100%;
-      height: auto;
-      border-bottom: 2px solid rgba(255,255,255,0.2);
-    }
-
-    /* Pay button */
-    .pay-btn {
-      width: 100%;
-      padding: 12px;
-      border: none;
-      font-weight: bold;
-      background: linear-gradient(135deg, #6a11cb, #2575fc);
-      color: #fff;
-      cursor: pointer;
-      font-size: 15px;
-      transition: all 0.3s ease;
-    }
-    .pay-btn:hover {
-      transform: scale(1.05);
-      background: linear-gradient(135deg, #2575fc, #6a11cb);
-      box-shadow: 0 4px 15px rgba(37,117,252,0.5);
-    }
-
-    /* Footer */
-    .footer {
-      text-align: center;
-      padding: 20px;
-      background: rgba(0,0,0,0.4);
-      border-top: 2px solid rgba(255,255,255,0.2);
-      margin-top: 20px;
-    }
-    .social-icons a {
-      margin: 0 10px;
-      text-decoration: none;
-      color: #fff;
-      transition: 0.3s;
-    }
-    .social-icons a:hover {
-      color: #ffd700;
-    }
-
-    /* Modal styles */
-    .modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0; top: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.6);
-    align-items: center;
-    justify-content: center;
-  }
-    .modal-content {
-      background: rgba(255,255,255,0.1);
-      backdrop-filter: blur(15px);
-      border-radius: 15px;
-      padding: 30px;
-      width: 90%;
-      max-width: 400px;
-      text-align: center;
-      color: #fff;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-    }
-    .modal-content h3 {
-      margin-bottom: 15px;
-      font-size: 1.4rem;
-    }
-    .modal-content input[type="email"] {
-      width: 100%;
-      padding: 12px;
-      border-radius: 10px;
-      border: none;
-      margin-bottom: 15px;
-      font-size: 1rem;
-    }
-    .modal-content button {
-      padding: 12px;
-      width: 100%;
-      border: none;
-      border-radius: 10px;
-      background: linear-gradient(135deg, #6a11cb, #2575fc);
-      color: #fff;
-      font-weight: bold;
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-    .modal-content button:hover {
-      transform: scale(1.05);
-      background: linear-gradient(135deg, #2575fc, #6a11cb);
-    }
-    .close {
-      position: absolute;
-      top: 15px;
-      right: 20px;
-      font-size: 28px;
-      cursor: pointer;
-      color: #fff;
-    }
-  </style>
+  <link rel="stylesheet" href="css/audiobooks.css" />
 </head>
 <body>
-  <header class="header">
-    <h1>Twilight Saga Audiobooks</h1>
-    <p>🎧✨ Just $2! Delivered to your email after payment</p>
+  <header>
+    <h1>🌙 Twilight Saga Audiobooks</h1>
+    <p>🎧 Immerse yourself in the saga for just $2! Support & enjoy the story. ❤️</p>
   </header>
 
-  <main class="audiobooks-container">
-    <section class="card">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4AgFhxAabj0_KT5g7mD-hisX_fLt1M-Zcew&s" alt="Twilight">
-      <button class="pay-btn" data-audiobook="Twilight Audiobook">Pay & Unlock</button>
-    </section>
+  <main>
+    <div class="audiobooks-container">
 
-    <section class="card">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrkEOa5elLQWzgBWiCqsacQaz_KB5HWEUSoQ&s" alt="New Moon">
-      <button class="pay-btn" data-audiobook="New Moon Audiobook">Pay & Unlock</button>
-    </section>
+      <!-- Twilight -->
+      <div class="audiobook-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4AgFhxAabj0_KT5g7mD-hisX_fLt1M-Zcew&s" alt="Twilight Audiobook">
+        <h3>🌌 Twilight</h3>
+        <p>The beginning of Bella & Edward’s unforgettable love story 💕</p>
+        <a href="https://paypal.me/iamsaaddar/2" target="_blank" class="pay-btn read-button">💳 Pay $2</a>
+        <a href="audiobooks/twilight-audiobook.html" class="listen-btn">🎧 Listen</a>
+      </div>
 
-    <section class="card">
-      <img src="https://m.media-amazon.com/images/I/61+2FD3Kc-L.jpg" alt="Eclipse">
-      <button class="pay-btn" data-audiobook="Eclipse Audiobook">Pay & Unlock</button>
-    </section>
+      <!-- New Moon -->
+      <div class="audiobook-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrkEOa5elLQWzgBWiCqsacQaz_KB5HWEUSoQ&s" alt="New Moon Audiobook">
+        <h3>🌑 New Moon</h3>
+        <p>Bella faces heartbreak & dangers of a world without Edward 😢</p>
+        <a href="https://paypal.me/iamsaaddar/2" target="_blank" class="pay-btn read-button">💳 Pay $2</a>
+        <a href="audiobooks/new-moon-audiobook.html" class="listen-btn">🎧 Listen</a>
+      </div>
 
-    <section class="card">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_3RQ5kUaU47W4VfhvAld99j7U8Cpskd5qPA&s" alt="Breaking Dawn">
-      <button class="pay-btn" data-audiobook="Breaking Dawn Audiobook">Pay & Unlock</button>
-    </section>
+      <!-- Eclipse -->
+      <div class="audiobook-card">
+        <img src="https://m.media-amazon.com/images/I/61+2FD3Kc-L.jpg" alt="Eclipse Audiobook">
+        <h3>☀️ Eclipse</h3>
+        <p>As danger rises, Bella must choose between Edward & Jacob ⚡</p>
+        <a href="https://paypal.me/iamsaaddar/2" target="_blank" class="pay-btn read-button">💳 Pay $2</a>
+        <a href="audiobooks/eclipse-audiobook.html" class="listen-btn">🎧 Listen</a>
+      </div>
 
-    <section class="card">
-      <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1588597375i/53287484.jpg" alt="Midnight Sun">
-      <button class="pay-btn" data-audiobook="Midnight Sun Audiobook">Pay & Unlock</button>
-    </section>
+      <!-- Breaking Dawn -->
+      <div class="audiobook-card">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_3RQ5kUaU47W4VfhvAld99j7U8Cpskd5qPA&s" alt="Breaking Dawn Audiobook">
+        <h3>🌅 Breaking Dawn</h3>
+        <p>The thrilling conclusion—love, sacrifice & destiny awaits 🔮</p>
+        <a href="https://paypal.me/iamsaaddar/2" target="_blank" class="pay-btn read-button">💳 Pay $2</a>
+        <a href="audiobooks/breaking-dawn-audiobook.html" class="listen-btn">🎧 Listen</a>
+      </div>
 
-    <section class="card">
-      <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1477428622i/31706920.jpg" alt="Life and Death">
-      <button class="pay-btn" data-audiobook="Life and Death Audiobook">Pay & Unlock</button>
-    </section>
+      <!-- Midnight Sun -->
+      <div class="audiobook-card">
+        <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1588597375i/53287484.jpg" alt="Midnight Sun Audiobook">
+        <h3>🌒 Midnight Sun</h3>
+        <p>Edward’s perspective of Twilight, revealing his deepest struggles 🌌</p>
+        <a href="https://paypal.me/iamsaaddar/2" target="_blank" class="pay-btn read-button">💳 Pay $2</a>
+        <a href="audiobooks/midnight-sun-audiobook.html" class="listen-btn">🎧 Listen</a>
+      </div>
+
+      <!-- Life and Death -->
+      <div class="audiobook-card">
+        <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1477428622i/31706920.jpg" alt="Life and Death Audiobook">
+        <h3>🔄 Life & Death</h3>
+        <p>A bold reimagining with a gender-swapped twist 🔮</p>
+        <a href="https://paypal.me/iamsaaddar/2" target="_blank" class="pay-btn read-button">💳 Pay $2</a>
+        <a href="audiobooks/life-and-death-audiobook.html" class="listen-btn">🎧 Listen</a>
+      </div>
+
+    </div>
   </main>
 
-  <footer class="footer">
+  <footer>
     <div class="social-icons">
-      <a href="#">Facebook</a>
-      <a href="https://x.com/@TwilightNetflix">Twitter</a>
-      <a href="https://www.instagram.com/twilightrebootofficial">Instagram</a>
+      <a href="#">📘 Facebook</a>
+      <a href="https://x.com/@TwilightNetflix">🐦 Twitter</a>
+      <a href="https://www.instagram.com/twilightrebootofficial">📸 Instagram</a>
     </div>
-    <p>&copy; 2025 Twilight Saga Fan Site. All rights reserved.</p>
+    <p>&copy; 2025 Twilight Saga Fan Site 🌙 All rights reserved.</p>
   </footer>
-
-  <!-- Modal -->
-  <div class="modal" id="emailModal">
-    <div class="modal-content">
-      <span class="close" id="closeModal">&times;</span>
-      <h3>Enter your Email</h3>
-      <form id="emailForm" action="https://formspree.io/f/xyzdgpoy" method="POST">
-        <input type="email" name="email" placeholder="Your Email" required>
-        <input type="hidden" name="audiobook" id="selectedAudiobook">
-        <button type="submit">Submit & Pay</button>
-      </form>
-    </div>
-  </div>
-
-  <script>
-    const modal = document.getElementById('emailModal');
-    const emailForm = document.getElementById('emailForm');
-    const selectedAudiobook = document.getElementById('selectedAudiobook');
-    const closeModal = document.getElementById('closeModal');
-
-    document.querySelectorAll('.pay-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        selectedAudiobook.value = btn.dataset.audiobook;
-        modal.style.display = 'flex';
-      });
-    });
-
-    emailForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const formData = new FormData(emailForm);
-      fetch(emailForm.action, {
-        method: emailForm.method,
-        body: formData,
-        headers: { 'Accept': 'application/json' }
-      }).then(response => {
-        if (response.ok) {
-          modal.style.display = 'none';
-          window.location.href = 'https://paypal.me/iamsaaddar/2';
-        } else {
-          alert('Something went wrong. Try again!');
-        }
-      });
-    });
-
-    window.addEventListener('click', (e) => {
-      if (e.target === modal) modal.style.display = 'none';
-    });
-
-    closeModal.addEventListener('click', () => {
-      modal.style.display = 'none';
-    });
-  </script>
-  <script defer src="/_vercel/insights/script.js"></script>
-
 </body>
 </html>
