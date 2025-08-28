@@ -20,7 +20,7 @@ header {
 
 header h1 {
   margin: 0;
-  font-size: 1.6rem; /* smaller for mobile */
+  font-size: 1.6rem;
   line-height: 1.2;
 }
 
@@ -37,7 +37,7 @@ header p {
   100% { background-position: 0% 50%; }
 }
 
-/* Cards container */
+/* Movies container */
 .movies-container {
   display: flex;
   flex-wrap: wrap;
@@ -51,13 +51,36 @@ header p {
   background: #1a1a1a;
   border-radius: 14px;
   padding: 12px;
-  width: 100%; /* default full width on mobile */
+  width: 100%;
   max-width: 280px;
   text-align: center;
-  transition: 0.2s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
 }
 
+/* Staggered animation for cards */
+.card:nth-child(1) { animation-delay: 0.2s; }
+.card:nth-child(2) { animation-delay: 0.4s; }
+.card:nth-child(3) { animation-delay: 0.6s; }
+.card:nth-child(4) { animation-delay: 0.8s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Card hover animation */
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+}
+
+/* Card content */
 .card img {
   width: 100%;
   border-radius: 10px;
@@ -80,8 +103,7 @@ header p {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  padding: 7px 10px; /* slightly bigger touch target */
-  width: auto;
+  padding: 7px 10px;
   min-width: 110px;
   margin: 3px 0;
   border: none;
@@ -89,7 +111,28 @@ header p {
   font-weight: 600;
   font-size: 0.8rem;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Button animations */
+.btn:active {
+  transform: scale(0.95);
+}
+
+.btn::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(255,255,255,0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn:hover::after {
+  opacity: 1;
 }
 
 .watch-btn {
@@ -122,13 +165,14 @@ footer {
 
 /* Responsive adjustments */
 @media (min-width: 600px) {
-  .card {
-    width: 45%; /* 2 cards side by side on tablets/small laptops */
-  }
+  .card { width: 45%; }
 }
-
 @media (min-width: 900px) {
-  .card {
-    width: 30%; /* 3 per row on bigger screens */
-  }
+  .card { width: 30%; }
+}
+/* Selected 3D effect */
+.card.selected {
+  transform: perspective(1000px) rotateX(6deg) rotateY(-6deg) scale(1.05);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
