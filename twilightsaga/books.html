@@ -146,50 +146,56 @@
 <body>
   <header class="header">
     <h1>Twilight Saga Books</h1>
-    <p>📚✨ Access the Twilight Saga Books for just $2 each! Enter your email and unlock after payment.</p>
+    <p>📚✨ Explore and read the Twilight Saga. Support us with a small donation 💜</p>
   </header>
 
-  <main class="books-container">
+ <main class="books-container">
     <section class="card">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4AgFhxAabj0_KT5g7mD-hisX_fLt1M-Zcew&s" alt="Twilight Book Cover">
       <h3>Twilight (2005)</h3>
       <p>Experience the beginning of the epic saga where Bella meets Edward.</p>
-      <button class="pay-btn read-button" data-novel="Twilight (2005)">Pay & Unlock</button>
+      <a href="https://drive.google.com/file/d/1oigg_x1FQYnJ0XM7SyUZQ4ynoYQw0sGJ/view?usp=sharing" target="_blank" class="read-button">Read Book</a>
+      <a href="https://paypal.me/iamsaaddar/2" target="_blank" class="read-button">Donate</a>
     </section>
 
     <section class="card">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrkEOa5elLQWzgBWiCqsacQaz_KB5HWEUSoQ&s" alt="New Moon Book Cover">
       <h3>New Moon (2006)</h3>
       <p>Follow Bella's journey as she discovers the world of werewolves.</p>
-      <button class="pay-btn read-button" data-novel="New Moon (2006)">Pay & Unlock</button>
+      <a href="https://drive.google.com/file/d/17amBWRo7KDEzukO_mvtoKG5nCbiELMV1/view?usp=sharing" target="_blank" class="read-button">Read Book</a>
+      <a href="https://paypal.me/iamsaaddar/2" target="_blank" class="read-button">Donate</a>
     </section>
 
     <section class="card">
       <img src="https://m.media-amazon.com/images/I/61+2FD3Kc-L.jpg" alt="Eclipse Book Cover">
       <h3>Eclipse (2007)</h3>
       <p>Bella is torn between Edward and Jacob as danger looms.</p>
-      <button class="pay-btn read-button" data-novel="Eclipse (2007)">Pay & Unlock</button>
+      <a href="https://drive.google.com/file/d/1d4BaQTKC-iRttdQSRK96o5tuMNSibztc/view?usp=drivesdk" target="_blank" class="read-button">Read Book</a>
+      <a href="https://paypal.me/iamsaaddar/2" target="_blank" class="read-button">Donate</a>
     </section>
 
     <section class="card">
       <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_3RQ5kUaU47W4VfhvAld99j7U8Cpskd5qPA&s" alt="Breaking Dawn Book Cover">
       <h3>Breaking Dawn (2008)</h3>
       <p>The epic conclusion of the Twilight Saga.</p>
-      <button class="pay-btn read-button" data-novel="Breaking Dawn (2008)">Pay & Unlock</button>
+      <a href="https://drive.google.com/file/d/1QVkuNI6dZ6BtD9h0j1EEOwb1DFPMiOMO/view?usp=drivesdk" target="_blank" class="read-button">Read Book</a>
+      <a href="https://paypal.me/iamsaaddar/2" target="_blank" class="read-button">Donate</a>
     </section>
 
     <section class="card">
       <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1588597375i/53287484.jpg" alt="Midnight Sun Book Cover">
       <h3>Midnight Sun (2020)</h3>
       <p>Edward's perspective of Twilight, revealing his inner world.</p>
-      <button class="pay-btn read-button" data-novel="Midnight Sun (2020)">Pay & Unlock</button>
+      <a href="https://drive.google.com/file/d/1KAyUs8pAv7LlvG_3d0qB2pIcpDxVWe1V/view?usp=sharing" target="_blank" class="read-button">Read Book</a>
+      <a href="https://paypal.me/iamsaaddar/2" target="_blank" class="read-button">Donate</a>
     </section>
 
     <section class="card">
       <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1477428622i/31706920.jpg" alt="Life and Death Book Cover">
       <h3>Life and Death (2015)</h3>
       <p>A gender-swapped retelling introducing Beau and Edythe.</p>
-      <button class="pay-btn read-button" data-novel="Life and Death (2015)">Pay & Unlock</button>
+      <a href="https://drive.google.com/file/d/1kn1NGcw5QYgh5T-TERnZBWsKnjuSGSoY/view?usp=sharing" target="_blank" class="read-button">Read Book</a>
+      <a href="https://paypal.me/iamsaaddar/2" target="_blank" class="read-button">Donate</a>
     </section>
   </main>
 
@@ -202,65 +208,7 @@
     <p>&copy; 2025 Twilight Saga Fan Site. All rights reserved.</p>
   </footer>
 
-  <!-- Modal -->
-  <div class="modal" id="emailModal">
-    <div class="modal-content">
-      <span class="close" id="closeModal">&times;</span>
-      <h3>Enter your Email</h3>
-      <form id="emailForm" action="https://formspree.io/f/xyzdgpoy" method="POST">
-        <input type="email" name="email" placeholder="Your Email" required>
-        <input type="hidden" name="novel" id="selectedNovel">
-        <button type="submit">Submit & Pay</button>
-      </form>
-    </div>
   </div>
-
-  <script>
-  const modal = document.getElementById('emailModal');
-  const emailForm = document.getElementById('emailForm');
-  const selectedNovel = document.getElementById('selectedNovel');
-  const closeModal = document.getElementById('closeModal');
-
-  document.querySelectorAll('.pay-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      selectedNovel.value = btn.dataset.novel;
-      modal.style.display = 'flex';
-    });
-  });
-
-  emailForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const formData = new FormData(emailForm);
-    fetch(emailForm.action, {
-      method: emailForm.method,
-      body: formData,
-      headers: { 'Accept': 'application/json' }
-    }).then(response => {
-      if (response.ok) {
-        modal.style.display = 'none';
-
-        // ✅ Create and submit PayPal form dynamically
-        const paypalForm = document.createElement('form');
-        paypalForm.action = "https://www.paypal.com/ncp/payment/R9DXM4ANFK8MS";
-        paypalForm.method = "post";
-        paypalForm.target = "_blank";
-
-        document.body.appendChild(paypalForm);
-        paypalForm.submit();
-      } else {
-        alert('Something went wrong. Try again!');
-      }
-    });
-  });
-
-  window.addEventListener('click', (e) => {
-    if (e.target === modal) modal.style.display = 'none';
-  });
-
-  closeModal.addEventListener('click', () => {
-    modal.style.display = 'none';
-  });
-</script>
 
   <script defer src="/_vercel/insights/script.js"></script>
 
