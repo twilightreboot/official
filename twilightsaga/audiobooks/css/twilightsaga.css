@@ -1,87 +1,123 @@
-/* General styles */
+/* =======================
+   Global Styles
+   ======================= */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #121212;
-    color: white;
+    background-color: #111;
+    color: #eee;
+    line-height: 1.6;
 }
 
-a {
-    color: #1abc9c;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-a:hover {
-    color: #16a085;
-}
-
-/* Header styles */
+/* =======================
+   Header
+   ======================= */
 header {
-    background: linear-gradient(to right, #7b008670, #4e0000);
-    padding: 1em 0;
+    background: linear-gradient(135deg, #4a148c, #880e4f);
+    padding: 30px 15px;
     text-align: center;
+    color: #fff;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2.5em;
+    margin: 0 0 10px;
+    font-size: 2rem;
 }
 
 header p {
-    margin: 0;
-    font-size: 1.2em;
+    font-size: 1rem;
+    max-width: 800px;
+    margin: auto;
 }
 
-/* Navigation styles */
-nav {
-    background-color: #34495e;
+/* =======================
+   Audio Container & Cards
+   ======================= */
+.audio-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 1em 0;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
 }
 
-nav a {
-    padding: 0.5em 1em;
-    text-transform: uppercase;
-    font-weight: bold;
-    transition: background-color 0.3s;
-}
-
-nav a:hover {
-    background-color: #1abc9c;
-    color: black;
-}
-
-/* Main content styles */
-main {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 2em;
-}
-
-.card {
-    background-color: #1e1e1e;
-    border: 1px solid #333;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    margin: 1em;
-    padding: 1em;
+.audio-player {
+    flex: 1 1 calc(50% - 40px);
+    max-width: 400px;
+    margin: 15px;
+    padding: 15px;
+    background: #1a1a1a;
+    border-radius: 15px;
     text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-    flex: 1 1 300px; /* Ensures each card takes equal space */
-    max-width: 300px;
-    box-sizing: border-box;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.card img {
-    max-width: 100%;
-    border-radius: 10px 10px 0 0;
+.audio-player:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.6);
 }
 
-.card h3 {
-    margin: 0.5em 0;
+.audio-player h4 {
+    margin-bottom: 10px;
+    color: #e0c3fc;
+    font-size: 1.1rem;
+}
+
+/* Cute audio styling */
+.audio-player audio {
+    width: 100%;
+    border-radius: 10px;
+    outline: none;
+    background-color: #222;
+}
+
+/* =======================
+   Footer
+   ======================= */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #222;
+    margin-top: 40px;
+}
+
+.social-icons {
+    margin-bottom: 10px;
+}
+
+.social-icons a {
+    margin: 0 10px;
+    color: #e0c3fc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.social-icons a:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+
+footer p {
+    font-size: 0.9rem;
+    color: #bbb;
+}
+
+/* =======================
+   Mobile Responsive
+   ======================= */
+@media (max-width: 768px) {
+    .audio-player {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    header h1 {
+        font-size: 1.6rem;
+    }
+
+    header p {
+        font-size: 0.9rem;
+    }
 }
