@@ -7,94 +7,95 @@
     <link rel="stylesheet" href="css/twilightsaga.css">
     <style>
         body {
-            background-image: url('https://m.media-amazon.com/images/I/71AWYilcOnL._AC_UF1000,1000_QL80_.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            font-family: 'Segoe UI', sans-serif;
             margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            color: white;
+            background: linear-gradient(135deg, #1a1a1a, #2c003e);
+            color: #eee;
+            line-height: 1.6;
         }
-        .header {
+        header {
+            background: linear-gradient(135deg, #0b1f63e3, #101c30);
+            padding: 40px 20px;
             text-align: center;
-            margin-bottom: 20px;
-            font-family: 'Times New Roman', Times, serif;
+            color: #fff;
         }
-        .footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #0000009c;
-            border-top: 2px solid #ddd;
-            margin-top: 20px;
-            font-family: 'Times New Roman', Times, serif;
+        header h1 {
+            margin: 0 0 15px;
+            font-size: 2.2rem;
+            letter-spacing: 1px;
         }
-        .social-icons a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #ffffff;
+        header p {
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1rem;
+            opacity: 0.9;
         }
         .audio-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            justify-content: center;
-            background-color: transparent;
-            padding: 20px;
-            max-width: 700px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            padding: 30px 20px;
+            max-width: 1200px;
             margin: auto;
         }
         .audio-player {
-            background: #1a1a1a;
-            border-radius: 12px;
-            padding: 15px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: white;
+            background: #2b2b2b;
+            padding: 20px;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .audio-player:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 18px rgba(0,0,0,0.6);
         }
         .audio-player h4 {
-            margin: 0 0 10px;
+            margin-bottom: 15px;
+            color: #fbc2eb;
+            font-size: 1.2rem;
         }
-        .audio-player audio {
+        audio {
             width: 100%;
+            border-radius: 10px;
             outline: none;
         }
-        .audio-player button {
-            background-color: #ff4d4d;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 6px;
-            font-size: 14px;
-            margin: 10px 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+            margin-top: 40px;
         }
-        .audio-player button:hover {
-            background-color: #cc0000;
+        .social-icons {
+            margin-bottom: 10px;
+        }
+        .social-icons a {
+            margin: 0 10px;
+            color: #fbc2eb;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .social-icons a:hover {
+            color: #ff9a9e;
         }
         @media (max-width: 600px) {
-            .audio-player {
-                padding: 10px;
+            header h1 {
+                font-size: 1.6rem;
             }
-            .audio-player button {
-                width: 100%;
-                margin: 5px 0;
+            .audio-player {
+                padding: 15px;
             }
         }
     </style>
 </head>
 <body>
-    <header class="header">
+    <header>
         <h1>Breaking Dawn Audiobook by Stephenie Meyer</h1>
         <p>📚✨ Dive into the Twilight Saga! Explore All Twilight Books Free 📖 Experience the magic, the love, and the adventure of this legendary series.</p>
     </header>
-
     <div class="audio-container" id="audioContainer"></div>
-
-    <footer class="footer">
+    <footer>
         <div class="social-icons">
             <a href="#">Facebook</a>
             <a href="https://x.com/@TwilightNetflix">Twitter</a>
@@ -115,10 +116,11 @@
             const wrapper = document.createElement('div');
             wrapper.className = 'audio-player';
             const title = document.createElement('h4');
-            title.textContent = `Chapter ${index + 1}`;
+            title.textContent = `✨ Chapter ${index + 1}`;
             const audio = document.createElement('audio');
             audio.controls = true;
             audio.src = src;
+            audio.setAttribute("aria-label", `Audio for Chapter ${index + 1}`);
             wrapper.appendChild(title);
             wrapper.appendChild(audio);
             container.appendChild(wrapper);
