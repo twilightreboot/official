@@ -1,133 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eclipse Audiobook</title>
-    <link rel="stylesheet" href="">
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-            background: linear-gradient(135deg, #1a1a1a, #2c003e);
-            color: #eee;
-            line-height: 1.6;
-        }
-        header {
-            background: linear-gradient(135deg, #0b1f63e3, #101c30);
-            padding: 40px 20px;
-            text-align: center;
-            color: #fff;
-        }
-        header h1 {
-            margin: 0 0 15px;
-            font-size: 2.2rem;
-            letter-spacing: 1px;
-        }
-        header p {
-            max-width: 700px;
-            margin: 0 auto;
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-        .audio-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            padding: 30px 20px;
-            max-width: 1200px;
-            margin: auto;
-        }
-        .audio-player {
-            background: #2b2b2b;
-            padding: 20px;
-            border-radius: 20px;
-            text-align: center;
-            box-shadow: 0 6px 14px rgba(0,0,0,0.4);
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
-        .audio-player:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 18px rgba(0,0,0,0.6);
-        }
-        .audio-player h4 {
-            margin-bottom: 15px;
-            color: #fbc2eb;
-            font-size: 1.2rem;
-        }
-        audio {
-            width: 100%;
-            border-radius: 10px;
-            outline: none;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #222;
-            margin-top: 40px;
-        }
-        .social-icons {
-            margin-bottom: 10px;
-        }
-        .social-icons a {
-            margin: 0 10px;
-            color: #fbc2eb;
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.3s;
-        }
-        .social-icons a:hover {
-            color: #ff9a9e;
-        }
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 1.6rem;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Eclipse Audiobook</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            twilight: {
+              dark: '#0d1b2a',
+              blue: '#1b4965',
+              teal: '#5fa8d3',
+              green: '#62b6cb',
+              light: '#cae9ff'
             }
-            .audio-player {
-                padding: 15px;
-            }
+          },
+          fontFamily: {
+            sans: ['"Crimson Text"', 'serif'],
+            heading: ['"Playfair Display"', 'serif']
+          },
+          backgroundImage: {
+            'twilight-gradient': 'linear-gradient(135deg, #0d1b2a 0%, #1b4965 50%, #5fa8d3 100%)'
+          }
         }
-    </style>
-   
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/feather-icons"></script>
+  <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+  <style>
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #0f172a;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #4c1d95;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #ec4899;
+    }
+    audio {
+      width: 100%;
+      border-radius: 12px;
+      background: rgba(255,255,255,0.1);
+    }
+    audio::-webkit-media-controls-panel {
+      background: linear-gradient(135deg, #0d1b2a 0%, #1b4965 100%);
+    }
+    audio::-webkit-media-controls-play-button,
+    audio::-webkit-media-controls-mute-button {
+      filter: invert(1);
+    }
+    audio::-webkit-media-controls-current-time-display,
+    audio::-webkit-media-controls-time-remaining-display {
+      color: #5fa8d3 !important;
+    }
+    audio::-webkit-media-controls-play-button {
+      background-color: #5fa8d3 !important;
+      border-radius: 50%;
+    }
+    .rain-drop {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%235fa8d3"><path d="M12 3.1L7.05 8.05a7 7 0 109.9 0z"/></svg>') no-repeat;
+      background-size: contain;
+      opacity: 0.6;
+      animation: drop 6s infinite;
+    }
+    @keyframes drop {
+      0% { transform: translateY(-100px) rotate(0deg); opacity: 0; }
+      10% { opacity: 0.8; }
+      90% { opacity: 0.8; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+  </style>
 </head>
-<body>
-    <header>
-        <h1>Eclipse Audiobook by Stephenie Meyer</h1>
-        <p>📚✨ Dive into the Twilight Saga! Explore All Twilight Books Free 📖 Experience the magic, the love, and the adventure of this legendary series.</p>
-    </header>
-    
-    <div class="audio-container" id="audioContainer"></div>
-  
-
-    <footer>
-        <div class="social-icons">
-            <a href="#">Facebook</a>
-            <a href="https://x.com/@TwilightNetflix">Twitter</a>
-            <a href="https://www.instagram.com/twilightrebootofficial">Instagram</a>
+<body class="bg-twilight-dark text-twilight-light font-sans min-h-screen">
+  <div id="vanta-bg" class="fixed inset-0 -z-10"></div>
+  <div id="rain-drops"></div>
+  <header class="bg-twilight-gradient py-20 px-4 text-center relative overflow-hidden">
+    <div class="absolute inset-0 bg-black/30"></div>
+    <div class="max-w-4xl mx-auto relative z-10" data-aos="fade-up">
+      <h1 class="text-4xl md:text-6xl font-heading font-bold mb-6 text-white tracking-tight">
+        <span class="bg-clip-text text-transparent bg-gradient-to-r from-twilight-green via-twilight-teal to-twilight-blue">Eclipse Audiobook</span>
+      </h1>
+      <p class="text-xl md:text-2xl italic mb-8 text-white/90 max-w-3xl mx-auto">
+        "I promise to love you forever — every single day of forever."<br>
+        <span class="text-twilight-pink">by Stephenie Meyer</span>
+      </p>
+    </div>
+    <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-twilight-dark to-transparent"></div>
+  </header>
+  <main class="container mx-auto px-4 py-12 relative z-10">
+    <section class="mb-20">
+      <h2 class="text-3xl font-heading font-bold mb-8 text-center text-white" data-aos="fade-up">
+        <span class="border-b-2 border-twilight-pink pb-2">Eclipse Audiobook Chapters</span>
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="audioContainer">
+        <!-- Chapters will be inserted here by JavaScript -->
+      </div>
+      <div class="mt-12 text-center">
+        <p class="text-sm text-white/60 mb-4">*$2 payment required for download</p>
+        <button class="px-6 py-3 bg-twilight-teal hover:bg-twilight-blue rounded-full font-medium text-twilight-dark transition-all transform hover:scale-105">
+          <i data-feather="download" class="w-5 h-5 mr-2 inline"></i> Download Now
+        </button>
+      </div>
+    </section>
+    <section class="max-w-4xl mx-auto text-center mb-20" data-aos="fade-up">
+      <div class="relative">
+        <div class="absolute -top-6 -left-6 text-6xl text-twilight-pink opacity-20">“</div>
+        <blockquote class="text-2xl italic font-serif text-white/90 px-8 py-6 bg-white/5 rounded-xl backdrop-blur-sm border border-white/10">
+          "I couldn't live in a world where you don't exist."
+        </blockquote>
+        <div class="absolute -bottom-6 -right-6 text-6xl text-twilight-pink opacity-20">”</div>
+      </div>
+      <p class="mt-6 text-twilight-pink font-medium">— Stephenie Meyer, Eclipse</p>
+    </section>
+  </main>
+  <footer class="bg-twilight-dark/90 backdrop-blur-sm border-t border-white/10 py-12">
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-6 md:mb-0">
+          <h3 class="text-2xl font-heading font-bold text-white mb-2">Twilight Saga</h3>
+          <p class="text-white/70">Immerse yourself in the forbidden love story</p>
         </div>
-        <p>&copy; 2025 Twilight Saga Fan Site. All rights reserved.</p>
-    </footer>
-    <script>
-        const audioSources = [
-            "eclipseaudio/01.mp3", "eclipseaudio/02.mp3", "eclipseaudio/03.mp3",
-            "eclipseaudio/04.mp3", "eclipseaudio/05.mp3", "eclipseaudio/06.mp3",
-            "eclipseaudio/07.mp3", "eclipseaudio/08.mp3", "eclipseaudio/09.mp3",
-            "eclipseaudio/10.mp3", "eclipseaudio/11.mp3", "eclipseaudio/12.mp3",
-            "eclipseaudio/13.mp3", "eclipseaudio/14.mp3", "eclipseaudio/15.mp3"
-        ];
-        const container = document.getElementById('audioContainer');
-        audioSources.forEach((src, index) => {
-            const wrapper = document.createElement('div');
-            wrapper.className = 'audio-player';
-            const title = document.createElement('h4');
-            title.textContent = `✨ Chapter ${index + 1}`;
-            const audio = document.createElement('audio');
-            audio.controls = true;
-            audio.src = src;
-            audio.setAttribute("aria-label", `Audio for Chapter ${index + 1}`);
-            wrapper.appendChild(title);
-            wrapper.appendChild(audio);
-            container.appendChild(wrapper);
-        });
-    </script>
+        <div class="flex space-x-6">
+          <a href="#" class="text-white hover:text-twilight-teal transition-colors" aria-label="Facebook">
+            <i data-feather="facebook" class="w-6 h-6"></i>
+          </a>
+          <a href="https://x.com/TwilightNetflix" class="text-white hover:text-twilight-teal transition-colors" aria-label="Twitter">
+            <i data-feather="twitter" class="w-6 h-6"></i>
+          </a>
+          <a href="https://www.instagram.com/twilightrebootofficial" class="text-white hover:text-twilight-teal transition-colors" aria-label="Instagram">
+            <i data-feather="instagram" class="w-6 h-6"></i>
+          </a>
+          <a href="#" class="text-white hover:text-twilight-teal transition-colors" aria-label="YouTube">
+            <i data-feather="youtube" class="w-6 h-6"></i>
+          </a>
+        </div>
+      </div>
+      <div class="border-t border-white/10 mt-8 pt-8 text-center text-white/60 text-sm">
+        <p>&copy; 2025 Twilight Saga Fan Site. All rights reserved. This is a fan-made site and not affiliated with Stephenie Meyer or the official Twilight franchise.</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    VANTA.NET({
+      el: "#vanta-bg",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0x5fa8d3,
+      backgroundColor: 0x0d1b2a,
+      points: 10.00,
+      maxDistance: 22.00,
+      spacing: 17.00
+    });
+    function createRainDrops() {
+      const container = document.getElementById('rain-drops');
+      for (let i = 0; i < 15; i++) {
+        const drop = document.createElement('div');
+        drop.className = 'rain-drop';
+        drop.style.left = `${Math.random() * 100}%`;
+        drop.style.animationDelay = `${Math.random() * 5}s`;
+        drop.style.animationDuration = `${3 + Math.random() * 6}s`;
+        container.appendChild(drop);
+      }
+    }
+    // Eclipse chapters and audio sources
+    const audioSources = [
+      { src: "eclipseaudio/01.mp3", title: "Ultimatum", duration: "32:45" },
+      { src: "eclipseaudio/02.mp3", title: "Evasion", duration: "28:12" },
+      { src: "eclipseaudio/03.mp3", title: "Motives", duration: "35:18" },
+      { src: "eclipseaudio/04.mp3", title: "Nature", duration: "30:51" },
+      { src: "eclipseaudio/05.mp3", title: "Imprint", duration: "27:34" },
+      { src: "eclipseaudio/06.mp3", title: "Switzerland", duration: "33:22" },
+      { src: "eclipseaudio/07.mp3", title: "Unhappy Ending", duration: "29:47" },
+      { src: "eclipseaudio/08.mp3", title: "Temper", duration: "31:15" },
+      { src: "eclipseaudio/09.mp3", title: "Target", duration: "36:08" },
+      { src: "eclipseaudio/10.mp3", title: "Scent", duration: "34:29" },
+      { src: "eclipseaudio/11.mp3", title: "Alliance", duration: "32:17" },
+      { src: "eclipseaudio/12.mp3", title: "Monster", duration: "38:42" },
+      { src: "eclipseaudio/13.mp3", title: "Newborn", duration: "29:10" },
+      { src: "eclipseaudio/14.mp3", title: "Declaration", duration: "31:55" },
+      { src: "eclipseaudio/15.mp3", title: "Epiphany", duration: "33:40" }
+    ];
+    const container = document.getElementById('audioContainer');
+    audioSources.forEach((chapter, index) => {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'bg-twilight-dark/50 backdrop-blur-sm rounded-xl p-6 border border-white/10 shadow-lg hover:shadow-xl transition-all hover:scale-[1.02]';
+      wrapper.setAttribute('data-aos', 'fade-up');
+      wrapper.setAttribute('data-aos-delay', (index % 3) * 100);
+      wrapper.innerHTML = `
+        <div class="flex items-center mb-4">
+          <div class="w-12 h-12 rounded-full bg-gradient-to-br from-twilight-blue to-twilight-green flex items-center justify-center text-white font-bold mr-4">
+            ${index + 1}
+          </div>
+          <div>
+            <h4 class="font-heading text-lg font-semibold text-white">${chapter.title}</h4>
+            <p class="text-sm text-white/60">${chapter.duration}</p>
+          </div>
+        </div>
+        <audio controls class="w-full mt-4">
+          <source src="${chapter.src}" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+        <div class="flex justify-between items-center mt-3 text-sm text-white/60">
+          <span><i data-feather="headphones" class="w-4 h-4 inline mr-1"></i> Listen</span>
+          <span><i data-feather="bookmark" class="w-4 h-4 inline mr-1"></i> Bookmark</span>
+        </div>
+      `;
+      container.appendChild(wrapper);
+    });
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true
+      });
+      feather.replace();
+      createRainDrops();
+    });
+  </script>
+</body>
 </html>
