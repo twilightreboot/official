@@ -3,64 +3,454 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robert Pattinson Discography</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/discography.css">
+    <title>Robert Pattinson | Complete Filmography</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0f0f0f;
+            color: #f8f8f8;
+            scroll-behavior: smooth;
+        }
+        
+        .movie-item {
+            transition: all 0.3s ease;
+            background: rgba(15, 15, 15, 0.7);
+            backdrop-filter: blur(10px);
+        }
+        
+        .movie-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(239, 68, 68, 0.2);
+            border-left: 3px solid #ef4444;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #f59e0b, #ef4444, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #f59e0b, #ef4444);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .search-input {
+            background: rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .search-input:focus {
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 0 2px rgba(239, 68, 68, 0.5);
+        }
+        
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #ef4444;
+            border-radius: 4px;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <h1>Robert Pattinson Discography</h1>
-        <p>Explore the complete list of movies featuring Robert Pattinson.</p>
-    </header>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="discography.html">Discography</a>
+<body class="min-h-screen">
+    <nav class="sticky top-0 z-50 bg-black bg-opacity-80 backdrop-blur-md py-4 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold gradient-text font-serif">Robert Pattinson</a>
+            <div class="flex space-x-8">
+                <a href="index.html" class="nav-link text-white hover:text-amber-400 text-lg font-medium transition-colors duration-300">Home</a>
+                <a href="discography.html" class="nav-link text-white hover:text-amber-400 text-lg font-medium transition-colors duration-300">Filmography</a>
+            </div>
+        </div>
     </nav>
-    <section>
-        <ul class="movie-list">
-        <li><a href="movieshtml/thedrama.html"><img src="posters/thedrama.jpg" alt="The Drama"><span>TBA: The Drama (Charlie)</span></a></li>
-        <li><a href="movieshtml/diemylove.html"><img src="posters/diemylove.jpg" alt="Die, My Love"><span>TBA: Die, My Love (Jackson)</span></a></li>
-        <li><a href="movieshtml/mickey17.html"><img src="posters/mickey17.jpg" alt="Mickey 17"><span>2025: Mickey 17 (Mickey)</span></a></li>
-        <li><a href="movieshtml/theboyandtheheron.html"><img src="posters/theboyandtheheron.jpg" alt="The Boy and the Heron"><span>2023: The Boy and the Heron (N/A)</span></a></li>
-        <li><a href="movieshtml/thebatman.html"><img src="https://i.pinimg.com/736x/25/3d/fc/253dfc65a5e4b84219c4bd0a48735227.jpg" alt="The Batman"><span>2022: The Batman (Bruce Wayne / Batman)</span></a></li>
-        <li><a href="movieshtml/thedevilallthetime.html"><img src="posters/thedevilallthetime.jpg" alt="The Devil All the Time"><span>2020: The Devil All the Time (Preston Teagardin)</span></a></li>
-        <li><a href="movieshtml/tenet.html"><img src="posters/tenet.jpg" alt="Tenet"><span>2020: Tenet (Neil)</span></a></li>
-        <li><a href="movieshtml/waitingforthebarbarians.html"><img src="posters/waitingforthebarbarians.jpg" alt="Waiting for the Barbarians"><span>2019: Waiting for the Barbarians (Officer Mandel)</span></a></li>
-        <li><a href="movieshtml/theking.html"><img src="posters/theking.jpg" alt="The King"><span>2019: The King (The Dauphin of France)</span></a></li>
-        <li><a href="movieshtml/thelighthouse.html"><img src="posters/thelighthouse.jpg" alt="The Lighthouse"><span>2019: The Lighthouse (Thomas Howard / Ephraim Winslow)</span></a></li>
-        <li><a href="movieshtml/highlife.html"><img src="posters/highlife.jpg" alt="High Life"><span>2018: High Life (Monte)</span></a></li>
-        <li><a href="movieshtml/damsel.html"><img src="posters/damsel.jpg" alt="Damsel"><span>2018: Damsel (Samuel Alabaster)</span></a></li>
-        <li><a href="movieshtml/goodtime.html"><img src="posters/goodtime.jpg" alt="Good Time"><span>2017: Good Time (Connie Nikas)</span></a></li>
-        <li><a href="movieshtml/lostcityofz.html"><img src="posters/lostcityofz.jpg" alt="The Lost City of Z"><span>2016: The Lost City of Z (Henry Costin)</span></a></li>
-        <li><a href="movieshtml/childhoodofaleader.html"><img src="posters/childhoodofaleader.jpg" alt="The Childhood of a Leader"><span>2016: The Childhood of a Leader (Charles Marker)</span></a></li>
-        <li><a href="movieshtml/life.html"><img src="posters/life.jpg" alt="Life"><span>2015: Life (Dennis Stock)</span></a></li>
-        <li><a href="movieshtml/queenofthedesert.html"><img src="posters/queenofthedesert.jpg" alt="Queen of the Desert"><span>2015: Queen of the Desert (T. E. Lawrence)</span></a></li>
-        <li><a href="movieshtml/mapstothestars.html"><img src="posters/mapstothestars.jpg" alt="Maps to the Stars"><span>2014: Maps to the Stars (Jerome Fontana)</span></a></li>
-        <li><a href="movieshtml/therover.html"><img src="posters/therover.jpg" alt="The Rover"><span>2014: The Rover (Rey)</span></a></li>
-        <li><a href="movieshtml/breakingdawn2.html"><img src="posters/breakingdawn2.jpg" alt="The Twilight Saga: Breaking Dawn – Part 2"><span>2012: The Twilight Saga: Breaking Dawn – Part 2 (Edward Cullen)</span></a></li>
-        <li><a href="movieshtml/cosmopolis.html"><img src="posters/cosmopolis.jpg" alt="Cosmopolis"><span>2012: Cosmopolis (Eric Packer)</span></a></li>
-        <li><a href="movieshtml/belami.html"><img src="posters/belami.jpg" alt="Bel Ami"><span>2012: Bel Ami (Georges Duroy)</span></a></li>
-        <li><a href="movieshtml/breakingdawn1.html"><img src="posters/breakingdawn1.jpg" alt="The Twilight Saga: Breaking Dawn – Part 1"><span>2011: The Twilight Saga: Breaking Dawn – Part 1 (Edward Cullen)</span></a></li>
-        <li><a href="movieshtml/waterforelephants.html"><img src="posters/waterforelephants.jpg" alt="Water for Elephants"><span>2011: Water for Elephants (Jacob Jankowski)</span></a></li>
-        <li><a href="movieshtml/loveanddistrust.html"><img src="posters/loveanddistrust.jpg" alt="Love & Distrust"><span>2010: Love & Distrust (Richard)</span></a></li>
-        <li><a href="movieshtml/eclipse.html"><img src="posters/eclipse.jpg" alt="The Twilight Saga: Eclipse"><span>2010: The Twilight Saga: Eclipse (Edward Cullen)</span></a></li>
-        <li><a href="movieshtml/rememberme.html"><img src="posters/rememberme.jpg" alt="Remember Me"><span>2010: Remember Me (Tyler Hawkins)</span></a></li>
-        <li><a href="movieshtml/newmoon.html"><img src="posters/newmoon.jpg" alt="The Twilight Saga: New Moon"><span>2009: The Twilight Saga: New Moon (Edward Cullen)</span></a></li>
-        <li><a href="movieshtml/littleashes.html"><img src="posters/littleashes.jpg" alt="Little Ashes"><span>2009: Little Ashes (Salvador Dalí)</span></a></li>
-        <li><a href="movieshtml/twilight.html"><img src="posters/twilight.jpg" alt="Twilight"><span>2008: Twilight (Edward Cullen)</span></a></li>
-        <li><a href="movieshtml/howtobe.html"><img src="posters/howtobe.jpg" alt="How to Be"><span>2008: How to Be (Art)</span></a></li>
-        <li><a href="movieshtml/harrypotter.html"><img src="posters/harrypotter.jpg" alt="Harry Potter and the Goblet of Fire"><span>2005: Harry Potter and the Goblet of Fire (Cedric Diggory)</span></a></li>
-        <li><a href="movieshtml/thebadmothershandbook.html"><img src="posters/thebadmothershandbook.jpg" alt="The Bad Mother's Handbook"><span>2004: The Bad Mother's Handbook (Daniel Gale)</span></a></li>
-    </ul>
-</section>
-<footer>
-    <p>&copy; 2024 Twilight Reboot Official | Fan site for entertainment purposes only.</p>
-    <div class="social-icons">
-        <a href="https://www.instagram.com/twilightrebootofficial/"><i class="fab fa-facebook"></i></a>
-        <a href="https://x.com/@twilightnetflix/"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.instagram.com/twilightrebootofficial/"><i class="fab fa-instagram"></i></a>
-    </div>
-</footer>
-<script src="js/discography.js"></script>
+
+    <header class="py-16 px-4 sm:px-6 lg:px-8 text-center">
+        <div class="max-w-7xl mx-auto" data-aos="fade-down">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 font-serif gradient-text">Complete Filmography</h1>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto">Every cinematic appearance from Twilight to The Batman and beyond</p>
+            
+            <div class="mt-8 max-w-md mx-auto" data-aos="fade-up" data-aos-delay="100">
+                <div class="relative">
+                    <input type="text" id="search" placeholder="Search movies..." class="w-full px-6 py-3 rounded-full text-white search-input border border-gray-700 focus:outline-none focus:border-amber-500 transition-all duration-300">
+                    <i data-feather="search" class="absolute right-4 top-3 text-gray-400"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="py-8 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="movie-grid">
+            <!-- The Drama -->
+            <a href="movieshtml/thedrama.html" class="movie-item rounded-lg overflow-hidden flex items-center p-4 border border-gray-800 hover:border-amber-500 transition-all duration-300" data-aos="fade-up">
+                <img src="posters/thedrama.jpg" alt="The Drama" class="w-20 h-28 object-cover rounded-md mr-4">
+                <div>
+                    <h3 class="font-bold text-lg">The Drama</h3>
+                    <p class="text-gray-400 text-sm">TBA | Charlie</p>
+                </div>
+            </a>
+            
+            <!-- Die, My Love -->
+            <a href="movieshtml/diemylove.html" class="movie-item rounded-lg overflow-hidden flex items-center p-4 border border-gray-800 hover:border-amber-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="50">
+                <img src="posters/diemylove.jpg" alt="Die, My Love" class="w-20 h-28 object-cover rounded-md mr-4">
+                <div>
+                    <h3 class="font-bold text-lg">Die, My Love</h3>
+                    <p class="text-gray-400 text-sm">TBA | Jackson</p>
+                </div>
+            </a>
+            
+            <!-- Mickey 17 -->
+            <a href="movieshtml/mickey17.html" class="movie-item rounded-lg overflow-hidden flex items-center p-4 border border-gray-800 hover:border-amber-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                <img src="posters/mickey17.jpg" alt="Mickey 17" class="w-20 h-28 object-cover rounded-md mr-4">
+                <div>
+                    <h3 class="font-bold text-lg">Mickey 17</h3>
+                    <p class="text-gray-400 text-sm">2025 | Mickey</p>
+                </div>
+            </a>
+            
+            <!-- The Boy and the Heron -->
+            <a href="movieshtml/theboyandtheheron.html" class="movie-item rounded-lg overflow-hidden flex items-center p-4 border border-gray-800 hover:border-amber-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="150">
+                <img src="posters/theboyandtheheron.jpg" alt="The Boy and the Heron" class="w-20 h-28 object-cover rounded-md mr-4">
+                <div>
+                    <h3 class="font-bold text-lg">The Boy and the Heron</h3>
+                    <p class="text-gray-400 text-sm">2023 | N/A</p>
+                </div>
+            </a>
+            
+            <!-- The Batman -->
+            <a href="movieshtml/thebatman.html" class="movie-item rounded-lg overflow-hidden flex items-center p-4 border border-gray-800 hover:border-amber-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://i.pinimg.com/736x/25/3d/fc/253dfc65a5e4b84219c4bd0a48735227.jpg" alt="The Batman" class="w-20 h-28 object-cover rounded-md mr-4">
+                <div>
+                    <h3 class="font-bold text-lg">The Batman</h3>
+                    <p class="text-gray-400 text-sm">2022 | Bruce Wayne / Batman</p>
+                </div>
+            </a>
+            
+            <!-- The Devil All the Time -->
+            <a href="movieshtml/thedevilallthetime.html" class="movie-item rounded-lg overflow-hidden flex items-center p-4 border border-gray-800 hover:border-amber-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="250">
+                <img src="posters/thedevilallthetime.jpg" alt="The Devil All the Time" class="w-20 h-28 object-cover rounded-md mr-4">
+                <div>
+                    <h3 class="font-bold text-lg">The Devil All the Time</h3>
+                    <p class="text-gray-400 text-sm">2020 | Preston Teagardin</p>
+                </div>
+            </a>
+            
+            <!-- Tenet -->
+            <a href="movieshtml/tenet.html" class="movie-item rounded-lg overflow-hidden flex items-center p-4 border border-gray-800 hover:border-amber-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                <img src="posters/tenet.jpg" alt="Tenet" class="w-20 h-28 object-cover rounded-md mr-4">
+                <div>
+                    <h3 class="font-bold text-lg">Tenet</h3>
+                    <p class="text-gray-400 text-sm">2020 | Neil</p>
+                </div>
+            </a>
+            
+            <!-- Waiting for the Barbarians -->
+            <a href="movieshtml/waitingforthebarbarians.html" class="movie-item rounded-lg overflow-hidden flex items-center p-4 border border-gray-800 hover:border-amber-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="350">
+                <img src="posters/waitingforthebarbarians.jpg" alt="Waiting for the Barbarians" class="w-20 h-28 object-cover rounded-md mr-4">
+                <div>
+                    <h3 class="font-bold text-lg">Waiting for the Barbarians</h3>
+                    <p class="text-gray-400 text-sm">2019 | Officer Mandel</p>
+                </div>
+            </a>
+            
+            <!-- The King -->
+            <a href="movieshtml/theking.html" class="movie-item rounded-lg overflow-hidden flex items-center p-4 border border-gray-800 hover:border-amber-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="400">
+                <img src="posters/theking.jpg" alt="The King" class="w-20 h-28 object-cover rounded-md mr-4">
+                <div>
+                    <h3 class="font-bold text-lg">The King</h3>
+                    <p class="text-gray-400 text-sm">2019 | The Dauphin of France</p>
+                </div>
+            </a>
+            
+            <!-- The Lighthouse -->
+            <a href="movieshtml/thelighthouse.html" class="movie-item rounded-lg overflow-hidden flex items-center p-4 border border-gray-800 hover:border-amber-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="450">
+                <img src="posters/thelighthouse.jpg" alt="The Lighthouse" class="w-20 h-28 object-cover rounded-md mr-4">
+                <div>
+                    <h3 class="font-bold text-lg">The Lighthouse</h3>
+                    <p class="text-gray-400 text-sm">2019 | Thomas Howard / Ephraim Winslow</p>
+                </div>
+            </a>
+            
+            <!-- High Life -->
+            <a href="movieshtml/highlife.html" class="movie-item rounded-lg overflow-hidden flex items-center p-4 border border-gray-800 hover:border-amber-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="500">
+                <img src="posters/highlife.jpg" alt="High Life" class="w-20 h-28 object-cover rounded-md mr-4">
+                <div>
+                    <h3 class="font-bold text-lg">High Life</h3>
+                    <p class="text-gray-400 text-sm">2018 | Monte</p>
+                </div>
+            </a>
+            
+            <!-- Damsel -->
+            <a href="movieshtml/damsel.html" class="movie-item rounded-lg overflow-hidden flex items-center p-4 border border-gray-800 hover:border-amber-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="550">
+                <img src="posters/damsel.jpg" alt="Damsel" class="w-20 h-28 object-cover rounded-md mr-4">
+                <div>
+                    <h3 class="font-bold text-lg">Damsel</h3>
+                    <p class="text-gray-400 text-sm">2018 | Samuel Alabaster</p>
+                </div>
+            </a>
+            
+            <!-- Good Time -->
+            <a href="movieshtml/goodtime.html" class="movie-item rounded-lg overflow-hidden flex items-center p-4 border border-gray-800 hover:border-amber-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="600">
+                <img src="posters/goodtime.jpg" alt="Good Time" class="w-20 h-28 object-cover rounded-md mr-4">
+                <div>
+                    <h3 class="font-bold text-lg">Good Time</h3>
+                    <p class="text-gray-400 text-sm">2017 | Connie Nikas</p>
+                </div>
+            </a>
+            
+            <!-- The Lost City of Z -->
+            <a href="movieshtml/lostcityofz.html" class="movie-item rounded-lg overflow-hidden flex items-center p-4 border border-gray-800 hover:border-amber-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="650">
+                <img src="posters/lostcityofz.jpg" alt="The Lost City of Z" class="w-20 h-28 object-cover rounded-md mr-4">
+                <div>
+                    <h3 class="font-bold text-lg">The Lost City of Z</h3>
+                    <p class="text-gray-400 text-sm">2016 | Henry Costin</p>
+                </div>
+            </a>
+            
+            <!-- The Childhood of a Leader -->
+            <a href="movieshtml/childhoodofaleader.html" class="movie-item rounded-lg overflow-hidden flex items-center p-4 border border-gray-800 hover:border-amber-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="700">
+                <img src="posters/childhoodofaleader.jpg" alt="The Childhood of a Leader" class="w-20 h-28 object-cover rounded-md mr-4">
+                <div>
+                    <h3 class="font-bold text-lg">The Childhood of a Leader</h3>
+                    <p class="text-gray-400 text-sm">2016 | Charles Marker</p>
+                </div>
+            </a>
+            
+            <!-- Life -->
+            <a href="movieshtml/life.html" class="movie-item rounded-lg overflow-hidden flex items-center p-4 border border-gray-800 hover:border-amber-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="750">
+                <img src="posters/life.jpg" alt="Life" class="w-20 h-28 object-cover rounded-md mr-4">
+                <div>
+                    <h3 class="font-bold text-lg">Life</h3>
+                    <p class="text-gray-400 text-sm">2015 | Dennis Stock</p>
+                </div>
+            </a>
+            
+            <!-- Queen of the Desert -->
+            <a href="movieshtml/queenofthedesert.html" class="movie-item rounded-lg overflow-hidden flex items-center p-4 border border-gray-800 hover:border-amber-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="800">
+                <img src="posters/queenofthedesert.jpg" alt="Queen of the Desert" class="w-20 h-28 object-cover rounded-md mr-4">
+                <div>
+                    <h3 class="font-bold text-lg">Queen of the Desert</h3>
+                    <p class="text-gray-400 text-sm">2015 | T. E. Lawrence</p>
+                </div>
+            </a>
+            
+            <!-- Maps to the Stars -->
+            <a href="movieshtml/mapstothestars.html" class="movie-item rounded-lg overflow-hidden flex items-center p-4 border border-gray-800 hover:border-amber-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="850">
+                <img src="posters/mapstothestars.jpg" alt="Maps to the Stars" class="w-20 h-28 object-cover rounded-md mr-4">
+                <div>
+                    <h3 class="font-bold text-lg">Maps to the Stars</h3>
+                    <p class="text-gray-400 text-sm">2014 | Jerome Fontana</p>
+                </div>
+            </a>
+            
+            <!-- The Rover -->
+            <a href="movieshtml/therover.html" class="movie-item rounded-lg overflow-hidden flex items-center p-4 border border-gray-800 hover:border-amber-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="900">
+                <img src="posters/therover.jpg" alt="The Rover" class="w-20 h-28 object-cover rounded-md mr-4">
+                <div>
+                    <h3 class="font-bold text-lg">The Rover</h3>
+                    <p class="text-gray-400 text-sm">2014 | Rey</p>
+                </div>
+            </a>
+            
+            <!-- Breaking Dawn – Part 2 -->
+            <a href="movieshtml/breakingdawn2.html" class="movie-item rounded-lg overflow-hidden flex items-center p-4 border border-gray-800 hover:border-amber-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="950">
+                <img src="posters/breakingdawn2.jpg" alt="The Twilight Saga: Breaking Dawn – Part 2" class="w-20 h-28 object-cover rounded-md mr-4">
+                <div>
+                    <h3 class="font-bold text-lg">Breaking Dawn – Part 2</h3>
+                    <p class="text-gray-400 text-sm">2012 | Edward Cullen</p>
+                </div>
+            </a>
+            
+            <!-- Cosmopolis -->
+            <a href="movieshtml/cosmopolis.html" class="movie-item rounded-lg overflow-hidden flex items-center p-4 border border-gray-800 hover:border-amber-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="1000">
+                <img src="posters/cosmopolis.jpg" alt="Cosmopolis" class="w-20 h-28 object-cover rounded-md mr-4">
+                <div>
+                    <h3 class="font-bold text-lg">Cosmopolis</h3>
+                    <p class="text-gray-400 text-sm">2012 | Eric Packer</p>
+                </div>
+            </a>
+            
+            <!-- Bel Ami -->
+            <a href="movieshtml/belami.html" class="movie-item rounded-lg overflow-hidden flex items-center p-4 border border-gray-800 hover:border-amber-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="1050">
+                <img src="posters/belami.jpg" alt="Bel Ami" class="w-20 h-28 object-cover rounded-md mr-4">
+                <div>
+                    <h3 class="font-bold text-lg">Bel Ami</h3>
+                    <p class="text-gray-400 text-sm">2012 | Georges Duroy</p>
+                </div>
+            </a>
+            
+            <!-- Breaking Dawn – Part 1 -->
+            <a href="movieshtml/breakingdawn1.html" class="movie-item rounded-lg overflow-hidden flex items-center p-4 border border-gray-800 hover:border-amber-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="1100">
+                <img src="posters/breakingdawn1.jpg" alt="The Twilight Saga: Breaking Dawn – Part 1" class="w-20 h-28 object-cover rounded-md mr-4">
+                <div>
+                    <h3 class="font-bold text-lg">Breaking Dawn – Part 1</h3>
+                    <p class="text-gray-400 text-sm">2011 | Edward Cullen</p>
+                </div>
+            </a>
+            
+            <!-- Water for Elephants -->
+            <a href="movieshtml/waterforelephants.html" class="movie-item rounded-lg overflow-hidden flex items-center p-4 border border-gray-800 hover:border-amber-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="1150">
+                <img src="posters/waterforelephants.jpg" alt="Water for Elephants" class="w-20 h-28 object-cover rounded-md mr-4">
+                <div>
+                    <h3 class="font-bold text-lg">Water for Elephants</h3>
+                    <p class="text-gray-400 text-sm">2011 | Jacob Jankowski</p>
+                </div>
+            </a>
+            
+            <!-- Love & Distrust -->
+            <a href="movieshtml/loveanddistrust.html" class="movie-item rounded-lg overflow-hidden flex items-center p-4 border border-gray-800 hover:border-amber-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="1200">
+                <img src="posters/loveanddistrust.jpg" alt="Love & Distrust" class="w-20 h-28 object-cover rounded-md mr-4">
+                <div>
+                    <h3 class="font-bold text-lg">Love & Distrust</h3>
+                    <p class="text-gray-400 text-sm">2010 | Richard</p>
+                </div>
+            </a>
+            
+            <!-- Eclipse -->
+            <a href="movieshtml/eclipse.html" class="movie-item rounded-lg overflow-hidden flex items-center p-4 border border-gray-800 hover:border-amber-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="1250">
+                <img src="posters/eclipse.jpg" alt="The Twilight Saga: Eclipse" class="w-20 h-28 object-cover rounded-md mr-4">
+                <div>
+                    <h3 class="font-bold text-lg">Eclipse</h3>
+                    <p class="text-gray-400 text-sm">2010 | Edward Cullen</p>
+                </div>
+            </a>
+            
+            <!-- Remember Me -->
+            <a href="movieshtml/rememberme.html" class="movie-item rounded-lg overflow-hidden flex items-center p-4 border border-gray-800 hover:border-amber-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="1300">
+                <img src="posters/rememberme.jpg" alt="Remember Me" class="w-20 h-28 object-cover rounded-md mr-4">
+                <div>
+                    <h3 class="font-bold text-lg">Remember Me</h3>
+                    <p class="text-gray-400 text-sm">2010 | Tyler Hawkins</p>
+                </div>
+            </a>
+            
+            <!-- New Moon -->
+            <a href="movieshtml/newmoon.html" class="movie-item rounded-lg overflow-hidden flex items-center p-4 border border-gray-800 hover:border-amber-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="1350">
+                <img src="posters/newmoon.jpg" alt="The Twilight Saga: New Moon" class="w-20 h-28 object-cover rounded-md mr-4">
+                <div>
+                    <h3 class="font-bold text-lg">New Moon</h3>
+                    <p class="text-gray-400 text-sm">2009 | Edward Cullen</p>
+                </div>
+            </a>
+            
+            <!-- Little Ashes -->
+            <a href="movieshtml/littleashes.html" class="movie-item rounded-lg overflow-hidden flex items-center p-4 border border-gray-800 hover:border-amber-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="1400">
+                <img src="posters/littleashes.jpg" alt="Little Ashes" class="w-20 h-28 object-cover rounded-md mr-4">
+                <div>
+                    <h3 class="font-bold text-lg">Little Ashes</h3>
+                    <p class="text-gray-400 text-sm">2009 | Salvador Dalí</p>
+                </div>
+            </a>
+            
+            <!-- Twilight -->
+            <a href="movieshtml/twilight.html" class="movie-item rounded-lg overflow-hidden flex items-center p-4 border border-gray-800 hover:border-amber-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="1450">
+                <img src="posters/twilight.jpg" alt="Twilight" class="w-20 h-28 object-cover rounded-md mr-4">
+                <div>
+                    <h3 class="font-bold text-lg">Twilight</h3>
+                    <p class="text-gray-400 text-sm">2008 | Edward Cullen</p>
+                </div>
+            </a>
+            
+            <!-- How to Be -->
+            <a href="movieshtml/howtobe.html" class="movie-item rounded-lg overflow-hidden flex items-center p-4 border border-gray-800 hover:border-amber-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="1500">
+                <img src="posters/howtobe.jpg" alt="How to Be" class="w-20 h-28 object-cover rounded-md mr-4">
+                <div>
+                    <h3 class="font-bold text-lg">How to Be</h3>
+                    <p class="text-gray-400 text-sm">2008 | Art</p>
+                </div>
+            </a>
+            
+            <!-- Harry Potter and the Goblet of Fire -->
+            <a href="movieshtml/harrypotter.html" class="movie-item rounded-lg overflow-hidden flex items-center p-4 border border-gray-800 hover:border-amber-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="1550">
+                <img src="posters/harrypotter.jpg" alt="Harry Potter and the Goblet of Fire" class="w-20 h-28 object-cover rounded-md mr-4">
+                <div>
+                    <h3 class="font-bold text-lg">Harry Potter and the Goblet of Fire</h3>
+                    <p class="text-gray-400 text-sm">2005 | Cedric Diggory</p>
+                </div>
+            </a>
+            
+            <!-- The Bad Mother's Handbook -->
+            <a href="movieshtml/thebadmothershandbook.html" class="movie-item rounded-lg overflow-hidden flex items-center p-4 border border-gray-800 hover:border-amber-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="1600">
+                <img src="posters/thebadmothershandbook.jpg" alt="The Bad Mother's Handbook" class="w-20 h-28 object-cover rounded-md mr-4">
+                <div>
+                    <h3 class="font-bold text-lg">The Bad Mother's Handbook</h3>
+                    <p class="text-gray-400 text-sm">2004 | Daniel Gale</p>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <footer class="bg-black bg-opacity-80 py-12 px-4 sm:px-6 lg:px-8 mt-20">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">&copy; 2024 Robert Pattinson Filmography | Fan site for entertainment purposes only.</p>
+                <div class="flex space-x-6">
+                    <a href="https://www.instagram.com/twilightrebootofficial/" class="text-gray-400 hover:text-white transition-colors duration-300">
+                        <i data-feather="facebook" class="w-6 h-6"></i>
+                    </a>
+                    <a href="https://x.com/@twilightnetflix/" class="text-gray-400 hover:text-white transition-colors duration-300">
+                        <i data-feather="twitter" class="w-6 h-6"></i>
+                    </a>
+                    <a href="https://www.instagram.com/twilightrebootofficial/" class="text-gray-400 hover:text-white transition-colors duration-300">
+                        <i data-feather="instagram" class="w-6 h-6"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        feather.replace();
+        
+        // Search functionality
+        document.getElementById('search').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const movieItems = document.querySelectorAll('.movie-item');
+            
+            movieItems.forEach(item => {
+                const title = item.querySelector('h3').textContent.toLowerCase();
+                const yearRole = item.querySelector('p').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || yearRole.includes(searchTerm)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>

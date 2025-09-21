@@ -3,59 +3,202 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Robert Pattinson</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="css/robert-pattinson.css">
+    <title>Robert Pattinson | The Dark Knight</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap');
+        body {
+            font-family: 'Montserrat', sans-serif;
+            overflow-x: hidden;
+        }
+        .vanta-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #f59e0b;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #f59e0b, #ef4444);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <h1>Robert Pattinson</h1>
-        <p>A Journey Through His Career</p>
+<body class="bg-gray-900 text-white">
+    <div id="vanta-bg" class="vanta-bg"></div>
+
+    <header class="relative z-10 py-12 px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-5xl md:text-7xl font-black mb-4 gradient-text" data-aos="fade-down" data-aos-duration="1000">ROBERT PATTINSON</h1>
+        <p class="text-xl md:text-2xl font-light italic opacity-90" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">The Dark Knight Rises</p>
     </header>
-    <nav>
-        <a href="#movies">Movies</a>
-        <a href="#photoshoots">Photoshoots</a>
-        <a href="#red-carpet">Red Carpet</a>
-        <a href="#fan-arts">Fan Arts</a>
-        <a href="#paparazzi">Paparazzi</a>
+
+    <nav class="relative z-10 flex justify-center items-center py-6 mb-12">
+        <div class="flex space-x-1 sm:space-x-4 bg-gray-800 bg-opacity-70 rounded-full px-4 py-2 backdrop-blur-sm">
+            <a href="#movies" class="nav-link px-3 py-2 text-sm sm:text-base font-medium hover:text-amber-400 transition-colors duration-300" data-aos="fade-up" data-aos-delay="300">Movies</a>
+            <a href="#photoshoots" class="nav-link px-3 py-2 text-sm sm:text-base font-medium hover:text-amber-400 transition-colors duration-300" data-aos="fade-up" data-aos-delay="400">Photoshoots</a>
+            <a href="#red-carpet" class="nav-link px-3 py-2 text-sm sm:text-base font-medium hover:text-amber-400 transition-colors duration-300" data-aos="fade-up" data-aos-delay="500">Red Carpet</a>
+            <a href="#fan-arts" class="nav-link px-3 py-2 text-sm sm:text-base font-medium hover:text-amber-400 transition-colors duration-300" data-aos="fade-up" data-aos-delay="600">Fan Arts</a>
+            <a href="#paparazzi" class="nav-link px-3 py-2 text-sm sm:text-base font-medium hover:text-amber-400 transition-colors duration-300" data-aos="fade-up" data-aos-delay="700">Paparazzi</a>
+        </div>
     </nav>
-    <main>
-        <div class="card" id="movies">
-            <img src="images/icon/allmovies.jpg" alt="Robert Pattinson Movies">
-            <h3><a href="rpattz/discography.html" style="color: inherit; text-decoration: none;">Movies</a></h3>
-            <p>Explore Robert Pattinson's filmography, from Twilight to The Batman.</p>
-        </div>
-        <div class="card" id="photoshoots">
-            <img src="images/icon/photoshoots.jpg" alt="Photoshoots">
-            <h3><a href="rpattz/photoshoots-project/index.html" style="color: inherit; text-decoration: none;">Photoshoots</a></h3>
-            <p>Stunning photoshoots showcasing Robert Pattinson's style and elegance.</p>
-        </div>
-        <div class="card" id="red-carpet">
-            <img src="images/icon/redcarpet.jpg" alt="Red Carpet">
-            <h3><a href="rpattz/redcarpet.html" style="color: inherit; text-decoration: none;">Red Carpet</a></h3>
-            <p>Iconic moments from Robert Pattinson's red carpet appearances.</p>
-        </div>
-        <div class="card" id="fan-arts">
-            <img src="images/icon/fanart.jpg" alt="Fan Arts">
-            <h3><a href="rpattz/fanarts.html" style="color: inherit; text-decoration: none;">Fan Arts</a></h3>
-            <p>Creative tributes and fan-made artworks celebrating Robert Pattinson.</p>
-        </div>
-        <div class="card" id="paparazzi">
-            <img src="images/icon/paparazzi.jpg" alt="Paparazzi">
-            <h3><a href="rpattz/paparazzi.html" style="color: inherit; text-decoration: none;">Paparazzi</a></h3>
-            <p>Candid shots capturing moments from Robert Pattinson's daily life.</p>
+
+    <main class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="card-hover bg-gray-800 bg-opacity-60 rounded-xl overflow-hidden backdrop-blur-sm" id="movies" data-aos="fade-up" data-aos-delay="300">
+                <div class="h-48 overflow-hidden">
+                    <img src="images/icon/allmovies.jpg" alt="Robert Pattinson Movies" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2 flex items-center">
+                        <i data-feather="film" class="mr-2 text-amber-400"></i>
+                        <a href="rpattz/discography.html" class="hover:text-amber-400 transition-colors duration-300">Movies</a>
+                    </h3>
+                    <p class="text-gray-300">From Twilight's Edward Cullen to The Batman's Dark Knight - explore Robert's transformative filmography.</p>
+                </div>
+            </div>
+
+            <div class="card-hover bg-gray-800 bg-opacity-60 rounded-xl overflow-hidden backdrop-blur-sm" id="photoshoots" data-aos="fade-up" data-aos-delay="400">
+                <div class="h-48 overflow-hidden">
+                    <img src="images/icon/photoshoots.jpg" alt="Photoshoots" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2 flex items-center">
+                        <i data-feather="camera" class="mr-2 text-amber-400"></i>
+                        <a href="rpattz/photoshoots-project/index.html" class="hover:text-amber-400 transition-colors duration-300">Photoshoots</a>
+                    </h3>
+                    <p class="text-gray-300">High-fashion editorials and intimate portraits showcasing Robert's chameleonic style.</p>
+                </div>
+            </div>
+
+            <div class="card-hover bg-gray-800 bg-opacity-60 rounded-xl overflow-hidden backdrop-blur-sm" id="red-carpet" data-aos="fade-up" data-aos-delay="500">
+                <div class="h-48 overflow-hidden">
+                    <img src="images/icon/redcarpet.jpg" alt="Red Carpet" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2 flex items-center">
+                        <i data-feather="star" class="mr-2 text-amber-400"></i>
+                        <a href="rpattz/redcarpet.html" class="hover:text-amber-400 transition-colors duration-300">Red Carpet</a>
+                    </h3>
+                    <p class="text-gray-300">Iconic moments from film premieres and award shows where Robert commanded attention.</p>
+                </div>
+            </div>
+
+            <div class="card-hover bg-gray-800 bg-opacity-60 rounded-xl overflow-hidden backdrop-blur-sm" id="fan-arts" data-aos="fade-up" data-aos-delay="600">
+                <div class="h-48 overflow-hidden">
+                    <img src="images/icon/fanart.jpg" alt="Fan Arts" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2 flex items-center">
+                        <i data-feather="heart" class="mr-2 text-amber-400"></i>
+                        <a href="rpattz/fanarts.html" class="hover:text-amber-400 transition-colors duration-300">Fan Arts</a>
+                    </h3>
+                    <p class="text-gray-300">Creative tributes from fans worldwide celebrating Robert's talent and charisma.</p>
+                </div>
+            </div>
+
+            <div class="card-hover bg-gray-800 bg-opacity-60 rounded-xl overflow-hidden backdrop-blur-sm" id="paparazzi" data-aos="fade-up" data-aos-delay="700">
+                <div class="h-48 overflow-hidden">
+                    <img src="images/icon/paparazzi.jpg" alt="Paparazzi" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2 flex items-center">
+                        <i data-feather="eye" class="mr-2 text-amber-400"></i>
+                        <a href="rpattz/paparazzi.html" class="hover:text-amber-400 transition-colors duration-300">Paparazzi</a>
+                    </h3>
+                    <p class="text-gray-300">Candid glimpses of Robert's life beyond the spotlight - unfiltered and authentic.</p>
+                </div>
+            </div>
+
+            <div class="card-hover bg-gray-800 bg-opacity-60 rounded-xl overflow-hidden backdrop-blur-sm" data-aos="fade-up" data-aos-delay="800">
+                <div class="h-48 overflow-hidden bg-gradient-to-r from-amber-500 to-pink-500 flex items-center justify-center">
+                    <i data-feather="plus" class="w-16 h-16 text-white opacity-90"></i>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold mb-2 flex items-center">
+                        <i data-feather="bell" class="mr-2 text-amber-400"></i>
+                        <span class="hover:text-amber-400 transition-colors duration-300">Coming Soon</span>
+                    </h3>
+                    <p class="text-gray-300">Stay tuned for exclusive content and updates about Robert's upcoming projects.</p>
+                </div>
+            </div>
         </div>
     </main>
-    <footer>
-        <p>&copy; 2024 Robert Pattinson Fan Site</p>
-        <div class="social-icons">
-            <a href="#"><i class="fab fa-facebook"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
+
+    <footer class="relative z-10 py-8 px-4 sm:px-6 lg:px-8 bg-gray-900 bg-opacity-80 backdrop-blur-sm">
+        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-400 mb-4 md:mb-0">&copy; 2024 Robert Pattinson Fan Site. All rights reserved.</p>
+            <div class="flex space-x-4">
+                <a href="#" class="text-gray-400 hover:text-amber-400 transition-colors duration-300" data-aos="fade-left" data-aos-delay="300">
+                    <i data-feather="facebook"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-amber-400 transition-colors duration-300" data-aos="fade-left" data-aos-delay="400">
+                    <i data-feather="twitter"></i>
+                </a>
+                <a href="#" class="text-gray-400 hover:text-amber-400 transition-colors duration-300" data-aos="fade-left" data-aos-delay="500">
+                    <i data-feather="instagram"></i>
+                </a>
+            </div>
         </div>
     </footer>
-    <script src="js/robert-pattinson.js"></script>
-    <script defer src="/_vercel/insights/script.js"></script>
 
+    <script>
+        VANTA.NET({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0xf59e0b,
+            backgroundColor: 0x111827,
+            points: 10.00,
+            maxDistance: 22.00,
+            spacing: 18.00
+        });
+    </script>
+    <script>
+        AOS.init({
+            once: true,
+            duration: 800,
+            easing: 'ease-in-out-quart'
+        });
+    </script>
+    <script>
+        feather.replace();
+    </script>
 </body>
 </html>
